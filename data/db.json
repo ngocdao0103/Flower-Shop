@@ -1,0 +1,261 @@
+{
+  "categories": [
+    {
+      "id": "CAT001",
+      "name": "Bó Hoa",
+      "description": "Các mẫu bó hoa tươi đẹp, thích hợp cho mọi dịp lễ và tặng người thương.",
+      "image_url": "https://example.com/images/categories/bouquet.jpg"
+    },
+    {
+      "id": "CAT002",
+      "name": "Chậu Hoa",
+      "description": "Các loại chậu hoa trang trí nhà cửa, văn phòng hoặc làm quà tặng sang trọng.",
+      "image_url": "https://example.com/images/categories/potted.jpg"
+    },
+    {
+      "id": "CAT003",
+      "name": "Hoa Hộp Quà",
+      "description": "Hoa được gói trong hộp quà tinh tế – lựa chọn sang trọng cho các dịp đặc biệt.",
+      "image_url": "https://example.com/images/categories/giftbox.jpg"
+    },
+    {
+      "id": "CAT004",
+      "name": "Hoa Sinh Nhật",
+      "description": "Những bó hoa và hộp hoa rực rỡ, mang thông điệp chúc mừng sinh nhật đầy ý nghĩa.",
+      "image_url": "https://example.com/images/categories/birthday.jpg"
+    }
+  ],
+
+  "products": [
+    {
+      "id": "FLW001",
+      "name": "Bó Hoa Hồng Đỏ",
+      "description": "Bó hoa hồng đỏ rực rỡ – lựa chọn tuyệt vời cho ngày lễ, tỏ tình hoặc kỷ niệm.",
+      "base_price": 1200000,
+      "category_id": "CAT001",
+      "category": "Bó Hoa",
+      "image_url": "https://example.com/images/rose-bouquet-red.jpg",
+      "variants": [
+        {
+          "variant_id": "FLW001-VAR1",
+          "attributes": [
+            { "name": "Kích cỡ", "value": "Nhỏ" },
+            { "name": "Bao giấy", "value": "Giấy Kraft" }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 10,
+          "sku": "ROSE-RED-S-KR",
+          "image_url": "https://example.com/images/rose-bouquet-red-small.jpg"
+        },
+        {
+          "variant_id": "FLW001-VAR2",
+          "attributes": [
+            { "name": "Kích cỡ", "value": "Lớn" },
+            { "name": "Bao giấy", "value": "Giấy trắng" }
+          ],
+          "price_modifier": 300000,
+          "stock_quantity": 5,
+          "sku": "ROSE-RED-L-WH",
+          "image_url": "https://example.com/images/rose-bouquet-red-large.jpg"
+        }
+      ]
+    },
+    {
+      "id": "FLW002",
+      "name": "Chậu Hoa Lan Cam",
+      "description": "Chậu hoa lan cam sang trọng, thích hợp để bàn, phòng khách hoặc làm quà tặng VIP.",
+      "base_price": 850000,
+      "category_id": "CAT002",
+      "category": "Chậu Hoa",
+      "image_url": "https://example.com/images/orchid-orange-pot.jpg",
+      "variants": [
+        {
+          "variant_id": "FLW002-VAR1",
+          "attributes": [
+            { "name": "Kích thước chậu", "value": "25cm" },
+            { "name": "Bao gồm hộp quà", "value": "Có" }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 3,
+          "sku": "ORCHID-ORANGE-25-GIFT",
+          "image_url": "https://example.com/images/orchid-orange-25cm.jpg"
+        },
+        {
+          "variant_id": "FLW002-VAR2",
+          "attributes": [
+            { "name": "Kích thước chậu", "value": "30cm" },
+            { "name": "Bao gồm hộp quà", "value": "Không" }
+          ],
+          "price_modifier": -50000,
+          "stock_quantity": 7,
+          "sku": "ORCHID-ORANGE-30-NOGIFT",
+          "image_url": "https://example.com/images/orchid-orange-30cm.jpg"
+        }
+      ]
+    },
+    {
+      "id": "FLW003",
+      "name": "Bó Hoa Tulip Mix Màu",
+      "description": "Bó hoa tulip nhiều màu tươi tắn – phù hợp làm quà sinh nhật, tặng bạn bè.",
+      "base_price": 550000,
+      "category_id": "CAT001",
+      "category": "Bó Hoa",
+      "image_url": "https://example.com/images/tulip-mix-bouquet.jpg",
+      "variants": [
+        {
+          "variant_id": "FLW003-VAR1",
+          "attributes": [
+            { "name": "Số lượng cành", "value": "10 cành" },
+            { "name": "Bao giấy", "value": "Giấy kraft" }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 20,
+          "sku": "TULIP-MIX-10-KR",
+          "image_url": "https://example.com/images/tulip-mix-10.jpg"
+        },
+        {
+          "variant_id": "FLW003-VAR2",
+          "attributes": [
+            { "name": "Số lượng cành", "value": "20 cành" },
+            { "name": "Bao giấy", "value": "Giấy trắng" }
+          ],
+          "price_modifier": 250000,
+          "stock_quantity": 8,
+          "sku": "TULIP-MIX-20-WH",
+          "image_url": "https://example.com/images/tulip-mix-20.jpg"
+        }
+      ]
+    }
+  ],
+
+  "users": [
+    {
+      "id": 1001,
+      "name": "Nguyễn Thị Hoa",
+      "email": "hoa.nguyen@example.com",
+      "phone": "0905123456",
+      "address": "123 Đường Hoa Mai, Quận Phú Nhuận, TP. Hồ Chí Minh",
+      "role": "customer"
+    },
+    {
+      "id": 1002,
+      "name": "Trần Văn Hùng",
+      "email": "hung.tran@example.com",
+      "phone": "0988123456",
+      "address": "45 Lê Lợi, Quận 1, TP. Hồ Chí Minh",
+      "role": "customer"
+    },
+    {
+      "id": 9001,
+      "name": "Admin FlowerShop",
+      "email": "admin@flosun.com",
+      "phone": "0911222333",
+      "role": "admin"
+    }
+  ],
+
+  "carts": [
+    {
+      "user_id": 1001,
+      "items": [
+        {
+          "cart_item_id": 1,
+          "product_id": "FLW001",
+          "variant_id": "FLW001-VAR1",
+          "quantity": 2
+        },
+        {
+          "cart_item_id": 2,
+          "product_id": "FLW003",
+          "variant_id": "FLW003-VAR2",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+
+  "orders": [
+    {
+      "order_id": "ORD20251016-001",
+      "user_id": 1001,
+      "receiver_name": "Nguyễn Thị Hoa",
+      "receiver_phone": "0905123456",
+      "receiver_address": "123 Đường Hoa Mai, Quận Phú Nhuận, TP. Hồ Chí Minh",
+      "order_date": "2025-10-16T10:30:00Z",
+      "status": "Delivered",
+      "items": [
+        {
+          "product_id": "FLW002",
+          "variant_id": "FLW002-VAR1",
+          "product_name": "Chậu Hoa Lan Cam (25cm - Có hộp quà)",
+          "quantity": 1,
+          "unit_price": 850000,
+          "total_price": 850000
+        }
+      ],
+      "shipping_fee": 50000,
+      "grand_total": 900000
+    },
+    {
+      "order_id": "ORD20251017-002",
+      "user_id": 1002,
+      "receiver_name": "Trần Văn Hùng",
+      "receiver_phone": "0988123456",
+      "receiver_address": "45 Lê Lợi, Quận 1, TP. Hồ Chí Minh",
+      "order_date": "2025-10-17T09:15:00Z",
+      "status": "Processing",
+      "items": [
+        {
+          "product_id": "FLW001",
+          "variant_id": "FLW001-VAR2",
+          "product_name": "Bó Hoa Hồng Đỏ (Lớn - Giấy trắng)",
+          "quantity": 1,
+          "unit_price": 1500000,
+          "total_price": 1500000
+        },
+        {
+          "product_id": "FLW003",
+          "variant_id": "FLW003-VAR1",
+          "product_name": "Bó Hoa Tulip Mix (10 cành - Giấy kraft)",
+          "quantity": 1,
+          "unit_price": 550000,
+          "total_price": 550000
+        }
+      ],
+      "shipping_fee": 40000,
+      "grand_total": 2090000
+    }
+  ],
+  "articles": [
+    {
+      "id": "ART001",
+      "title": "Cách bảo quản hoa tươi lâu trong mùa hè",
+      "slug": "cach-bao-quan-hoa-tuoi-lau-trong-mua-he",
+      "content": "Hoa tươi rất dễ héo trong thời tiết nắng nóng. Bài viết hướng dẫn bạn cách giữ hoa tươi lâu hơn bằng việc thay nước thường xuyên, cắt gốc, và đặt hoa nơi thoáng mát.",
+      "thumbnail_url": "https://example.com/images/blogs/keep-flowers-fresh.jpg",
+      "author": "Admin FlowerShop",
+      "created_at": "2025-10-10T08:00:00Z",
+      "category": "Mẹo chăm hoa"
+    },
+    {
+      "id": "ART002",
+      "title": "Gợi ý bó hoa tặng sinh nhật người yêu",
+      "slug": "goi-y-bo-hoa-tang-sinh-nhat-nguoi-yeu",
+      "content": "Hồng đỏ thể hiện tình yêu mãnh liệt, tulip tượng trưng cho niềm vui – cùng chọn bó hoa ý nghĩa nhất cho người bạn yêu.",
+      "thumbnail_url": "https://example.com/images/blogs/birthday-gift-ideas.jpg",
+      "author": "Nguyễn Thị Hoa",
+      "created_at": "2025-10-12T10:30:00Z",
+      "category": "Gợi ý quà tặng"
+    },
+    {
+      "id": "ART003",
+      "title": "Top 5 loài hoa mang lại may mắn trong nhà",
+      "slug": "top-5-loai-hoa-may-man",
+      "content": "Hoa lan, hoa đồng tiền, cúc vàng, hoa sen và lavender là những loài hoa giúp thu hút năng lượng tích cực và tài lộc.",
+      "thumbnail_url": "https://example.com/images/blogs/lucky-flowers.jpg",
+      "author": "Admin FlowerShop",
+      "created_at": "2025-10-14T14:45:00Z",
+      "category": "Phong thủy & may mắn"
+    }
+  ]
+}
