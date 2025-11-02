@@ -1,0 +1,298 @@
+/* Banner */
+.breadcrumbs-area {
+  padding: 100px 0;
+  background: #f6f6f6 url("../../images/banners/image2.png") no-repeat scroll
+    bottom center / cover;
+}
+
+.breadcrumbs-area::before {
+  background: #ffffff none repeat scroll 0 0;
+  opacity: 0.3;
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  width: 100%;
+  position: absolute;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs-area .breadcrumb-content .title-3 {
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.breadcrumbs-area .breadcrumb-content ul {
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.breadcrumbs-area .breadcrumb-content ul li {
+  color: #000000;
+  position: relative;
+}
+
+.breadcrumbs-area .breadcrumb-content ul li > a:hover {
+  color: #e72463;
+}
+
+.breadcrumbs-area .breadcrumb-content ul li a {
+  font-size: 18px;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.breadcrumb-content ul li + li:before {
+  color: #000000;
+  content: ">";
+  font-size: 16px;
+  vertical-align: middle;
+  padding: 0 10px;
+  font-weight: 400;
+}
+/* Cart body */
+.cart-main-wrapper {
+}
+
+.mt-no-text {
+  margin-top: 100px;
+}
+
+.container.custom-area {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.container.custom-area .row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.container.custom-area .col-custom {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.cart-table .table {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.cart-table .table tr {
+  border-color: #eceff8;
+}
+
+.cart-table .table thead tr th {
+  border-color: #eceff8;
+  border-bottom: 0 solid transparent;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.cart-table .table tbody td {
+  border-color: #eceff8;
+  text-align: center;
+  padding: 10px 20px;
+  vertical-align: middle;
+  font-weight: bolder;
+  color: #333333;
+}
+
+.cart-table .table {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.cart-table .table tbody td a {
+  color: #333333;
+  text-transform: capitalize;
+}
+
+.cart-table .table tbody td a:hover {
+  color: #e72463;
+}
+
+.cart-table .table tr .pro-thumbnail,
+.cart-table .table tr .pro-price,
+.cart-table .table tr .pro-quantity,
+.cart-table .table tr .pro-subtotal,
+.cart-table .table tr .pro-remove {
+  width: 177px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.quantity {
+  margin-right: 10px;
+}
+
+.quantity .cart-plus-minus {
+  position: relative;
+  width: 150px;
+  border-radius: 4px;
+  text-align: left;
+  height: 45px;
+  overflow: hidden;
+}
+
+.quantity .cart-plus-minus > .cart-plus-minus-box:focus {
+  outline: none;
+  border-color: #b0b0b0; /* Đổi màu viền nhẹ khi focus */
+  box-shadow: none;
+}
+
+.quantity .cart-plus-minus > .cart-plus-minus-box {
+  border: 1px solid #dddddd;
+  padding-right: 35px;
+  padding-left: 35px;
+  height: 45px;
+  text-align: center;
+  width: 150px;
+  background: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.quantity .cart-plus-minus > .qtybutton.dec {
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  border-right: 1px solid #dddddd;
+}
+
+.quantity .cart-plus-minus > .qtybutton:hover {
+  background-color: #f5f5f5;
+}
+.quantity .cart-plus-minus > .qtybutton:active {
+  background-color: #e9e9e9;
+}
+
+.quantity .cart-plus-minus > .qtybutton {
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  text-align: center;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  width: 35px;
+  align-items: center;
+  color: #000000;
+  transition: 0.3s;
+}
+
+.quantity .cart-plus-minus > .qtybutton.inc {
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  border-left: 1px solid #dddddd;
+}
+
+.remove-icon:hover {
+  color: #e72463;
+}
+
+/* Total Cart */
+/* 1. Thiết kế cái hộp (wrapper) */
+.cart-calculator-wrapper {
+  background: #f9f9f9; /* Màu nền hơi xám nhẹ cho sạch */
+  border: 1px solid #eceff8; /* Viền mờ giống viền bảng */
+  padding: 30px;
+  border-radius: 8px; /* Bo góc hiện đại */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Đổ bóng 3D nhẹ */
+}
+
+/* 2. Tiêu đề "Tóm tắt giỏ hàng" */
+.cart-calculator-wrapper h3 {
+  font-size: 24px;
+  font-weight: 600; /* Đậm vừa */
+  color: #333;
+  margin-bottom: 20px; /* Khoảng cách dưới */
+  padding-bottom: 15px; /* Khoảng cách với đường gạch */
+  border-bottom: 1px dashed #dddddd; /* Đường gạch đứt thanh lịch */
+}
+
+/* 3. Tùy chỉnh bảng (table) bên trong */
+.cart-calculate-items .table {
+  margin-bottom: 25px; /* Khoảng cách với nút */
+}
+
+.cart-calculate-items .table td {
+  border: none; /* Xóa hết viền của Bootstrap */
+  padding: 12px 0; /* Canh lại padding cho thoáng */
+  color: #555;
+  font-weight: 500;
+}
+
+/* Canh giá tiền qua bên phải */
+.cart-calculate-items .table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  color: #000;
+}
+
+/* 4. Làm nổi bật dòng "Tổng cộng" (Grand Total) */
+.cart-calculate-items .table tr.grand-total td {
+  padding-top: 15px;
+  border-top: 1px solid #eceff8; /* Thêm đường gạch trên */
+  font-size: 20px;
+  font-weight: 700;
+  color: #e72463; /* Dùng màu hồng/đỏ chủ đạo của shop bạn */
+}
+
+/* Chữ "Tổng cộng" cũng đậm lên */
+.cart-calculate-items .table tr.grand-total td:first-child {
+  color: #000;
+}
+
+.checkout-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-btn:hover {
+  opacity: 0.8;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}

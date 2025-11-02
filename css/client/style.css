@@ -1,3 +1,11 @@
+body {
+    line-height: 1.6;
+    font-weight: 400;
+    color: #484848;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    font-size: 14px;
+}
 /* ==== Navbar Tổng thể ==== */
 .navbar {
     background-color: #fff;
@@ -86,12 +94,12 @@
 }
 
 .text-shadow-dark {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .carousel-item img {
-    height: 60vh;
-    object-fit: cover;
+  height: 60vh;
+  object-fit: cover;
 }
 
 .img-post-big {
