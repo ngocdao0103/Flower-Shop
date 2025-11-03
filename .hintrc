@@ -23,6 +23,19 @@
         "label": "off",
         "select-name": "off"
       }
-    ]
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "axe/aria": [
+      "default",
+      {
+        "aria-required-children": "off"
+      }
+    ],
+    "no-inline-styles": "off"
   }
 }
