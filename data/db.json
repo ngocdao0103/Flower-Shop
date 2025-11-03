@@ -25,7 +25,6 @@
       "image_url": "https://example.com/images/categories/birthday.jpg"
     }
   ],
-
   "products": [
     {
       "id": "FLW001",
@@ -39,8 +38,14 @@
         {
           "variant_id": "FLW001-VAR1",
           "attributes": [
-            { "name": "Kích cỡ", "value": "Nhỏ" },
-            { "name": "Bao giấy", "value": "Giấy Kraft" }
+            {
+              "name": "Kích cỡ",
+              "value": "Nhỏ"
+            },
+            {
+              "name": "Bao giấy",
+              "value": "Giấy Kraft"
+            }
           ],
           "price_modifier": 0,
           "stock_quantity": 10,
@@ -50,8 +55,14 @@
         {
           "variant_id": "FLW001-VAR2",
           "attributes": [
-            { "name": "Kích cỡ", "value": "Lớn" },
-            { "name": "Bao giấy", "value": "Giấy trắng" }
+            {
+              "name": "Kích cỡ",
+              "value": "Lớn"
+            },
+            {
+              "name": "Bao giấy",
+              "value": "Giấy trắng"
+            }
           ],
           "price_modifier": 300000,
           "stock_quantity": 5,
@@ -72,8 +83,14 @@
         {
           "variant_id": "FLW002-VAR1",
           "attributes": [
-            { "name": "Kích thước chậu", "value": "25cm" },
-            { "name": "Bao gồm hộp quà", "value": "Có" }
+            {
+              "name": "Kích thước chậu",
+              "value": "25cm"
+            },
+            {
+              "name": "Bao gồm hộp quà",
+              "value": "Có"
+            }
           ],
           "price_modifier": 0,
           "stock_quantity": 3,
@@ -83,8 +100,14 @@
         {
           "variant_id": "FLW002-VAR2",
           "attributes": [
-            { "name": "Kích thước chậu", "value": "30cm" },
-            { "name": "Bao gồm hộp quà", "value": "Không" }
+            {
+              "name": "Kích thước chậu",
+              "value": "30cm"
+            },
+            {
+              "name": "Bao gồm hộp quà",
+              "value": "Không"
+            }
           ],
           "price_modifier": -50000,
           "stock_quantity": 7,
@@ -105,8 +128,14 @@
         {
           "variant_id": "FLW003-VAR1",
           "attributes": [
-            { "name": "Số lượng cành", "value": "10 cành" },
-            { "name": "Bao giấy", "value": "Giấy kraft" }
+            {
+              "name": "Số lượng cành",
+              "value": "10 cành"
+            },
+            {
+              "name": "Bao giấy",
+              "value": "Giấy kraft"
+            }
           ],
           "price_modifier": 0,
           "stock_quantity": 20,
@@ -116,8 +145,14 @@
         {
           "variant_id": "FLW003-VAR2",
           "attributes": [
-            { "name": "Số lượng cành", "value": "20 cành" },
-            { "name": "Bao giấy", "value": "Giấy trắng" }
+            {
+              "name": "Số lượng cành",
+              "value": "20 cành"
+            },
+            {
+              "name": "Bao giấy",
+              "value": "Giấy trắng"
+            }
           ],
           "price_modifier": 250000,
           "stock_quantity": 8,
@@ -127,7 +162,6 @@
       ]
     }
   ],
-
   "users": [
     {
       "id": 1001,
@@ -153,7 +187,6 @@
       "role": "admin"
     }
   ],
-
   "carts": [
     {
       "user_id": 1001,
@@ -173,7 +206,6 @@
       ]
     }
   ],
-
   "orders": [
     {
       "order_id": "ORD20251016-001",
@@ -188,13 +220,15 @@
           "product_id": "FLW002",
           "variant_id": "FLW002-VAR1",
           "product_name": "Chậu Hoa Lan Cam (25cm - Có hộp quà)",
+          "image_url": "https://flowerboxes.vn/wp-content/uploads/2021/01/761DCFD1-203F-475A-A29C-237833F4D1CB.jpeg",
           "quantity": 1,
           "unit_price": 850000,
           "total_price": 850000
         }
       ],
       "shipping_fee": 50000,
-      "grand_total": 900000
+      "grand_total": 900000,
+      "id": "1"
     },
     {
       "order_id": "ORD20251017-002",
@@ -203,12 +237,13 @@
       "receiver_phone": "0988123456",
       "receiver_address": "45 Lê Lợi, Quận 1, TP. Hồ Chí Minh",
       "order_date": "2025-10-17T09:15:00Z",
-      "status": "Processing",
+      "status": "Cancelled",
       "items": [
         {
           "product_id": "FLW001",
           "variant_id": "FLW001-VAR2",
           "product_name": "Bó Hoa Hồng Đỏ (Lớn - Giấy trắng)",
+          "image_url": "https://bizweb.dktcdn.net/100/347/446/files/40a1d845-4667-43fe-9506-d3ee5e046084-jpeg.jpg?v=1617543894355",
           "quantity": 1,
           "unit_price": 1500000,
           "total_price": 1500000
@@ -217,13 +252,15 @@
           "product_id": "FLW003",
           "variant_id": "FLW003-VAR1",
           "product_name": "Bó Hoa Tulip Mix (10 cành - Giấy kraft)",
+          "image_url": "https://happyflower.vn/app/uploads/2023/04/TULIP-CAM-10B-LAN-CANH.jpg",
           "quantity": 1,
           "unit_price": 550000,
           "total_price": 550000
         }
       ],
       "shipping_fee": 40000,
-      "grand_total": 2090000
+      "grand_total": 2090000,
+      "id": "2"
     }
   ],
   "articles": [
