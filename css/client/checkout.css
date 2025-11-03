@@ -1,0 +1,104 @@
+/* Banner */
+.breadcrumbs-area {
+  padding: 100px 0;
+  background: #f6f6f6 url("../../images/banners/image2.png") no-repeat scroll
+    bottom center / cover;
+}
+
+.breadcrumbs-area::before {
+  background: #ffffff none repeat scroll 0 0;
+  opacity: 0.3;
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  width: 100%;
+  position: absolute;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs-area .breadcrumb-content .title-3 {
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.breadcrumbs-area .breadcrumb-content ul {
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.breadcrumbs-area .breadcrumb-content ul li {
+  color: #000000;
+  position: relative;
+}
+
+.breadcrumbs-area .breadcrumb-content ul li > a:hover {
+  color: #e72463;
+}
+
+.breadcrumbs-area .breadcrumb-content ul li a {
+  font-size: 18px;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.breadcrumb-content ul li + li:before {
+  color: #000000;
+  content: ">";
+  font-size: 16px;
+  vertical-align: middle;
+  padding: 0 10px;
+  font-weight: 400;
+}
+
+/* Checkout Body */
+.checkout-area {
+  margin: 100px 0px;
+}
+
+.place-order-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.place-order-btn>span {
+  position: relative;
+  z-index: 10;
+}
+
+.place-order-btn:hover::before {
+    transform: translateX(0);
+}
+
+.place-order-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  z-index: 5;
+  transition: all ease-in-out 0.2s;
+  background-color: #e72463;
+}
+
