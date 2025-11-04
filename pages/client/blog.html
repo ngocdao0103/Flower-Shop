@@ -6,19 +6,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flower Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="../../css/client/style.css">
 </head>
 
 <body>
     <div id="header"></div>
-    <div class="container">
-        hi blog
+    <div class="shop-header">
+        <h2 class="text-dark">Blog Sidebar</h2>
+        <p class="text-dark">Home > Blog</p>
+    </div>
+    <div class="container py-5" style="width: 70rem;">
+        <div class="row">
+            <!-- ===== Cột bài viết ===== -->
+            <div class="col-md-9">
+                <div class="row g-4">
+                    <!-- Một bài viết -->
+                    <div class="col-md-6">
+                        <a href="../client/detail_blog.html">
+                            <div class="card border-0 shadow-sm">
+                                <img src="https://htmldemo.net/flosun/flosun/assets/images/blog/blog1.jpg"
+                                    class="card-img-top" alt="Blog image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Standard blog post title</h5>
+                                    <small class="text-muted d-block mb-2">By Admin – December 18, 2022</small>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                    <a href="#" class="text-decoration-none text-dark fw-semibold">Read More →</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://htmldemo.net/flosun/flosun/assets/images/blog/blog3.jpg"
+                                class="card-img-top" alt="Blog image">
+                            <div class="card-body">
+                                <h5 class="card-title">Standard blog post title</h5>
+                                <small class="text-muted d-block mb-2">By Admin – December 18, 2022</small>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <a href="#" class="text-decoration-none text-dark fw-semibold">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://htmldemo.net/flosun/flosun/assets/images/blog/blog2.jpg"
+                                class="card-img-top" alt="Blog image">
+                            <div class="card-body">
+                                <h5 class="card-title">Standard blog post title</h5>
+                                <small class="text-muted d-block mb-2">By Admin – December 18, 2022</small>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <a href="#" class="text-decoration-none text-dark fw-semibold">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://htmldemo.net/flosun/flosun/assets/images/blog/blog3.jpg"
+                                class="card-img-top" alt="Blog image">
+                            <div class="card-body">
+                                <h5 class="card-title">Standard blog post title</h5>
+                                <small class="text-muted d-block mb-2">By Admin – December 18, 2022</small>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <a href="#" class="text-decoration-none text-dark fw-semibold">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://htmldemo.net/flosun/flosun/assets/images/blog/blog3.jpg"
+                                class="card-img-top" alt="Blog image">
+                            <div class="card-body">
+                                <h5 class="card-title">Standard blog post title</h5>
+                                <small class="text-muted d-block mb-2">By Admin – December 18, 2022</small>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <a href="#" class="text-decoration-none text-dark fw-semibold">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://htmldemo.net/flosun/flosun/assets/images/blog/blog2.jpg"
+                                class="card-img-top" alt="Blog image">
+                            <div class="card-body">
+                                <h5 class="card-title">Standard blog post title</h5>
+                                <small class="text-muted d-block mb-2">By Admin – December 18, 2022</small>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <a href="#" class="text-decoration-none text-dark fw-semibold">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-bar border p-3 d-flex justify-content-between align-items-center mt-4">
+                    <!-- Pagination -->
+                    <nav>
+                        <ul class="pagination mb-0">
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">next</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                                        <path fill-rule="evenodd"
+                                            d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Result count -->
+                    <div class="pagination-info text-muted small">
+                        Showing 1 – 12 of 34 result
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Cột sidebar ===== -->
+            <aside class="col-lg-3 sidebar-custom">
+                <!-- Search -->
+                <div class="mb-5">
+                    <h6 class="sidebar-title mb-4">Search</h6>
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" placeholder="Search our store">
+                        <button class="btn btn-dark btn-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="mb-5">
+                    <h6 class="sidebar-title mb-4">Categories</h6>
+                    <ul class="sidebar-list">
+                        <li><a href="#">All Product</a></li>
+                        <li><a href="#">Best Seller (5)</a></li>
+                        <li><a href="#">Featured (4)</a></li>
+                        <li><a href="#">New Products (6)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tags -->
+                <div class="mb-5">
+                    <h6 class="sidebar-title mb-4">Tags</h6>
+                    <div class="tags">
+                        <span class="tag">Rose</span>
+                        <span class="tag">Sunflower</span>
+                        <span class="tag">Tulip</span>
+                        <span class="tag">Lily</span>
+                        <span class="tag">Smart</span>
+                        <span class="tag">Modern</span>
+                        <span class="tag">Gift</span>
+                    </div>
+                </div>
+
+                <!-- Recent Products -->
+                <div class="mb-5">
+                    <h6 class="sidebar-title mb-4">Recent Products</h6>
+                    <div class="recent-product">
+                        <div class="product-item-recent">
+                            <img src="https://htmldemo.net/flosun/flosun/assets/images/cart/1.jpg"
+                                alt="Glory of the Snow">
+                            <div class="info">
+                                <h6>Glory of the Snow</h6>
+                                <p class="price">$80.00 <span>$90.00</span></p>
+                                <div class="stars">★★★☆☆</div>
+                            </div>
+                        </div>
+
+                        <div class="product-item-recent">
+                            <img src="https://htmldemo.net/flosun/flosun/assets/images/cart/2.jpg"
+                                alt="Pearly Everlasting">
+                            <div class="info">
+                                <h6>Pearly Everlasting</h6>
+                                <p class="price">$50.00 <span>$60.00</span></p>
+                                <div class="stars">★★☆☆☆</div>
+                            </div>
+                        </div>
+
+                        <div class="product-item-recent">
+                            <img src="https://htmldemo.net/flosun/flosun/assets/images/cart/3.jpg"
+                                alt="Jack in the Pulpit">
+                            <div class="info">
+                                <h6>Jack in the Pulpit</h6>
+                                <p class="price">$40.00 <span>$50.00</span></p>
+                                <div class="stars">★★★☆☆</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
     </div>
     <div id="footer"></div>
 
-    <!-- Boostrap Library -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Orther Scripts -->
     <script src="../../components/header.js"></script>
     <script src="../../components/footer.js"></script>
 </body>
