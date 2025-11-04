@@ -74,15 +74,20 @@ btnSave.addEventListener("click", async () => {
     let message_name = "";
     let message_img = "";
     let message_description = "";
-
+    categoryService.categories.forEach(category =>{
+        if(name === category.name){
+            message_name="Tên danh mục đã tồn tại!";
+            isValid=false;
+        }
+    });
     if (!name.trim()) {
         message_name = "Vui lòng nhập tên danh mục!";
         isValid = false;
     } else if (name.trim().length < 3) {
         message_name = "Tên danh mục phải có ít nhất 3 ký tự!";
         isValid = false;
-
-    } if (!image) {
+    }
+    if(!image) {
         message_img = "Vui lòng chọn hình ảnh!";
         isValid = false;
     }
