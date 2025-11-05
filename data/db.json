@@ -25,22 +25,26 @@
       "image_url": "https://example.com/images/categories/birthday.jpg"
     }
   ],
-
   "products": [
     {
-      "id": "FLW001",
       "name": "Bó Hoa Hồng Đỏ",
-      "description": "Bó hoa hồng đỏ rực rỡ – lựa chọn tuyệt vời cho ngày lễ, tỏ tình hoặc kỷ niệm.",
       "base_price": 1200000,
-      "category_id": "CAT001",
       "category": "Bó Hoa",
       "image_url": "https://example.com/images/rose-bouquet-red.jpg",
+      "description": "Bó hoa hồng đỏ rực rỡ – lựa chọn tuyệt vời cho ngày lễ, tỏ tình hoặc kỷ niệm.",
+      "id": "FLW001",
       "variants": [
         {
           "variant_id": "FLW001-VAR1",
           "attributes": [
-            { "name": "Kích cỡ", "value": "Nhỏ" },
-            { "name": "Bao giấy", "value": "Giấy Kraft" }
+            {
+              "name": "Kích cỡ",
+              "value": "Nhỏ"
+            },
+            {
+              "name": "Bao giấy",
+              "value": "Giấy Kraft"
+            }
           ],
           "price_modifier": 0,
           "stock_quantity": 10,
@@ -50,8 +54,14 @@
         {
           "variant_id": "FLW001-VAR2",
           "attributes": [
-            { "name": "Kích cỡ", "value": "Lớn" },
-            { "name": "Bao giấy", "value": "Giấy trắng" }
+            {
+              "name": "Kích cỡ",
+              "value": "Lớn"
+            },
+            {
+              "name": "Bao giấy",
+              "value": "Giấy trắng"
+            }
           ],
           "price_modifier": 300000,
           "stock_quantity": 5,
@@ -72,8 +82,14 @@
         {
           "variant_id": "FLW002-VAR1",
           "attributes": [
-            { "name": "Kích thước chậu", "value": "25cm" },
-            { "name": "Bao gồm hộp quà", "value": "Có" }
+            {
+              "name": "Kích thước chậu",
+              "value": "25cm"
+            },
+            {
+              "name": "Bao gồm hộp quà",
+              "value": "Có"
+            }
           ],
           "price_modifier": 0,
           "stock_quantity": 3,
@@ -83,8 +99,14 @@
         {
           "variant_id": "FLW002-VAR2",
           "attributes": [
-            { "name": "Kích thước chậu", "value": "30cm" },
-            { "name": "Bao gồm hộp quà", "value": "Không" }
+            {
+              "name": "Kích thước chậu",
+              "value": "30cm"
+            },
+            {
+              "name": "Bao gồm hộp quà",
+              "value": "Không"
+            }
           ],
           "price_modifier": -50000,
           "stock_quantity": 7,
@@ -105,8 +127,14 @@
         {
           "variant_id": "FLW003-VAR1",
           "attributes": [
-            { "name": "Số lượng cành", "value": "10 cành" },
-            { "name": "Bao giấy", "value": "Giấy kraft" }
+            {
+              "name": "Số lượng cành",
+              "value": "10 cành"
+            },
+            {
+              "name": "Bao giấy",
+              "value": "Giấy kraft"
+            }
           ],
           "price_modifier": 0,
           "stock_quantity": 20,
@@ -116,8 +144,14 @@
         {
           "variant_id": "FLW003-VAR2",
           "attributes": [
-            { "name": "Số lượng cành", "value": "20 cành" },
-            { "name": "Bao giấy", "value": "Giấy trắng" }
+            {
+              "name": "Số lượng cành",
+              "value": "20 cành"
+            },
+            {
+              "name": "Bao giấy",
+              "value": "Giấy trắng"
+            }
           ],
           "price_modifier": 250000,
           "stock_quantity": 8,
@@ -125,12 +159,33 @@
           "image_url": "https://example.com/images/tulip-mix-20.jpg"
         }
       ]
+    },
+    {
+      "id": "10af",
+      "name": "toàn",
+      "base_price": 12000000,
+      "category": "Hoa Tươi",
+      "image_url": "",
+      "variants": [
+        {
+          "variant_id": "VAR_1762327411181",
+          "attributes": [
+            {
+              "name": "số ký",
+              "value": "120kg"
+            }
+          ],
+          "price_modifier": -11999850,
+          "stock_quantity": 0,
+          "sku": "SKU_1762327411181",
+          "image_url": ""
+        }
+      ]
     }
   ],
-
   "users": [
     {
-      "id": 1001,
+      "id": "1001",
       "name": "Nguyễn Thị Hoa",
       "email": "hoa.nguyen@example.com",
       "phone": "0905123456",
@@ -138,7 +193,7 @@
       "role": "customer"
     },
     {
-      "id": 1002,
+      "id": "1002",
       "name": "Trần Văn Hùng",
       "email": "hung.tran@example.com",
       "phone": "0988123456",
@@ -146,14 +201,13 @@
       "role": "customer"
     },
     {
-      "id": 9001,
+      "id": "9001",
       "name": "Admin FlowerShop",
       "email": "admin@flosun.com",
       "phone": "0911222333",
       "role": "admin"
     }
   ],
-
   "carts": [
     {
       "user_id": 1001,
@@ -170,10 +224,10 @@
           "variant_id": "FLW003-VAR2",
           "quantity": 1
         }
-      ]
+      ],
+      "id": "244f"
     }
   ],
-
   "orders": [
     {
       "order_id": "ORD20251016-001",
@@ -194,7 +248,8 @@
         }
       ],
       "shipping_fee": 50000,
-      "grand_total": 900000
+      "grand_total": 900000,
+      "id": "8104"
     },
     {
       "order_id": "ORD20251017-002",
@@ -223,7 +278,8 @@
         }
       ],
       "shipping_fee": 40000,
-      "grand_total": 2090000
+      "grand_total": 2090000,
+      "id": "0810"
     }
   ],
   "articles": [
