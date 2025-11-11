@@ -1,4 +1,4 @@
-export const endpoint = {
+export const endpoints = {
     CATEGORY : '/categories',
     PRODUCT : '/products',
     ORDER : '/orders',

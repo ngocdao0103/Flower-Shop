@@ -1,5 +1,5 @@
-import { API_URL } from "../../environments/environment.js";
-import { endpoint, status } from "../../config/api-endpoint.config.js";
+import { apiURL } from "../../environments/environment.js";
+import { endpoints, status } from "../../config/api-endpoint.config.js";
 export class CategoryService {
     id;
     name;
@@ -16,7 +16,7 @@ export class CategoryService {
 
     async renderCategoryList() {
         const table_categories = document.getElementById("table-categories");
-        const res = await axios.get(API_URL + endpoint.CATEGORY);
+        const res = await axios.get(apiURL + endpoints.CATEGORY);
         if (res.status == status.OK) {
             this.categories = res.data;
             console.log(this.categories);
@@ -113,7 +113,7 @@ export class CategoryService {
             statusCategory
         };
 
-        const res = await axios.post(API_URL + endpoint.CATEGORY, newCategory);
+        const res = await axios.post(apiURL + endpoints.CATEGORY, newCategory);
 
         if (res.status === status.CREATED || res.status === status.OK) {
             console.log("✅ Thêm danh mục thành công:", res.data);
@@ -126,7 +126,7 @@ export class CategoryService {
 
     // --- Xóa danh mục ---
     async deleteCategory(id) {
-        const res = await axios.delete(`${API_URL + endpoint.CATEGORY}/${id}`);
+        const res = await axios.delete(`${apiURL + endpoints.CATEGORY}/${id}`);
         if (res.status === status.OK) {
             await this.renderCategoryList();
         } else {
@@ -136,7 +136,7 @@ export class CategoryService {
 
     async updateCategory(id, name, description, image_url, status) {
         try {
-            const res = await axios.put(`${API_URL + endpoint.CATEGORY}/${id}`, {
+            const res = await axios.put(`${apiURL + endpoints.CATEGORY}/${id}`, {
                 name,
                 description,
                 image_url,

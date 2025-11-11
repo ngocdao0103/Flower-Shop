@@ -1,5 +1,5 @@
 import { apiURL } from "../../environments/environment.js";
-import { endpoint, status } from "../../config/api-endpoint.config.js";
+import { endpoints, status } from "../../config/api-endpoint.config.js";
 
 export class ProductService {
     productList = [];
@@ -78,7 +78,7 @@ export class ProductService {
 
     deleteProduct(id) {
         axios
-            .delete(apiURL + endpoint.PRODUCT + `/${id}`)
+            .delete(apiURL + endpoints.PRODUCT + `/${id}`)
             .then((res) => {
                 if (res.status == status.DELETED || res.status == status.OK) {
                     console.log('Deleted', res.data);
@@ -108,7 +108,7 @@ export class ProductService {
         }
 
         axios
-            .post(apiURL + endpoint.PRODUCT, payload)
+            .post(apiURL + endpoints.PRODUCT, payload)
             .then((res) => {
                 if (res.status == status.CREATED || res.status == status.OK) {
                     const created = res.data || payload;
