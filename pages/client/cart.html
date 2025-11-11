@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/client/style.css">
+    <link rel="stylesheet" href="../../css/client/cart.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+</style>
+
+<body>
+    <div id="header"></div>
+    <!-- Banner -->
+    <div class="breadcrumbs-area position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="breadcrumb-content position-relative section-content">
+                        <h3 class="title-3">Giỏ hàng</h3>
+                        <ul>
+                            <li><a href="../../index.html">Trang chủ</a></li>
+                            <li>Giỏ hàng</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CartBody -->
+    <div class="cart-main-wrapper mt-no-text">
+        <div class="container custom-area">
+            <div class="row">
+                <div class="col-lg-12 col-custom">
+                    <div class="cart-table table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="pro-thumbnail">Ảnh</th>
+                                    <th class="pro-title">Tên sản phẩm</th>
+                                    <th class="pro-price">Giá</th>
+                                    <th class="pro-quantity">Số lượng</th>
+                                    <th class="pro-subtotal">Tổng cộng</th>
+                                    <th class="pro-remove">Xóa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="pro-thumbnail">
+                                        <a href="">
+                                            <img src="https://htmldemo.net/flosun/flosun/assets/images/product/small-size/1.jpg"
+                                                alt="">
+                                        </a>
+                                    </td>
+                                    <td class="pro-title">
+                                        <a class="text-decoration-none" href="">
+                                            Pearly Everlasting
+                                            s / green
+                                        </a>
+                                    </td>
+                                    <td class="pro-price">250.000đ</td>
+                                    <td class="pro-quantity">
+                                        <div class="quantity">
+                                            <div class="cart-plus-minus">
+                                                <input type="text" class="cart-plus-minus-box" value="0">
+                                                <button class="btn dec qtybutton">
+                                                    -
+                                                </button>
+                                                <button class="btn inc qtybutton">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="pro-subtotal">3.000.000đ</th>
+                                    <td class="pro-remove">
+                                        <button class="btn"><i class="remove-icon bi bi-trash"
+                                                style="font-size: 2rem;"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="pro-thumbnail">
+                                        <a href="">
+                                            <img src="https://htmldemo.net/flosun/flosun/assets/images/product/small-size/1.jpg"
+                                                alt="">
+                                        </a>
+                                    </td>
+                                    <td class="pro-title">
+                                        <a class="text-decoration-none" href="">
+                                            Pearly Everlasting
+                                            s / green
+                                        </a>
+                                    </td>
+                                    <td class="pro-price">250.000đ</td>
+                                    <td class="pro-quantity">
+                                        <div class="quantity">
+                                            <div class="cart-plus-minus">
+                                                <input type="text" class="cart-plus-minus-box" value="0">
+                                                <button class="btn dec qtybutton">
+                                                    -
+                                                </button>
+                                                <button class="btn inc qtybutton">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="pro-subtotal">3.000.000đ</th>
+                                    <td class="pro-remove">
+                                        <button class="btn"><i class="remove-icon bi bi-trash"
+                                                style="font-size: 2rem;"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="pro-thumbnail">
+                                        <a href="">
+                                            <img src="https://htmldemo.net/flosun/flosun/assets/images/product/small-size/1.jpg"
+                                                alt="">
+                                        </a>
+                                    </td>
+                                    <td class="pro-title">
+                                        <a class="text-decoration-none" href="">
+                                            Pearly Everlasting
+                                            s / green
+                                        </a>
+                                    </td>
+                                    <td class="pro-price">250.000đ</td>
+                                    <td class="pro-quantity">
+                                        <div class="quantity">
+                                            <div class="cart-plus-minus">
+                                                <input type="text" class="cart-plus-minus-box" value="0">
+                                                <button class="btn dec qtybutton">
+                                                    -
+                                                </button>
+                                                <button class="btn inc qtybutton">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="pro-subtotal">3.000.000đ</th>
+                                    <td class="pro-remove">
+                                        <button class="btn"><i class="remove-icon bi bi-trash"
+                                                style="font-size: 2rem;"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-5 ml-auto col-custom mt-4 mb-100">
+                    <div class="cart-calculator-wrapper">
+                        <div class="cart-calculate-items">
+                            <h3>Tóm tắt giỏ hàng</h3>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Tạm tính (Subtotal)</td>
+                                            <td>230.000đ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phí vận chuyển</td>
+                                            <td>30.000đ</td>
+                                        </tr>
+
+                                        <tr class="grand-total">
+                                            <td>Tổng cộng</td>
+                                            <td>260.000đ</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                            <a href="./checkout.html" class="btn btn-dark checkout-btn">Tiến hành thanh toán</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+    <!-- Boostrap Library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Orther Scripts -->
+    <script src="../../components/header.js"></script>
+    <script src="../../components/footer.js"></script>
+</body>
+
+</html>
