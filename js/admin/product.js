@@ -40,13 +40,16 @@ async function init() {
 			if (nameError) nameError.textContent = '';
 
 			if (!name) {
-				if (nameError) nameError.textContent = 'This field is required!';
+				if (nameError) nameError.textContent = 'Tên sản phẩm không được để trống!';
+				return;
+			}else if (name.length < 3) {
+				if (nameError) nameError.textContent = 'Tên sản phẩm phải có ít nhất 3 ký tự!';
 				return;
 			}
 
 			const isDuplicate = productService.productList.some((p) => p.name.toLowerCase() === name.toLowerCase());
 			if (isDuplicate) {
-				if (nameError) nameError.textContent = 'This product name already exists!';
+				if (nameError) nameError.textContent = 'Tên sản phẩm đã tồn tại!';
 				return;
 			}
 
