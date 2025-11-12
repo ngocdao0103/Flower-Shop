@@ -4,6 +4,7 @@ export const endpoints = {
     ORDER : '/orders',
     USER : '/users',
     CART: '/carts',
+    BLOG: '/articles',
 }
 
 export const status = {
