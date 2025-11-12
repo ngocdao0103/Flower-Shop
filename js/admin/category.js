@@ -1,7 +1,48 @@
-import { CategoryService } from "../../services/Admin/category.service.js";
+import { CategoryService } from "../../services/admin/category.service.js";
 
 const categoryService = new CategoryService();
+const message = sessionStorage.getItem("successMessage");
+const classMessage = sessionStorage.getItem("classMessage");
+if (message) {
+    // Tạo alert nhỏ ở góc phải
+    const alertHTML = `
+      <div id="custom-alert" class="alert alert-${classMessage} alert-dismissible fade show shadow-lg" 
+           role="alert" 
+           style="
+             position: fixed; 
+             top: 40px; 
+             right: 20px; 
+             width: 300px; 
+             z-index: 1050; 
+             opacity: 0; 
+             transform: translateY(-20px);
+             transition: all 0.6s ease;
+           ">
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+    document.body.insertAdjacentHTML("beforeend", alertHTML);
 
+    const alertBox = document.getElementById("custom-alert");
+
+    // Hiệu ứng trượt vào
+    setTimeout(() => {
+        alertBox.style.opacity = "1";
+        alertBox.style.transform = "translateY(0)";
+    }, 100);
+
+    // Tự ẩn sau 3 giây (và trượt ra)
+    setTimeout(() => {
+        alertBox.style.opacity = "0";
+        alertBox.style.transform = "translateY(-20px)";
+        setTimeout(() => alertBox.remove(), 600);
+    }, 3000);
+
+    // Xóa message để không hiện lại
+    sessionStorage.removeItem("successMessage");
+    sessionStorage.removeItem("classMessage");
+}
 // --- CLOUDINARY CONFIG ---
 const CLOUD_NAME = "djbobb5oe";
 const UPLOAD_PRESET = "jsnangcao";
@@ -74,10 +115,10 @@ btnSave.addEventListener("click", async () => {
     let message_name = "";
     let message_img = "";
     let message_description = "";
-    categoryService.categories.forEach(category =>{
-        if(name === category.name){
-            message_name="Tên danh mục đã tồn tại!";
-            isValid=false;
+    categoryService.categories.forEach(category => {
+        if (name === category.name) {
+            message_name = "Tên danh mục đã tồn tại!";
+            isValid = false;
         }
     });
     if (!name.trim()) {
@@ -87,7 +128,7 @@ btnSave.addEventListener("click", async () => {
         message_name = "Tên danh mục phải có ít nhất 3 ký tự!";
         isValid = false;
     }
-    if(!image) {
+    if (!image) {
         message_img = "Vui lòng chọn hình ảnh!";
         isValid = false;
     }
@@ -126,7 +167,6 @@ btnSave.addEventListener("click", async () => {
     try {
         // Gọi API tạo danh mục
         await categoryService.createCategory(name, description, image_url, 0);
-        alert("✅ Thêm danh mục thành công!");
         location.reload();
         bootstrap.Modal.getInstance(document.getElementById("addCategory")).hide();
 
@@ -158,7 +198,7 @@ window.updateCategory = async (id) => {
     const name = document.getElementById(`edit-name-${id}`).value.trim();
     const description = document.getElementById(`edit-description-${id}`).value.trim();
     const fileInput = document.getElementById(`edit-image-${id}`);
-    const status = parseInt(document.getElementById(`edit-status-${id}`).value);
+    const statusCategory = parseInt(document.getElementById(`edit-status-${id}`).value);
     const previewImg = document.getElementById(`preview-${id}`);
 
     let image_url = previewImg.src; // Ảnh cũ mặc định
@@ -179,8 +219,7 @@ window.updateCategory = async (id) => {
     }
 
     try {
-        await categoryService.updateCategory(id, name, description, image_url, status);
-        alert("✅ Cập nhật danh mục thành công!");
+        await categoryService.updateCategory(id, name, description, image_url, statusCategory);
         location.reload();
     } catch (error) {
         alert("❌ Lỗi khi cập nhật danh mục!");
