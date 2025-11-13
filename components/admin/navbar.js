@@ -6,6 +6,9 @@ navbar.innerHTML = `
             <a href="../dashboard/dashboard.html" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-speedometer2 me-3"></i><span>Tổng quan</span>
             </a>
+            <a href="../blog/blog.html" class="list-group-item list-group-item-action py-2 ripple">
+                <i class="bi bi-journal-text me-3"></i><span>Quản lý Bài viết</span>
+            </a>
             <a href="../user/user.html" class="list-group-item list-group-item-action py-2 ripple">
                 <i class="bi bi-person-fill me-3"></i><span>Quản lý Người dùng</span>
             </a>

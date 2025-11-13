@@ -273,14 +273,13 @@
   ],
   "articles": [
     {
-      "id": "ART001",
       "title": "Cách bảo quản hoa tươi lâu trong mùa hè",
       "slug": "cach-bao-quan-hoa-tuoi-lau-trong-mua-he",
       "content": "Hoa tươi rất dễ héo trong thời tiết nắng nóng. Bài viết hướng dẫn bạn cách giữ hoa tươi lâu hơn bằng việc thay nước thường xuyên, cắt gốc, và đặt hoa nơi thoáng mát.",
-      "thumbnail_url": "https://example.com/images/blogs/keep-flowers-fresh.jpg",
+      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763022738/hvbvensn28xfyzozrusk.jpg",
       "author": "Admin FlowerShop",
-      "created_at": "2025-10-10T08:00:00Z",
-      "category": "Mẹo chăm hoa"
+      "category": "Mẹo chăm hoa",
+      "id": "ART001"
     },
     {
       "id": "ART002",
@@ -301,6 +300,16 @@
       "author": "Admin FlowerShop",
       "created_at": "2025-10-14T14:45:00Z",
       "category": "Phong thủy & may mắn"
+    },
+    {
+      "id": "ART655",
+      "title": "5 loại hoa dễ trồng và nở quanh năm",
+      "slug": "5-loai-hoa-de-trong-va-no-quanh-nam",
+      "content": "Nếu bạn là người yêu hoa nhưng không có nhiều thời gian chăm sóc, hãy thử trồng những loài hoa dễ sống và ra hoa quanh năm như hoa mười giờ, cúc họa mi, dừa cạn, hoa giấy và hoa hồng leo.\n\nNhững loài hoa này không chỉ dễ trồng, ít sâu bệnh, mà còn chịu được thời tiết khắc nghiệt, từ nắng nóng đến mưa nhiều.\n\n🌸 Hoa mười giờ – nở rực rỡ vào buổi sáng, chỉ cần ánh nắng là đủ.\n🌼 Cúc họa mi – tượng trưng cho sự trong sáng, dễ nhân giống bằng cách giâm cành.\n🌺 Dừa cạn – loài hoa “bền bỉ”, có thể trồng trong chậu hay ngoài sân vườn.\n🌹 Hoa hồng leo – mang vẻ đẹp cổ điển, thích hợp để trang trí hàng rào, ban công.\n🌷 Hoa giấy – càng nắng càng nở rộ, không cần tưới nhiều nước.\n\nNhờ đặc điểm dễ trồng và nở quanh năm, những loài hoa này sẽ giúp khu vườn của bạn luôn rực rỡ sắc màu, tạo không gian tươi mát và thư giãn cho mọi người.",
+      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763020232/stku2iisgmjuyx6pc1ul.jpg",
+      "author": "Admin FlowerShop",
+      "category": "Góc làm vườn",
+      "created_at": "2025-11-13T07:50:32.920Z"
     }
   ]
 }
