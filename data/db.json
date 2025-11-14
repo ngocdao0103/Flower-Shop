@@ -192,6 +192,24 @@
       "email": "admin@flosun.com",
       "phone": "0911222333",
       "role": "admin"
+    },
+    {
+      "id": "43a0",
+      "name": "Nguyễn Thị Như Ngọc",
+      "email": "ntnn29122006@gmail.com",
+      "phone": "0565261662",
+      "address": "Xã Cờ Đỏ Thành phố Cần Thơ",
+      "password": "ngocpc09921",
+      "role": "costomer"
+    },
+    {
+      "id": "43a0",
+      "name": "Nguyễn Thị Như Ngọc nè",
+      "email": "ngoc29122006@gmail.com",
+      "phone": "0766999007",
+      "address": "Xã Cờ Đỏ Thành phố Cần Thơ",
+      "password": "1234",
+      "role": "admin"
     }
   ],
   "carts": [
