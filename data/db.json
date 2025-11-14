@@ -175,7 +175,7 @@
       "email": "phamxuanbac28102003@gmail.com",
       "phone": "0867710985",
       "address": "cần thơ",
-      "role": "Admin",
+      "role": "Khách hàng",
       "status": "Khóa",
       "reason": "do vi phạm",
       "id": "fffd"
@@ -232,7 +232,7 @@
       "receiver_phone": "0988123456",
       "receiver_address": "45 Lê Lợi, Quận 1, TP. Hồ Chí Minh",
       "order_date": "2025-10-17T09:15:00Z",
-      "status": "Cancelled",
+      "status": "Processing",
       "items": [
         {
           "product_id": "FLW001",
