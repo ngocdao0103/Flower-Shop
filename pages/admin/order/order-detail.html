@@ -9,6 +9,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/admin/style.css">
 
+    <!-- Chặn nếu chưa có tài khoản admin -->
+    <script>
+        const user = JSON.parse(localStorage.getItem("userLogin"));
+
+        if (!user || user.role !== 'admin') {
+            window.location.href = "http://127.0.0.1:5500/index.html";
+        }
+    </script>
 </head>
 
 <body class="bg-light">
