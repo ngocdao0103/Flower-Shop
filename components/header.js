@@ -1,4 +1,36 @@
 const header = document.getElementById('header');
+
+// nếu có đăng nhập thì hiện dropdown tài khoản & đăng xuất
+// nếu chưa đăng nhập thì hiện dropdown đăng kí đăng nhập
+const userLogin = JSON.parse(localStorage.getItem("userLogin")); 
+let accountSection = "";
+
+if (userLogin) {
+    accountSection = `
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="bi bi-person-fill"></i> ${userLogin.name}
+            </a>
+            <div class="dropdown-menu bg-light rounded-0 m-0">
+                <a href="#" class="dropdown-item" id="logoutBtn">Đăng xuất</a>
+            </div>
+        </div>
+    `;
+} else {
+    accountSection = `
+        <div class="dropdown nav-item">
+            <a class="dropdown-toggle nav-link" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <i class="bi bi-person-fill"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="triggerId">
+                <a class="dropdown-item" href="/pages/client/register.html">Đăng kí</a>
+                <a class="dropdown-item" href="/pages/client/login.html">Đăng nhập</a>
+            </ul>
+        </div>
+    `;
+}
+
 header.innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -19,6 +51,8 @@ header.innerHTML = `
                     <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+
+                    ${accountSection}
                 </ul>
             </div>
 
@@ -37,9 +71,18 @@ header.innerHTML = `
                         <span class="badge">3</span>
                     </div>
                 </a>
-                
             </div>
         </div>  
     </nav>
-`
-header.append(header)
+`;
+
+
+// Thực hiện đăng xuất
+const logoutBtn = document.querySelector("#logoutBtn");
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+        localStorage.clear();
+        alert("Bạn đã đăng xuất thành công!");
+        window.location.href = "http://127.0.0.1:5500/pages/client/login.html"; 
+    });
+}
