@@ -275,31 +275,29 @@
     {
       "title": "Cách bảo quản hoa tươi lâu trong mùa hè",
       "slug": "cach-bao-quan-hoa-tuoi-lau-trong-mua-he",
-      "content": "Hoa tươi rất dễ héo trong thời tiết nắng nóng. Bài viết hướng dẫn bạn cách giữ hoa tươi lâu hơn bằng việc thay nước thường xuyên, cắt gốc, và đặt hoa nơi thoáng mát.",
-      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763022738/hvbvensn28xfyzozrusk.jpg",
+      "content": "Mùa hè với thời tiết nắng nóng khiến hoa tươi rất dễ bị héo, rụng cánh và mất đi vẻ đẹp tự nhiên chỉ sau vài giờ. Tuy nhiên, nếu biết cách chăm sóc đúng, bạn hoàn toàn có thể giúp bình hoa của mình giữ được độ tươi lâu hơn, thậm chí từ 3–5 ngày. Dưới đây là những bí quyết đơn giản nhưng cực kỳ hiệu quả.\n\n🌿 1. Cắt vát gốc hoa trước khi cắm\nKhi mới mua hoa về, hãy dùng kéo sắc cắt vát gốc khoảng 45 độ. Điều này giúp hoa hấp thu nước tốt hơn. Bạn nên cắt thêm một chút phần gốc mỗi 1–2 ngày để hoa luôn được cung cấp nước tối ưu.\n\n💧 2. Thay nước bình hoa thường xuyên\nNhiệt độ cao khiến nước trong bình dễ bị đục và sinh vi khuẩn. Tốt nhất nên thay nước mỗi ngày và rửa sạch bình để hạn chế vi khuẩn làm thối gốc hoa.\n\n🌬️ 3. Đặt hoa ở nơi thoáng mát, tránh ánh nắng trực tiếp\nNắng nóng là kẻ thù số một của hoa tươi. Hãy đặt bình hoa ở nơi mát mẻ, tránh cửa sổ, quạt mạnh hoặc khu vực có nhiệt độ cao như gần bếp.\n\n❄️ 4. Cho một vài viên đá vào bình hoa\nĐá giúp hạ nhiệt độ nước, làm chậm quá trình héo của hoa. Tuy nhiên, không nên bỏ quá nhiều để tránh sốc nhiệt.\n\n🍯 5. Thêm chất dưỡng hoa tự nhiên\nBạn có thể “tự chế” dung dịch dưỡng hoa bằng:\n\n1 muỗng đường (cung cấp dinh dưỡng)\n\n1 muỗng giấm trắng hoặc vài giọt chanh (kháng khuẩn)\n\nHỗn hợp này giúp hoa vừa sạch vi khuẩn, vừa được bổ sung năng lượng.\n\n🌼 6. Loại bỏ lá ngập dưới nước\nLá khi ngâm nước lâu sẽ mục nát, tạo ra vi khuẩn gây hỏng hoa nhanh hơn. Vì vậy, hãy tỉa hết lá ở phần thân cắm vào nước.\n\n🌙 7. Để hoa “nghỉ ngơi” buổi tối\nMẹo nhỏ: Trong những ngày nắng nóng, bạn có thể đặt hoa vào phòng mát hoặc gần máy điều hoà vào ban đêm để hoa phục hồi tốt hơn.\n\nVới những cách đơn giản này, bạn hoàn toàn có thể giữ hoa tươi lâu hơn trong suốt mùa hè oi bức, giúp không gian sống luôn tràn ngập sắc màu và hương thơm tự nhiên.",
+      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763134703/utnkt2qldsigm8iqoj1x.jpg",
       "author": "Admin FlowerShop",
       "category": "Mẹo chăm hoa",
       "id": "ART001"
     },
     {
-      "id": "ART002",
       "title": "Gợi ý bó hoa tặng sinh nhật người yêu",
       "slug": "goi-y-bo-hoa-tang-sinh-nhat-nguoi-yeu",
       "content": "Hồng đỏ thể hiện tình yêu mãnh liệt, tulip tượng trưng cho niềm vui – cùng chọn bó hoa ý nghĩa nhất cho người bạn yêu.",
-      "thumbnail_url": "https://example.com/images/blogs/birthday-gift-ideas.jpg",
+      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763092678/fokv6yg6jv1pzsip95dl.jpg",
       "author": "Nguyễn Thị Hoa",
-      "created_at": "2025-10-12T10:30:00Z",
-      "category": "Gợi ý quà tặng"
+      "category": "Gợi ý quà tặng",
+      "id": "ART002"
     },
     {
-      "id": "ART003",
       "title": "Top 5 loài hoa mang lại may mắn trong nhà",
       "slug": "top-5-loai-hoa-may-man",
       "content": "Hoa lan, hoa đồng tiền, cúc vàng, hoa sen và lavender là những loài hoa giúp thu hút năng lượng tích cực và tài lộc.",
-      "thumbnail_url": "https://example.com/images/blogs/lucky-flowers.jpg",
+      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763092687/r8cu51jwjcznquhonlh8.jpg",
       "author": "Admin FlowerShop",
-      "created_at": "2025-10-14T14:45:00Z",
-      "category": "Phong thủy & may mắn"
+      "category": "Phong thủy & may mắn",
+      "id": "ART003"
     },
     {
       "id": "ART655",
@@ -310,6 +308,16 @@
       "author": "Admin FlowerShop",
       "category": "Góc làm vườn",
       "created_at": "2025-11-13T07:50:32.920Z"
+    },
+    {
+      "id": "ART810",
+      "title": "Bí quyết chăm sóc hoa vào mùa mưa để tránh úng rễ",
+      "slug": "bi-quyet-cham-soc-hoa-vao-mua-mua-de-tranh-ung-re",
+      "content": "Mùa mưa mang lại không khí dễ chịu nhưng cũng là thời điểm nhiều loại hoa dễ bị thối rễ, vàng lá và nấm bệnh do nước đọng quá nhiều. Để giúp vườn hoa của bạn luôn khỏe mạnh trong thời tiết ẩm ướt, bạn có thể áp dụng những bí quyết đơn giản sau:\n\n🌿 1. Tăng khả năng thoát nước cho chậu\nHãy kiểm tra đáy chậu xem lỗ thoát nước có bị tắc hay không. Nếu đất quá bí, bạn nên trộn thêm sỏi nhẹ hoặc xơ dừa để đất tơi hơn, giúp nước thoát nhanh hơn sau mỗi cơn mưa.\n\n🌦️ 2. Hạn chế tưới nước vào sáng sớm\nMưa đã cung cấp đủ độ ẩm, nên bạn chỉ cần tưới nếu đất quá khô. Việc tưới thêm khi trời ẩm dễ khiến hoa bị úng.\n\n🍃 3. Dọn lá rụng và cành héo\nLá và cành mục rất dễ là nơi tích tụ nấm. Việc dọn dẹp định kỳ không chỉ giữ chậu hoa sạch sẽ mà còn hạn chế các loại bệnh thường gặp trong mùa mưa.\n\n🪴 4. Che chắn bằng mái hiên hoặc lưới\nNếu mưa lớn kéo dài, hãy di chuyển các chậu hoa vào gần mái hiên hoặc phủ lưới che nhằm giảm lượng nước tạt trực tiếp vào gốc.\n\n🌸 5. Sử dụng chế phẩm sinh học chống nấm\nMột số loại nấm phát triển mạnh khi độ ẩm cao. Bạn có thể dùng các sản phẩm sinh học an toàn giúp bảo vệ rễ hoa mà không lo gây hại môi trường.\n\nNhờ những mẹo nhỏ này, khu vườn của bạn sẽ luôn khỏe mạnh và tươi tắn ngay cả trong những ngày mưa dài dai dẳng.",
+      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763134389/bk2xkbcma0fwol1uy0fl.jpg",
+      "author": "Admin FlowerShop",
+      "category": "Mẹo chăm hoa",
+      "created_at": "2025-11-14T15:33:09.118Z"
     }
   ]
 }
