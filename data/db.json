@@ -171,27 +171,14 @@
   ],
   "users": [
     {
-      "id": "1001",
-      "name": "Nguyễn Thị Hoa",
-      "email": "hoa.nguyen@example.com",
-      "phone": "0905123456",
-      "address": "123 Đường Hoa Mai, Quận Phú Nhuận, TP. Hồ Chí Minh",
-      "role": "customer"
-    },
-    {
-      "id": "1002",
-      "name": "Trần Văn Hùng",
-      "email": "hung.tran@example.com",
-      "phone": "0988123456",
-      "address": "45 Lê Lợi, Quận 1, TP. Hồ Chí Minh",
-      "role": "customer"
-    },
-    {
-      "id": "9001",
-      "name": "Admin FlowerShop",
-      "email": "admin@flosun.com",
-      "phone": "0911222333",
-      "role": "admin"
+      "name": "Loại sản phẩm 3",
+      "email": "phamxuanbac28102003@gmail.com",
+      "phone": "0867710985",
+      "address": "cần thơ",
+      "role": "Khách hàng",
+      "status": "Khóa",
+      "reason": "do vi phạm",
+      "id": "fffd"
     }
   ],
   "carts": [
@@ -245,7 +232,7 @@
       "receiver_phone": "0988123456",
       "receiver_address": "45 Lê Lợi, Quận 1, TP. Hồ Chí Minh",
       "order_date": "2025-10-17T09:15:00Z",
-      "status": "Cancelled",
+      "status": "Processing",
       "items": [
         {
           "product_id": "FLW001",
