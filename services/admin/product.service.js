@@ -82,12 +82,25 @@ export class ProductService {
             .then((res) => {
                 if (res.status == status.DELETED || res.status == status.OK) {
                     console.log('Deleted', res.data);
+                    // set flash message and reload so the product list shows the notification
+                    try {
+                        sessionStorage.setItem('successMessage', 'Xóa sản phẩm thành công');
+                        sessionStorage.setItem('classMessage', 'success');
+                    } catch (e) {
+                        /* ignore if sessionStorage unavailable */
+                    }
                     this.productList = this.productList.filter((p) => p.id !== id);
                     this.renderList();
                     const deleteModalEl = document.getElementById('deleteModal');
                     if (deleteModalEl && typeof bootstrap !== 'undefined') {
                         const modalInstance = bootstrap.Modal.getInstance(deleteModalEl) || new bootstrap.Modal(deleteModalEl);
                         modalInstance.hide();
+                    }
+                    // reload to ensure the flash is displayed via product.js init
+                    try {
+                        window.location.reload();
+                    } catch (e) {
+                        // ignore
                     }
                 } else {
                     console.warn('Delete returned unexpected status', res.status);
@@ -106,8 +119,8 @@ export class ProductService {
             const modalInstance = bootstrap.Modal.getInstance(addModalEl) || new bootstrap.Modal(addModalEl);
             modalInstance.hide();
         }
-
-        axios
+        // return the axios promise so callers can react (e.g., show a flash message)
+        return axios
             .post(apiURL + endpoints.PRODUCT, payload)
             .then((res) => {
                 if (res.status == status.CREATED || res.status == status.OK) {
@@ -115,17 +128,19 @@ export class ProductService {
                     if (!created.id) created.id = `PROD_${Date.now()}`;
                     this.productList = this.productList.map((p) => (p.id === tempId ? created : p));
                     this.renderList();
-                    const addModalEl = document.getElementById('addModal');
-                    if (addModalEl && typeof bootstrap !== 'undefined') {
-                        const modalInstance = bootstrap.Modal.getInstance(addModalEl) || new bootstrap.Modal(addModalEl);
+                    const addModalEl2 = document.getElementById('addModal');
+                    if (addModalEl2 && typeof bootstrap !== 'undefined') {
+                        const modalInstance = bootstrap.Modal.getInstance(addModalEl2) || new bootstrap.Modal(addModalEl2);
                         modalInstance.hide();
                     }
                 } else {
                     console.warn('Create returned unexpected status', res.status);
                 }
+                return res;
             })
             .catch((err) => {
                 console.error('Create product failed:', err);
+                throw err;
             });
     }
 }
