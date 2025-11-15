@@ -57,8 +57,8 @@ export class CategoryService {
 
                                             <label>Trạng thái</label>
                                             <select id="edit-status-${category.id}" class="form-select mb-3">
-                                                <option value="1" ${category.status == 1 ? "selected" : ""}>Hiển thị</option>
-                                                <option value="0" ${category.status == 0 ? "selected" : ""}>Ẩn</option>
+                                                <option value="0" ${category.statusCategory == 0 ? "selected" : ""}>Hiển thị</option>
+                                                <option value="1" ${category.statusCategory == 1 ? "selected" : ""}>Ẩn</option>
                                             </select>
 
                                             <label>Ảnh hiện tại</label>
@@ -116,11 +116,14 @@ export class CategoryService {
         const res = await axios.post(apiURL + endpoints.CATEGORY, newCategory);
 
         if (res.status === status.CREATED || res.status === status.OK) {
-            console.log("✅ Thêm danh mục thành công:", res.data);
+            sessionStorage.setItem("successMessage", "Tạo danh mục thành công");
+            sessionStorage.setItem("classMessage", "success");
             await this.renderCategoryList(); // Cập nhật lại danh sách ngay sau khi thêm
             return res.data;
         } else {
-            throw new Error("Không thể thêm danh mục");
+            sessionStorage.setItem("successMessage", "Tạo danh mục thất bại");
+            sessionStorage.setItem("classMessage", "danger");
+            throw new Error("Không thể tạo danh mục");
         }
     }
 
@@ -129,27 +132,33 @@ export class CategoryService {
         const res = await axios.delete(`${apiURL + endpoints.CATEGORY}/${id}`);
         if (res.status === status.OK) {
             await this.renderCategoryList();
+            sessionStorage.setItem("successMessage", "Xóa danh mục thành công");
+            sessionStorage.setItem("classMessage", "success");
+            return res.data;
         } else {
+            sessionStorage.setItem("successMessage", "Xóa danh mục thất bại");
+            sessionStorage.setItem("classMessage", "danger");
             throw new Error("Không thể xóa danh mục");
         }
     }
 
-    async updateCategory(id, name, description, image_url, status) {
+    async updateCategory(id, name, description, image_url, statusCategory) {
         try {
             const res = await axios.put(`${apiURL + endpoints.CATEGORY}/${id}`, {
                 name,
                 description,
                 image_url,
-                status
+                statusCategory
             });
 
             if (res.status === status.OK) {
-                console.log("✅ Cập nhật danh mục thành công!");
+                sessionStorage.setItem("successMessage", "Cập nhật danh mục thành công");
+                sessionStorage.setItem("classMessage", "success");
                 return res.data;
             }
         } catch (error) {
-            console.error("❌ Lỗi khi cập nhật danh mục:", error);
-            throw error;
+            sessionStorage.setItem("successMessage", "Cập nhật danh mục thất bại");
+            sessionStorage.setItem("classMessage", "danger");
         }
     }
 }
