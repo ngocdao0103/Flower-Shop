@@ -31,12 +31,11 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label class="form-label">Tên sản phẩm</label>
-                <input id="editProductName" type="text" class="form-control">
+                <input id="editProductName" type="text" class="form-control" value="Hoa Hồng Đỏ">
               </div>
               <div class="col-md-6 mb-3">
                 <label class="form-label">Giá</label>
-                <input id="editProductPrice" type="text" class="form-control">
-                <div id="editProductPriceError" class="text-danger small mt-1"></div>
+                <input id="editProductPrice" type="text" class="form-control" value="150000">
               </div>
               <div class="col-md-6 mb-3">
                 <label class="form-label">Danh mục</label>
@@ -47,12 +46,8 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label class="form-label">Ảnh đại diện</label>
-                <div class="input-group">
-                  <input id="editProductImageUrl" type="text" class="form-control" placeholder="Hoặc bấm Select để Upload" readonly>
-                  <button class="btn btn-outline-secondary" type="button" onclick="openImageUploadModal('editProductImageUrl')">Select Image</button>
-                </div>
-                <div id="editProductImageError" class="text-danger small mt-1"></div>
-                <img id="editProductImagePreview" src="https://via.placeholder.com/80" class="img-thumbnail mt-2 rounded" alt="" style="max-height:100px;width:100px;object-fit:cover;">
+                <input id="editProductImageUrl" type="text" class="form-control" placeholder="https://...">
+                <img id="editProductImagePreview" src="https://via.placeholder.com/80" class="mt-2 rounded" alt="">
               </div>
               <div class="col-12 mb-3">
                 <label class="form-label">Mô tả</label>
@@ -151,101 +146,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Image upload modal (Cloudinary) -->
-  <div
-    class="modal fade"
-    id="imageUploadModal"
-    tabindex="-1"
-    aria-labelledby="imageUploadModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="imageUploadModalLabel">
-            Upload Image to Cloudinary
-          </h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div
-              id="drop-zone"
-              class="p-5 border border-2 border-dashed rounded-3 text-center bg-light"
-            >
-              <i class="bi bi-cloud-arrow-up-fill fs-1 text-primary mb-3"></i>
-              <p class="fs-5 fw-bold text-dark">
-                Pull and Drop your images here
-              </p>
-              <p class="text-muted mb-4">or</p>
-
-              <input
-                type="file"
-                id="file-input"
-                accept="image/*"
-                class="d-none"
-              />
-              <label for="file-input" class="btn btn-primary shadow-sm">
-                Choose file from computer
-              </label>
-            </div>
-
-            <div id="preview-container" class="row mt-4 g-3"></div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <button id="upload-all-button" class="btn btn-success">
-            Upload Selected Images
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // When variant modals are shown, attach Select Image buttons to image URL inputs
-    (function () {
-      function attachSelectButton(modalEl, inputId) {
-        try {
-          const input = modalEl.querySelector(`#${inputId}`);
-          if (!input) return;
-          // avoid duplicating button
-          if (modalEl.querySelector('.select-variant-image-btn')) return;
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'btn btn-outline-secondary ms-2 select-variant-image-btn';
-          btn.textContent = 'Select Image';
-          btn.addEventListener('click', () => window.openImageUploadModal(inputId));
-          // insert after input
-          input.insertAdjacentElement('afterend', btn);
-        } catch (e) {
-          // ignore
-        }
-      }
-
-      document.addEventListener('shown.bs.modal', function (evt) {
-        const id = evt.target && evt.target.id;
-        if (id === 'addVariantModal') {
-          attachSelectButton(evt.target, 'variantImageUrl');
-        } else if (id === 'editVariantModal') {
-          attachSelectButton(evt.target, 'editVariantImageUrl');
-        }
-      });
-    })();
-  </script>
 
   <script src="../../../components/admin/header.js"></script>
   <script src="../../../components/admin/navbar.js"></script>

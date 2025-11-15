@@ -75,7 +75,6 @@
               <div class="mb-3">
                 <label class="form-label">Giá</label>
                 <input id="productPrice" class="form-control" />
-                <div id="productPriceError" class="text-danger small mt-1"></div>
               </div>
               <div class="mb-3">
                 <label class="form-label">Danh mục</label>
@@ -85,49 +84,13 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label class="form-label">Mô tả</label>
-                <textarea id="productDescription" class="form-control" rows="3" placeholder="Mô tả ngắn về sản phẩm (tùy chọn)"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="productImage" class="form-label">Image URL</label>
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="productImage"
-                    required
-                    placeholder="Hoặc bấm Select để Upload"
-                    readonly
-                  />
-                  <button
-                    class="btn btn-outline-secondary"
-                    type="button"
-                    onclick="openImageUploadModal('productImage')"
-                  >
-                    Select Image
-                  </button>
-                </div>
-                <img
-                  id="productImagePreview"
-                  src=""
-                  alt="Image Preview"
-                  class="img-thumbnail mt-2 d-none"
-                  style="max-height: 100px"
-                />
-                <div
-                  id="productImageError"
-                  class="text-danger mt-1"
-                  style="font-size: 0.9rem"
-                ></div>
+                <label class="form-label">Ảnh (URL)</label>
+                <input id="productImageUrl" type="text" class="form-control" placeholder="https://..." />
               </div>
             </div>
             <div class="modal-footer">
-              <button class="btn btn-secondary" data-bs-dismiss="modal">
-                Hủy
-              </button>
-              <button id="saveProductBtn" class="btn btn-warning text-dark">
-                Lưu
-              </button>
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+              <button id="saveProductBtn" class="btn btn-warning text-dark">Lưu</button>
             </div>
           </form>
         </div>
@@ -167,74 +130,9 @@
             <i class="bi bi-exclamation-triangle text-danger display-5"></i>
             <h5>Bạn có chắc muốn xóa?</h5>
             <div class="mt-3">
-              <button class="btn btn-secondary" data-bs-dismiss="modal">
-                Hủy
-              </button>
-              <button id="confirmDeleteBtn" class="btn btn-danger ms-2">
-                Xóa
-              </button>
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+              <button id="confirmDeleteBtn" class="btn btn-danger ms-2">Xóa</button>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal fade"
-      id="imageUploadModal"
-      tabindex="-1"
-      aria-labelledby="imageUploadModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="imageUploadModalLabel">
-              Upload Image to Cloudinary
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="container-fluid">
-              <div
-                id="drop-zone"
-                class="p-5 border border-2 border-dashed rounded-3 text-center bg-light"
-              >
-                <i class="bi bi-cloud-arrow-up-fill fs-1 text-primary mb-3"></i>
-                <p class="fs-5 fw-bold text-dark">
-                  Pull and Drop your images here
-                </p>
-                <p class="text-muted mb-4">or</p>
-
-                <input
-                  type="file"
-                  id="file-input"
-                  accept="image/*"
-                  class="d-none"
-                />
-                <label for="file-input" class="btn btn-primary shadow-sm">
-                  Choose file from computer
-                </label>
-              </div>
-
-              <div id="preview-container" class="row mt-4 g-3"></div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button id="upload-all-button" class="btn btn-success">
-              Upload Selected Images
-            </button>
           </div>
         </div>
       </div>
