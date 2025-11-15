@@ -33,14 +33,14 @@
       "base_price": 1200000,
       "category_id": "CAT001",
       "category": "Bó Hoa",
-      "image_url": "https://example.com/images/rose-bouquet-red.jpg",
+      "image_url": "https://res.cloudinary.com/dfa75ewka/image/upload/v1763231896/jpic31wwqmpo4v2n4hlz.jpg",
       "variants": [
         {
           "variant_id": "FLW001-VAR1",
           "attributes": [
             {
               "name": "Kích cỡ",
-              "value": "Nhỏ"
+              "value": "Nhỏo"
             },
             {
               "name": "Bao giấy",
@@ -68,6 +68,23 @@
           "stock_quantity": 5,
           "sku": "ROSE-RED-L-WH",
           "image_url": "https://example.com/images/rose-bouquet-red-large.jpg"
+        },
+        {
+          "variant_id": "VAR_1763232141025",
+          "attributes": [
+            {
+              "name": "Kích cỡ",
+              "value": "Vừa"
+            },
+            {
+              "name": "Bao giấy",
+              "value": "có"
+            }
+          ],
+          "price_modifier": -1200000,
+          "stock_quantity": 0,
+          "sku": "SKU_1763232141025",
+          "image_url": "https://res.cloudinary.com/dfa75ewka/image/upload/v1763232140/qizxqt4fph4oh8bpcnmy.jpg"
         }
       ]
     },
@@ -162,11 +179,12 @@
       ]
     },
     {
-      "id": "3832",
-      "name": "sdfs",
-      "base_price": 0,
-      "category": "Hoa Tươi",
-      "image_url": ""
+      "id": "d715",
+      "name": "Ngọc Tuyền",
+      "base_price": 1000000000,
+      "category": "Bó Hoa",
+      "image_url": "https://res.cloudinary.com/dfa75ewka/image/upload/v1763230649/igojrtgjdpzscqc5busm.jpg",
+      "description": "Người đẹp"
     }
   ],
   "users": [

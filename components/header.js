@@ -16,9 +16,8 @@ header.innerHTML = `
                     <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/pages/client/product.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="/pages/client/blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pages/client/about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pages/client/contact.html">Contact Us</a></li>
                 </ul>
             </div>
 

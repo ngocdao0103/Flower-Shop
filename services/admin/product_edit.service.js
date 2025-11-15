@@ -1,5 +1,5 @@
 import { apiURL } from "../../environments/environment.js";
-import { endpoint } from "../../config/api-endpoint.config.js";
+import { endpoints } from "../../config/api-endpoint.config.js";
 
 export class ProductEditService {
   product = null;
@@ -10,7 +10,7 @@ export class ProductEditService {
 
   async load(id) {
     try {
-      const res = await axios.get(`${apiURL}${endpoint.PRODUCT}/${encodeURIComponent(id)}`);
+      const res = await axios.get(`${apiURL}${endpoints.PRODUCT}/${encodeURIComponent(id)}`);
       this.product = res.data;
     } catch (err) {
       console.warn('product_edit.service: API fetch failed, falling back to local db', err);
@@ -252,19 +252,26 @@ export class ProductEditService {
     this.product.variants.push(variant);
     this.renderVariants();
 
+    // show success alert in-page that variant was added to the UI
+    try {
+      this.showAlert('Thêm biến thể thành công', 'success');
+    } catch (e) {
+      // ignore if DOM not ready
+    }
+
     try {
       if (this.product && this.product.id) {
-        const res = await axios.put(`${apiURL}${endpoint.PRODUCT}/${encodeURIComponent(this.product.id)}`, this.product);
+        const res = await axios.put(`${apiURL}${endpoints.PRODUCT}/${encodeURIComponent(this.product.id)}`, this.product);
         if (!res || (res.status !== 200 && res.status !== 204 && res.status !== 201)) {
           console.warn('Failed to persist variant to API, status:', res && res.status);
-          alert('Đã thêm biến thể nhưng không thể lưu lên server (kiểm tra API).');
+          try { this.showAlert('Đã thêm biến thể nhưng không thể lưu lên server (kiểm tra API).', 'warning'); } catch (e) { /* ignore */ }
         }
       } else {
         console.warn('Product has no id, cannot persist to API.');
       }
     } catch (err) {
       console.warn('Persisting new variant failed (API unreachable?):', err);
-      alert('Đã thêm biến thể vào giao diện nhưng chưa lưu được vào server. Hãy ấn "Lưu thay đổi" để thử lại.');
+      try { this.showAlert('Đã thêm biến thể vào giao diện nhưng chưa lưu được vào server. Hãy ấn "Lưu thay đổi" để thử lại.', 'warning'); } catch (e) { /* ignore */ }
     }
 
     const addModalEl = document.getElementById('addVariantModal');
@@ -366,6 +373,43 @@ export class ProductEditService {
       return new Intl.NumberFormat('vi-VN').format(Number(val)) + 'đ';
     } catch (e) {
       return String(val);
+    }
+  }
+
+  showAlert(message, className = 'success') {
+    try {
+      const id = 'product-edit-alert';
+      // remove existing
+      const old = document.getElementById(id);
+      if (old) old.remove();
+
+      const el = document.createElement('div');
+      el.id = id;
+      el.className = `alert alert-${className} alert-dismissible fade show shadow-lg`;
+      el.setAttribute('role', 'alert');
+      el.style.position = 'fixed';
+      el.style.top = '40px';
+      el.style.right = '20px';
+      el.style.width = '300px';
+      el.style.zIndex = '1050';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(-20px)';
+      el.style.transition = 'all 0.6s ease';
+      el.innerHTML = `${message}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
+      document.body.appendChild(el);
+      // animate in
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, 50);
+      // auto remove
+      setTimeout(() => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(-20px)';
+        setTimeout(() => el.remove(), 600);
+      }, 3000);
+    } catch (e) {
+      console.warn('showAlert failed', e);
     }
   }
 
