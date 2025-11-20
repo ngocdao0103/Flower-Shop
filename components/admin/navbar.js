@@ -1,4 +1,4 @@
-const navbar = document.getElementById('navbar');
+const navbar = document.getElementById("navbar");
 navbar.innerHTML = `
 <nav id="sidebarMenu" class="d-lg-block sidebar collapse bg-light border-end vh-100">
     <div class="position-sticky">
@@ -34,15 +34,26 @@ navbar.innerHTML = `
 `;
 
 // Highlight link active theo URL
-const links = navbar.querySelectorAll('a.list-group-item');
-links.forEach(link => {
-    const hrefFile = link.getAttribute('href').split('/').pop();
-    const currentFile = window.location.pathname.split('/').pop();
-    if (hrefFile === currentFile) {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'true');
-    } else {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
-    }
+const links = navbar.querySelectorAll("a.list-group-item");
+links.forEach((link) => {
+  const hrefFile = link.getAttribute("href").split("/").pop();
+  const currentFile = window.location.pathname.split("/").pop();
+  if (hrefFile === currentFile) {
+    link.classList.add("active");
+    link.setAttribute("aria-current", "true");
+  } else {
+    link.classList.remove("active");
+    link.removeAttribute("aria-current");
+  }
 });
+
+const logoutBtnAdmin = document.querySelector("#logoutBtnAdmin");
+if (logoutBtnAdmin) {
+  logoutBtnAdmin.addEventListener("click", () => {
+    sessionStorage.removeItem("admin_login");
+    sessionStorage.removeItem("customer_login");
+    sessionStorage.removeItem("fullname_login");
+    alert("Bạn đã đăng xuất thành công!");
+    window.location.href = "../../../index.html";
+  });
+}

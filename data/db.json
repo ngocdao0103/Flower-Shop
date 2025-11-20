@@ -1,10 +1,11 @@
 {
   "categories": [
     {
-      "id": "CAT001",
       "name": "Bó Hoa",
       "description": "Các mẫu bó hoa tươi đẹp, thích hợp cho mọi dịp lễ và tặng người thương.",
-      "image_url": "https://example.com/images/categories/bouquet.jpg"
+      "image_url": "https://example.com/images/categories/bouquet.jpg",
+      "statusCategory": 1,
+      "id": "CAT001"
     },
     {
       "id": "CAT002",
@@ -172,6 +173,33 @@
       "status": "Khóa",
       "reason": "do vi phạm",
       "id": "fffd"
+    },
+    {
+      "id": "e7c9",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "phone": "0792834912",
+      "address": "Cần Thơ",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "9c9d",
+      "name": "duong2x123",
+      "email": "baolmq05@gmail.com",
+      "phone": "0792834912",
+      "address": "Cần Thơ",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "0921",
+      "name": "Lê Minh Quốc Bảo",
+      "email": "hoconline0201@gmail.com",
+      "phone": "0792834912",
+      "address": "Cần Thơ",
+      "password": "1234",
+      "role": "customer"
     }
   ],
   "carts": [

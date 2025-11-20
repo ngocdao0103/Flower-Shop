@@ -1,6 +1,6 @@
 import { Login } from "../../services/client/login.service.js";
 
-const login = new Login();
+const loginControl = new Login();
 
 const loginAction = (event) => {
   event.preventDefault();
@@ -23,7 +23,7 @@ const loginAction = (event) => {
     return;
   }
 
-  login.login(email.value, password.value);
+  loginControl.login(email.value, password.value);
 };
 
 document.querySelector("#login-btn").addEventListener("click", loginAction);

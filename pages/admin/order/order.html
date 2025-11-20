@@ -11,14 +11,6 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.bootstrap5.css" />
   <link rel="stylesheet" href="/css/admin/style.css" />
 
-    <!-- Chặn nếu chưa có tài khoản admin -->
-    <script>
-        const user = JSON.parse(localStorage.getItem("userLogin"));
-
-        if (!user || user.role !== 'admin') {
-            window.location.href = "http://127.0.0.1:5500/index.html";
-        }
-    </script>
 </head>
 
 <body class="bg-light">

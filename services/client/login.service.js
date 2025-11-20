@@ -1,28 +1,43 @@
+import { apiURL } from "../../environments/environment.js";
+import { endpoints, status } from "../../config/api-endpoint.config.js";
+
 export class Login {
   user = [];
 
-  constructor() {}
-
   login(email, password) {
-    axios.get("http://localhost:3000/users")
-      .then(response => {
-        if (response.status === 200) {
+    axios
+      .get(apiURL + endpoints.USER)
+      .then((response) => {
+        if (response.status == status.OK) {
           this.user = response.data;
 
-          const foundUser = this.user.find(u => 
-            u.email === email && u.password === password
+          let foundUser = this.user.find(
+            (u) => u.email == email && u.password == password
           );
 
           if (foundUser) {
-            alert("Đăng nhập thành công!");
-            localStorage.setItem("userLogin", JSON.stringify(foundUser));
+            if (foundUser.role == "admin") {
+              sessionStorage.setItem("admin_login", foundUser.id);
+              sessionStorage.setItem("customer_login", foundUser.id);
+              sessionStorage.setItem("fullname_login", foundUser.name);
+              alert("Đăng nhập thành công!");
+              window.location.href =
+                "../../pages/admin/dashboard/dashboard.html";
+              return;
+            }
 
-            window.location.href = "http://127.0.0.1:5500/index.html";
+            if (foundUser.role == "customer") {
+              sessionStorage.setItem("customer_login", foundUser.id);
+              sessionStorage.setItem("fullname_login", foundUser.name);
+              alert("Đăng nhập thành công!");
+              window.location.href = "../../index.html";
+              return;
+            }
           } else {
             alert("Sai email hoặc sai mật khẩu!");
           }
         }
       })
-      .catch(error => alert("Lỗi đăng nhập:", error));
+      .catch((error) => alert("Lỗi đăng nhập:", error));
   }
 }

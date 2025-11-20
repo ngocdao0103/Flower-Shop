@@ -1,15 +1,18 @@
-const header = document.getElementById('header');
+const header = document.getElementById("header");
 
 // nếu có đăng nhập thì hiện dropdown tài khoản & đăng xuất
 // nếu chưa đăng nhập thì hiện dropdown đăng kí đăng nhập
-const userLogin = JSON.parse(localStorage.getItem("userLogin")); 
+
+let userCustomerLogin = sessionStorage.getItem("customer_login") ?? "";
+let userFullName = sessionStorage.getItem("fullname_login") ?? "";
+
 let accountSection = "";
 
-if (userLogin) {
-    accountSection = `
+if (userCustomerLogin) {
+  accountSection = `
         <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <i class="bi bi-person-fill"></i> ${userLogin.name}
+                <i class="bi bi-person-fill"></i> ${userFullName}
             </a>
             <div class="dropdown-menu bg-light rounded-0 m-0">
                 <a href="#" class="dropdown-item" id="logoutBtn">Đăng xuất</a>
@@ -17,7 +20,7 @@ if (userLogin) {
         </div>
     `;
 } else {
-    accountSection = `
+  accountSection = `
         <div class="dropdown nav-item">
             <a class="dropdown-toggle nav-link" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
@@ -76,13 +79,14 @@ header.innerHTML = `
     </nav>
 `;
 
-
 // Thực hiện đăng xuất
 const logoutBtn = document.querySelector("#logoutBtn");
 if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
-        localStorage.clear();
-        alert("Bạn đã đăng xuất thành công!");
-        window.location.href = "http://127.0.0.1:5500/pages/client/login.html"; 
-    });
+  logoutBtn.addEventListener("click", () => {
+    sessionStorage.removeItem("admin_login");
+    sessionStorage.removeItem("customer_login");
+    sessionStorage.removeItem("fullname_login");
+    alert("Bạn đã đăng xuất thành công!");
+    window.location.href = "../../index.html";
+  });
 }
