@@ -165,41 +165,25 @@
   ],
   "users": [
     {
-      "name": "Loại sản phẩm 3",
-      "email": "phamxuanbac28102003@gmail.com",
+      "name": "1",
+      "password": "1",
+      "email": "phamxuan222bac28102003@gmail.com",
       "phone": "0867710985",
-      "address": "cần thơ",
-      "role": "Khách hàng",
-      "status": "Khóa",
-      "reason": "do vi phạm",
-      "id": "fffd"
+      "address": "123",
+      "role": "admin",
+      "status": "1",
+      "id": "25c0"
     },
     {
-      "id": "e7c9",
-      "name": "admin",
-      "email": "admin@gmail.com",
-      "phone": "0792834912",
-      "address": "Cần Thơ",
-      "password": "admin",
-      "role": "admin"
-    },
-    {
-      "id": "9c9d",
-      "name": "duong2x123",
-      "email": "baolmq05@gmail.com",
-      "phone": "0792834912",
-      "address": "Cần Thơ",
-      "password": "123",
-      "role": "admin"
-    },
-    {
-      "id": "0921",
-      "name": "Lê Minh Quốc Bảo",
-      "email": "hoconline0201@gmail.com",
-      "phone": "0792834912",
-      "address": "Cần Thơ",
-      "password": "1234",
-      "role": "customer"
+      "name": "2",
+      "password": "22",
+      "email": "phamxuanbac2810201103@gmail.com",
+      "phone": "0867710985",
+      "address": "2",
+      "role": "admin",
+      "status": "0",
+      "reason": "nnn",
+      "id": "fced"
     }
   ],
   "carts": [

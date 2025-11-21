@@ -1,5 +1,5 @@
 import { apiURL } from "../../environments/environment.js";
-import { endpoints } from "../../config/api-endpoint.config.js";
+import { endpoints, status } from "../../config/api-endpoint.config.js";
 
 export class Register {
   register(name, email, phone, address, password) {
@@ -11,6 +11,7 @@ export class Register {
         address: address,
         password: password,
         role: "customer",
+        status: "1"
       })
       .then((response) => {
         console.log(response);

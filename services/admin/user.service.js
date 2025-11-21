@@ -18,12 +18,12 @@ export class User {
                                     <td>${index + 1}</td>
                                     <td>${item.name}</td>
                                     <td>${item.email}</td>
-                                    <td>${item.role}</td>
+                                    <td>${item.role == "admin" ? "Quản trị viên" : "Khách hàng"}</td>
                                     <td><span class="badge ${
-                                      item.status === "Khóa"
+                                      item.status == 0
                                         ? "bg-danger"
                                         : "bg-success"
-                                    }">${item.status}</span>
+                                    }">${item.status == 0 ? "Khóa" : "Hoạt động"}</span>
                                       </td>
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary me-1 btn-edit" data-id="${
@@ -48,7 +48,7 @@ export class User {
     axios
       .get(apiURL + endpoints.USER)
       .then((res) => {
-        if (res.status === STATUS.OK) {
+        if (res.status == STATUS.OK) {
           this.users = res.data;
           this.render();
         }
@@ -56,9 +56,10 @@ export class User {
       .catch((err) => console.error(err));
   }
 
-  create(name, email, phone, address, role, status) {
+  create(name, password, email, phone, address, role, status) {
     const obj = {
       name: name,
+      password: password,
       email: email,
       phone: phone,
       address: address,
@@ -68,7 +69,7 @@ export class User {
     axios
       .post(apiURL + endpoints.USER, obj)
       .then((res) => {
-        if (res.status === STATUS.CREATED) {
+        if (res.status == STATUS.CREATED) {
           this.users.push(res.data);
           this.render();
         }
@@ -81,7 +82,7 @@ export class User {
       .delete(apiURL + endpoints.USER + `/${id}`)
 
       .then((res) => {
-        if (res.status === STATUS.OK) {
+        if (res.status == STATUS.OK) {
           this.users = this.users.filter(
             (item) => String(item.id) != String(id)
           );
@@ -90,9 +91,10 @@ export class User {
       })
       .catch((err) => console.error(err));
   }
-  edit(name, email, phone, address, role, status, id, reason = "") {
+  edit(name, password, email, phone, address, role, status, id, reason = "") {
     const obj = {
       name: name,
+      password: password,
       email: email,
       phone: phone,
       address: address,
@@ -100,16 +102,16 @@ export class User {
       status: status,
     };
 
-    if (status === "Khóa") {
+    if (status == 0) {
       obj.reason = reason;
     }
 
     axios
       .put(apiURL + endpoints.USER + `/${id}`, obj)
       .then((res) => {
-        if (res.status === STATUS.OK) {
+        if (res.status == STATUS.OK) {
           this.users = this.users.map((item) =>
-            String(item.id) === String(id) ? res.data : item
+            String(item.id) == String(id) ? res.data : item
           );
           this.render();
         }
