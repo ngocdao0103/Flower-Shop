@@ -124,7 +124,7 @@ async function init() {
 			} else {
 				// enforce upload to Cloudinary (prevent external/pasted URLs)
 				if (!image_url.includes(`res.cloudinary.com/${CLOUD_NAME}`)) {
-					if (imageError) imageError.textContent = 'Vui lòng upload ảnh bằng nút "Select Image" (Cloud).';
+					if (imageError) imageError.textContent = 'Vui lòng upload ảnh bằng nút "Chọn hình ảnh" (Cloud).';
 					hasError = true;
 				}
 			}

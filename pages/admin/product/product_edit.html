@@ -51,7 +51,7 @@
                   <input id="editProductImageUrl" type="text" class="form-control"
                     placeholder="Hoặc bấm Select để Upload" readonly>
                   <button class="btn btn-outline-secondary" type="button"
-                    onclick="openImageUploadModal('editProductImageUrl')">Select Image</button>
+                    onclick="openImageUploadModal('editProductImageUrl')">Chọn hình ảnh</button>
                 </div>
                 <div id="editProductImageError" class="text-danger small mt-1"></div>
                 <img id="editProductImagePreview" src="https://via.placeholder.com/80"
@@ -170,7 +170,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="imageUploadModalLabel">
-            Upload Image to Cloudinary
+            Tải hình lên Cloudinary
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -179,13 +179,13 @@
             <div id="drop-zone" class="p-5 border border-2 border-dashed rounded-3 text-center bg-light">
               <i class="bi bi-cloud-arrow-up-fill fs-1 text-primary mb-3"></i>
               <p class="fs-5 fw-bold text-dark">
-                Pull and Drop your images here
+                Kéo và thả hình ảnh của bạn vào đây
               </p>
-              <p class="text-muted mb-4">or</p>
+              <p class="text-muted mb-4">hoặc</p>
 
               <input type="file" id="file-input" accept="image/*" class="d-none" />
               <label for="file-input" class="btn btn-primary shadow-sm">
-                Choose file from computer
+                Chọn tệp từ máy tính
               </label>
             </div>
 
@@ -194,10 +194,10 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Close
+            Đóng
           </button>
           <button id="upload-all-button" class="btn btn-success">
-            Upload Selected Images
+            Tải lên các hình đã chọn
           </button>
         </div>
       </div>
@@ -216,7 +216,7 @@
           const btn = document.createElement('button');
           btn.type = 'button';
           btn.className = 'btn btn-outline-secondary ms-2 select-variant-image-btn';
-          btn.textContent = 'Select Image';
+          btn.textContent = 'Chọn hình ảnh';
           btn.addEventListener('click', () => window.openImageUploadModal(inputId));
           // insert after input
           input.insertAdjacentElement('afterend', btn);
