@@ -32,14 +32,21 @@ export class BlogService {
                 html += `
                     <div class="col-md-6">
                         <a href="../client/detail_blog.html?blog=${blog.slug}" >
-                            <div class="card border-0 shadow-sm">
+                            <div class="card border-0 shadow-sm h-100">
                                 <img src="${blog.thumbnail_url}"
-                                    class="card-img-top" alt="Blog image">
-                                <div class="card-body">
-                                    <h5 class="card-title">${blog.title}</h5>
+                                    class="card-img-top" 
+                                    alt="Blog image"
+                                    style="height: 250px; object-fit: cover;"
+                                    loading="lazy">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="min-height: 50px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                                        ${blog.title}
+                                    </h5>
                                     <small class="text-muted d-block mb-2">${blog.author || "Không rõ"} – ${new Date(blog.created_at).toLocaleDateString('vi-VN')}</small>
-                                    <p class="card-text">${shortContent}</p>
-                                    <a href="#" class="text-decoration-none text-dark fw-semibold">Read More →</a>
+                                    <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                                        ${shortContent}
+                                    </p>
+                                    <a href="#" class="text-decoration-none text-dark fw-semibold mt-auto">Read More →</a>
                                 </div>
                             </div>
                         </a>
