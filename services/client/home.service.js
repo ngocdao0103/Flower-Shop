@@ -9,14 +9,14 @@ export class Home {
 
   renderHomeFuture() {
     let html = ``;
-    const featured = this.products.filter((p) => p.is_featured === true);
+    const featured = this.products.filter((p) => p.is_featured == true);
     const SortProduct = featured.slice(-4).reverse();
 
     SortProduct.forEach((item) => {
       const hasSale = item.sale_price && item.sale_price > 0;
 
       html += `
-         <div class="col">
+         <div class="col-12 col-lg-3 col-md-6">
         <div class="card product-card-home h-100 border-0 rounded-0 position-relative overflow-hidden">
 
           <div class="image-wrapper">
@@ -81,7 +81,7 @@ export class Home {
           : item.content;
 
       html += `
-         <div class="col-12 col-md-3">
+         <div class="col-12 col-lg-3 col-md-6">
     <a href="../client/detail_blog.html?blog=${item.slug}">
       <div class="card border-0 shadow-sm h-100">
         <img
@@ -105,8 +105,9 @@ export class Home {
             ${item.title}
           </h5>
           <small class="text-muted d-block mb-2">
-            ${item.author || "Không rõ"} ${new Date( item.created_at
-            ).toLocaleDateString("vi-VN")}
+            ${item.author || "Không rõ"} ${new Date(
+        item.created_at
+      ).toLocaleDateString("vi-VN")}
           </small>
           <p
             class="card-text"

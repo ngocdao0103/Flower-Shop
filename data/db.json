@@ -28,13 +28,14 @@
   ],
   "products": [
     {
+      "is_featured": true,
       "id": "FLW001",
       "name": "Bó Hoa Hồng Đỏ",
       "description": "Bó hoa hồng đỏ rực rỡ – lựa chọn tuyệt vời cho ngày lễ, tỏ tình hoặc kỷ niệm.",
       "base_price": 1200000,
+      "sale_price": 950000,
       "category_id": "CAT001",
-      "category": "Bó Hoa",
-      "image_url": "https://example.com/images/rose-bouquet-red.jpg",
+      "image_url": "https://th.bing.com/th/id/R.00baacb19cce2cc8320e372c78d828c3?rik=XEkOQlUnLSy4gQ&pid=ImgRaw&r=0",
       "variants": [
         {
           "variant_id": "FLW001-VAR1",
@@ -73,13 +74,14 @@
       ]
     },
     {
+      "is_featured": true,
       "id": "FLW002",
       "name": "Chậu Hoa Lan Cam",
       "description": "Chậu hoa lan cam sang trọng, thích hợp để bàn, phòng khách hoặc làm quà tặng VIP.",
       "base_price": 850000,
+      "sale_price": 0,
       "category_id": "CAT002",
-      "category": "Chậu Hoa",
-      "image_url": "https://example.com/images/orchid-orange-pot.jpg",
+      "image_url": "https://thumbs.dreamstime.com/b/rose-gialle-4226950.jpg",
       "variants": [
         {
           "variant_id": "FLW002-VAR1",
@@ -118,13 +120,14 @@
       ]
     },
     {
+      "is_featured": true,
       "id": "FLW003",
       "name": "Bó Hoa Tulip Mix Màu",
       "description": "Bó hoa tulip nhiều màu tươi tắn – phù hợp làm quà sinh nhật, tặng bạn bè.",
       "base_price": 550000,
+      "sale_price": 0,
       "category_id": "CAT001",
-      "category": "Bó Hoa",
-      "image_url": "https://example.com/images/tulip-mix-bouquet.jpg",
+      "image_url": "https://th.bing.com/th/id/R.bd305fd10411bc676b05abb3cb0b6576?rik=5dkw1%2bsNVhg8EA&pid=ImgRaw&r=0",
       "variants": [
         {
           "variant_id": "FLW003-VAR1",

@@ -1,312 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flower Shop</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./css/client/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
-  </head>
 
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flower Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="./css/client/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+</head>
 
-    .banner-title {
-      font-size: 50px;
-      font-weight: 700;
-      font-family: "Great Vibes", cursive;
-    }
-  </style>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
-  <body>
-    <div id="header"></div>
-    <div
-      id="flowerCarousel"
-      class="carousel slide carousel-fade"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#flowerCarousel"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#flowerCarousel"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#flowerCarousel"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-      </div>
+  .banner-title {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: "Great Vibes", cursive;
+  }
 
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="./images/banners/image1.png"
-            class="d-block w-100"
-            alt="Bó hồng tình yêu"
-          />
+  .promo-card {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+  }
 
-          <div class="carousel-caption d-none d-md-block">
-            <h1 class="banner-title display-5 fw-bold text-shadow-dark">
-              Gửi trọn yêu thương
-            </h1>
-            <p class="lead text-dark">
-              Bộ sưu tập hoa hồng lãng mạn, tinh tế cho mọi khoảnh khắc đáng
-              nhớ.
-            </p>
-            <a href="#" class="btn btn-danger mt-2">KHÁM PHÁ NGAY</a>
-          </div>
-        </div>
+  .promo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
 
-        <div class="carousel-item">
-          <img
-            src="./images/banners/image2.png"
-            class="d-block w-100"
-            alt="Giao hoa hỏa tốc"
-          />
-
-          <div class="carousel-caption d-none d-md-block">
-            <h1 class="banner-title display-5 fw-bold text-shadow-dark">
-              Giao hoa hỏa tốc 60 phút
-            </h1>
-            <p class="lead text-dark">
-              Luôn đảm bảo hoa tươi mới, nguyên vẹn đến tận tay người nhận một
-              cách nhanh nhất.
-            </p>
-            <a href="#" class="btn btn-warning mt-2">ĐẶT GIAO NHANH</a>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img
-            src="./images/banners/image3.png"
-            class="d-block w-100"
-            alt="Hoa theo mùa"
-          />
-
-          <div class="carousel-caption d-none d-md-block">
-            <h1 class="banner-title display-5 fw-bold text-shadow-dark">
-              Sắc màu hoa theo mùa
-            </h1>
-            <p class="lead text-dark">
-              Khám phá các loại hoa nhập khẩu, độc đáo chỉ có trong mùa này.
-            </p>
-            <a href="#" class="btn btn-info mt-2">XEM SẢN PHẨM</a>
-          </div>
-        </div>
-      </div>
-
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#flowerCarousel"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Trước</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#flowerCarousel"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Sau</span>
-      </button>
+<body>
+  <div id="header"></div>
+  <div id="flowerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#flowerCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#flowerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#flowerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
 
-    <section class="py-4">
-      <div class="container-fluid" style="width: 90rem">
-        <div class="row g-4">
-          <div class="col-md-5">
-            <div class="position-relative">
-              <img
-                src="https://htmldemo.net/flosun/flosun/assets/images/category/home1-category-1.jpg"
-                class="w-100 img-post-big"
-                alt=""
-              />
-            </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./images/banners/image1.png" class="d-block w-100" alt="Bó hồng tình yêu" />
+
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="banner-title display-5 fw-bold text-shadow-dark">
+            Gửi trọn yêu thương
+          </h1>
+          <p class="lead text-dark">
+            Bộ sưu tập hoa hồng lãng mạn, tinh tế cho mọi khoảnh khắc đáng
+            nhớ.
+          </p>
+          <a href="/pages/client/product.html" class="btn btn-danger mt-2">KHÁM PHÁ NGAY</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="./images/banners/image2.png" class="d-block w-100" alt="Giao hoa hỏa tốc" />
+
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="banner-title display-5 fw-bold text-shadow-dark">
+            Giao hoa hỏa tốc 60 phút
+          </h1>
+          <p class="lead text-dark">
+            Luôn đảm bảo hoa tươi mới, nguyên vẹn đến tận tay người nhận một
+            cách nhanh nhất.
+          </p>
+          <a href="/pages/client/product.html" class="btn btn-warning mt-2">ĐẶT GIAO NHANH</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="./images/banners/image3.png" class="d-block w-100" alt="Hoa theo mùa" />
+
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="banner-title display-5 fw-bold text-shadow-dark">
+            Sắc màu hoa theo mùa
+          </h1>
+          <p class="lead text-dark">
+            Khám phá các loại hoa nhập khẩu, độc đáo chỉ có trong mùa này.
+          </p>
+          <a href="/pages/client/product.html" class="btn btn-info mt-2">XEM SẢN PHẨM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="py-4">
+    <div class="container-fluid">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <div class="position-relative">
+            <img src="https://htmldemo.net/flosun/flosun/assets/images/category/home1-category-1.jpg"
+              class="w-100 img-post-big" alt="" />
           </div>
-          <div class="col-md-7">
-            <div class="row g-4">
-              <div class="col-md-6">
-                <div class="position-relative">
-                  <img
-                    src="https://htmldemo.net/flosun/flosun/assets/images/category/home1-category-2.jpg"
-                    class="w-100 img-post"
-                    alt=""
-                  />
-                </div>
+        </div>
+        <div class="col-md-7">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="position-relative">
+                <img src="https://htmldemo.net/flosun/flosun/assets/images/category/home1-category-2.jpg"
+                  class="w-100 img-post" alt="" />
               </div>
-              <div class="col-md-6">
-                <div class="position-relative">
-                  <img
-                    src="https://htmldemo.net/flosun/flosun/assets/images/category/home1-category-3.jpg"
-                    class="w-100 img-post"
-                    alt=""
-                  />
-                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="position-relative">
+                <img src="https://htmldemo.net/flosun/flosun/assets/images/category/home1-category-3.jpg"
+                  class="w-100 img-post" alt="" />
               </div>
-              <div class="col-md-6">
-                <div class="position-relative">
-                  <img
-                    src="	https://htmldemo.net/flosun/flosun/assets/images/category/home1-category-4.jpg"
-                    class="w-100 img-post"
-                    alt=""
-                  />
-                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="position-relative">
+                <img src="	https://htmldemo.net/flosun/flosun/assets/images/category/home1-category-4.jpg"
+                  class="w-100 img-post" alt="" />
               </div>
-              <div class="col-md-6">
-                <div class="position-relative">
-                  <img
-                    src="	https://htmldemo.net/flosun/flosun/assets/images/category/home1-category-5.jpg"
-                    class="w-100 img-post"
-                    alt=""
-                  />
-                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="position-relative">
+                <img src="	https://htmldemo.net/flosun/flosun/assets/images/category/home1-category-5.jpg"
+                  class="w-100 img-post" alt="" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="container-xl">
-        <div class="text-center py-5">
-          <p class="h4 fst-italic text-danger">Món quà tuyệt vời</p>
-          <p class="h1 fw-bold">Sản phẩm nổi bật</p>
+    </div>
+    <div class="container-xl">
+      <div class="text-center py-5">
+        <p class="h4 fst-italic text-danger">Món quà tuyệt vời</p>
+        <p class="h1 fw-bold">Sản phẩm nổi bật</p>
+      </div>
+      <div class="row row-cols-1 row-cols-md-4 g-4" id="List"></div>
+    </div>
+
+    <div class="container text-center mt-5">
+      <p class="h4 fst-italic text-danger">Một câu chuyện nhỏ về chúng tôi</p>
+      <p class="h1 fw-bold">Lịch sử của chúng tôi</p>
+      <p class="lh-base fw-normal m-5" style="font-size: 18px; text-align: justify">
+        Khi thời gian cho phép và mọi ràng buộc được gỡ bỏ, chúng ta có thể
+        lựa chọn những giải pháp linh hoạt mà không gặp bất kỳ cản trở nào để
+        thực hiện điều mang lại sự hài lòng lớn nhất. Các kiểu chữ vốn dĩ
+        không có sự rõ ràng; chính cách người đọc sử dụng và tiếp cận mới tạo
+        nên sự rõ ràng đó. Nhiều nghiên cứu cũng cho thấy rằng độc giả thường
+        xuyên đọc một nội dung thì sẽ hiểu nội dung ấy tốt hơn. Sự rõ ràng là
+        một quá trình mang tính động, luôn thay đổi theo hoàn cảnh. Hãy hướng
+        đến sự nhịp nhàng mềm mại và sống một cách tinh tế, có chủ đích trong
+        từng hành động.
+      </p>
+    </div>
+
+    <div class="container-fluid py-5">
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-12 col-lg-3 col-md-6">
+          <div class="card promo-card">
+            <img src="https://i.pinimg.com/736x/13/fc/99/13fc997c912e313645553e113646a8d4.jpg" alt="Big Red Rose" />
+          </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="List"></div>
-      </div>
 
-      <div class="container text-center mt-5" style="width: 55rem">
-        <p class="h4 fst-italic text-danger">Một câu chuyện nhỏ về chúng tôi</p>
-        <p class="h1 fw-bold" style="font-size: 5rem">Lịch sử của chúng tôi</p>
-        <p
-          class="lh-base fw-normal m-5"
-          style="font-size: 18px; text-align: justify"
-        >
-          Khi thời gian cho phép và mọi ràng buộc được gỡ bỏ, chúng ta có thể
-          lựa chọn những giải pháp linh hoạt mà không gặp bất kỳ cản trở nào để
-          thực hiện điều mang lại sự hài lòng lớn nhất. Các kiểu chữ vốn dĩ
-          không có sự rõ ràng; chính cách người đọc sử dụng và tiếp cận mới tạo
-          nên sự rõ ràng đó. Nhiều nghiên cứu cũng cho thấy rằng độc giả thường
-          xuyên đọc một nội dung thì sẽ hiểu nội dung ấy tốt hơn. Sự rõ ràng là
-          một quá trình mang tính động, luôn thay đổi theo hoàn cảnh. Hãy hướng
-          đến sự nhịp nhàng mềm mại và sống một cách tinh tế, có chủ đích trong
-          từng hành động.
-        </p>
-      </div>
-
-      <div class="container-fluid py-5">
-        <div class="row g-4">
-          <!-- Card 1 -->
-          <div class="col-md-4">
-            <div class="card promo-card">
-              <img
-                src="https://i.pinimg.com/736x/13/fc/99/13fc997c912e313645553e113646a8d4.jpg"
-                alt="Big Red Rose"
-              />
-            </div>
+        <!-- Card 2 -->
+        <div class="col-12 col-lg-3 col-md-6">
+          <div class="card promo-card">
+            <img src="https://i.pinimg.com/736x/62/c8/74/62c8744ed7c52ab58c26db17305406eb.jpg" alt="Red Tulip" />
           </div>
+        </div>
 
-          <!-- Card 2 -->
-          <div class="col-md-4">
-            <div class="card promo-card">
-              <img
-                src="https://i.pinimg.com/736x/62/c8/74/62c8744ed7c52ab58c26db17305406eb.jpg"
-                alt="Red Tulip"
-              />
-            </div>
+        <!-- Card 3 -->
+        <div class="col-12 col-lg-3 col-md-6">
+          <div class="card promo-card">
+            <img src="https://i.pinimg.com/736x/0c/96/49/0c964922af156be0ea310e58572d4cd5.jpg" alt="Tulip Flower" />
           </div>
+        </div>
 
-          <!-- Card 3 -->
-          <div class="col-md-4">
-            <div class="card promo-card">
-              <img
-                src="https://i.pinimg.com/736x/0c/96/49/0c964922af156be0ea310e58572d4cd5.jpg"
-                alt="Tulip Flower"
-              />
-            </div>
+        <!-- Card 4 -->
+        <div class="col-12 col-lg-3 col-md-6">
+          <div class="card promo-card">
+            <img src="https://i.pinimg.com/736x/39/da/a6/39daa6e9a23d95e8fcd89ac5d84fc67a.jpg" alt="Tulip Flower" />
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="py-5 bg-white">
-        <div class="container">
-          <!-- Tiêu đề -->
-          <div class="text-center mb-5">
-            <p class="text-danger fw-semibold fst-italic">
-              Từ Blog của chúng tôi
-            </p>
-            <h2 class="fw-bold text-uppercase">
-              Bài viết mới nhất của chúng tôi
-            </h2>
-          </div>
+    <div class="py-5 bg-white">
+      <div class="container">
+        <!-- Tiêu đề -->
+        <div class="text-center mb-5">
+          <p class="text-danger fw-semibold fst-italic">
+            Từ Blog của chúng tôi
+          </p>
+          <h2 class="fw-bold text-uppercase">
+            Bài viết mới nhất của chúng tôi
+          </h2>
+        </div>
 
-          <!-- Danh sách bài viết -->
-          <div class="row g-4" id="ListBlog"></div>
+        <!-- Danh sách bài viết -->
+        <div class="row g-4" id="ListBlog"></div>
+      </div>
+    </div>
+
+    <div class="brand-section">
+      <div class="brand-container">
+        <div class="brand-item">
+          <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/1.png" alt="Brand 1" />
+        </div>
+        <div class="brand-item">
+          <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/2.png" alt="Brand 2" />
+        </div>
+        <div class="brand-item">
+          <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/3.png" alt="Brand 3" />
+        </div>
+        <div class="brand-item">
+          <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/4.png" alt="Brand 4" />
+        </div>
+        <div class="brand-item">
+          <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/5.png" alt="Brand 5" />
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="brand-section">
-        <div class="brand-container">
-          <div class="brand-item">
-            <img
-              src="https://htmldemo.net/flosun/flosun/assets/images/brand/1.png"
-              alt="Brand 1"
-            />
-          </div>
-          <div class="brand-item">
-            <img
-              src="https://htmldemo.net/flosun/flosun/assets/images/brand/2.png"
-              alt="Brand 2"
-            />
-          </div>
-          <div class="brand-item">
-            <img
-              src="https://htmldemo.net/flosun/flosun/assets/images/brand/3.png"
-              alt="Brand 3"
-            />
-          </div>
-          <div class="brand-item">
-            <img
-              src="https://htmldemo.net/flosun/flosun/assets/images/brand/4.png"
-              alt="Brand 4"
-            />
-          </div>
-          <div class="brand-item">
-            <img
-              src="https://htmldemo.net/flosun/flosun/assets/images/brand/5.png"
-              alt="Brand 5"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+  <div id="footer"></div>
 
-    <div id="footer"></div>
+  <script src="./components/footer.js"></script>
+  <script src="./components/header.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="./js/client/home.js"></script>
+</body>
 
-    <script src="./components/footer.js"></script>
-    <script src="./components/header.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="./js/client/home.js"></script>
-  </body>
 </html>
