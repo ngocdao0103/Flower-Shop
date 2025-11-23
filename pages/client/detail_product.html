@@ -55,23 +55,20 @@
 
             <!-- Right: Product Details -->
             <div class="col-md-7">
-                <h3 class="mb-2">Sample product</h3>
+                <h3 class="mb-2">Tên sản phẩm</h3>
 
                 <!-- Giá và đánh giá -->
                 <div class="price-detail mb-1">
-                    <span class="price fw-bold fs-5">$80.00</span>
+                    <span class="price fw-bold fs-5">120.000 đ</span>
                     <span class="old-price text-muted text-decoration-line-through ms-2">$90.00</span>
                 </div>
-                <div class="rating-detail text-pink fs-5 mb-2">★★★☆☆</div>
 
                 <!-- SKU -->
                 <p class="text-muted mb-2">SKU: 12345</p>
 
                 <!-- Mô tả -->
                 <p>
-                    I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
-                    and I will give you a complete account of the system, and expound the actual teachings of the great
-                    explorer of the truth, the master-builder of human happiness.
+                    Mô tả ngắn
                 </p>
 
                 <!-- Nút số lượng + thêm giỏ hàng -->
@@ -83,7 +80,7 @@
                     </div>
                     <div class="m-0">
                         <button class="btn btn-dark px-4 me-2 btn-cart">
-                            <span class="text">Add to cart</span>
+                            <span class="text">Thêm vào giỏ</span>
                             <span class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-cart-fill" viewBox="0 0 16 16">
@@ -92,32 +89,18 @@
                                 </svg>
                             </span>
                         </button>
-                        <button class="btn btn-outline-dark px-4 btn-wishlist">
-                            Add to wishlist
-                        </button>
                     </div>
                 </div>
 
                 <!-- Chia sẻ -->
                 <div class="d-flex align-items-center mb-3">
-                    <span class="fw-bold me-2 ">Share :</span>
+                    <span class="fw-bold me-2 ">Chia sẻ :</span>
                     <a href="#" class="text-decoration-none me-2"><img
                             src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="20"></a>
                     <a href="#" class="text-decoration-none me-2"><img
                             src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="20"></a>
                     <a href="#" class="text-decoration-none me-2"><img
                             src="https://cdn-icons-png.flaticon.com/512/733/733558.png" width="20"></a>
-                    <a href="#" class="text-decoration-none"><img
-                            src="https://cdn-icons-png.flaticon.com/512/733/733558.png" width="20"></a>
-                </div>
-
-                <!-- Logo thanh toán -->
-                <div class="d-flex align-items-center flex-wrap gap-2">
-                    <img src="https://i.pinimg.com/736x/fd/b4/ef/fdb4efb9ec1f26dd2fac539282074f6f.jpg" width="60">
-                    <img src="https://i.pinimg.com/1200x/3d/d3/de/3dd3de3c0ea439adcd71d4531e0e181c.jpg" width="60">
-                    <img src="https://i.pinimg.com/736x/37/ec/77/37ec777fa00a64ebb61e47ede3205567.jpg" width="60">
-                    <img src="https://i.pinimg.com/1200x/fb/e1/53/fbe153311767e446742ccf480b193bb2.jpg" width="60">
-                    <img src="https://i.pinimg.com/1200x/fa/69/97/fa699711fde23c4cc32c3135ee1e5d75.jpg" width="60">
                 </div>
             </div>
         </div>
@@ -127,19 +110,11 @@
             <ul class="nav nav-tabs border-0" id="productTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#description"
-                        type="button" role="tab">DESCRIPTION</button>
+                        type="button" role="tab">Mô tả</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="rev-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button"
-                        role="tab">REVIEWS</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="ship-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button"
-                        role="tab">SHIPPING POLICY</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="size-tab" data-bs-toggle="tab" data-bs-target="#size" type="button"
-                        role="tab">SIZE CHART</button>
+                        role="tab">Đánh giá</button>
                 </li>
             </ul>
 
@@ -168,7 +143,7 @@
                                 class="me-3 rounded-circle" alt="User">
                             <div>
                                 <div class="text-warning">★★★★☆</div>
-                                <strong>Admin</strong> - December 19, 2022
+                                <strong>Quản trị viên</strong> - 23 - 11 - 2025
                                 <p class="mt-2 mb-0">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in viverra ex, vitae
                                     vestibulum arcu. Duis sollicitudin metus sed lorem commodo.
@@ -177,17 +152,15 @@
                         </div>
                     </div>
 
-                    <h6 class="fw-semibold">Add a review</h6>
-                    <p class="text-muted small">Your email address will not be published. Required fields are marked *
-                    </p>
+                    <h6 class="fw-semibold">Thêm một đánh giá</h6>
 
-                    <label class="fw-semibold small">Your Rating</label>
+                    <label class="fw-semibold small">Đánh giá của bạn</label>
                     <div class="text-warning mb-3">★★★★☆</div>
 
                     <form>
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label class="form-label">Name *</label>
+                                <label class="form-label">Tên *</label>
                                 <input type="text" class="form-control">
                             </div>
                             <div class="col-md-6">
@@ -196,96 +169,11 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Comment</label>
+                            <label class="form-label">Bình luận</label>
                             <textarea class="form-control" rows="4"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-dark px-4">Submit</button>
+                        <button type="submit" class="btn btn-dark px-4">Gửi</button>
                     </form>
-                </div>
-
-                <!-- SHIPPING POLICY -->
-                <div class="tab-pane fade show active" id="shipping" role="tabpanel">
-                    <h5 class="fw-semibold mb-3">Shipping policy for our store</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt
-                        ut laoreet dolore magna aliquam erat volutpat.
-                    </p>
-                    <ul>
-                        <li>1–2 business days (Typically by end of day)</li>
-                        <li>30 days money back guaranty</li>
-                        <li>24/7 live support</li>
-                        <li>Odio dignissim qui blandit praesent</li>
-                        <li>Luptatum zzril delenit augue duis dolore</li>
-                        <li>Te feugait nulla facilisi.</li>
-                    </ul>
-                    <p>
-                        Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim
-                        placerat facer possim assum. Typi non habent claritatem insitam.
-                    </p>
-                    <p>
-                        Claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
-                        Claritas est etiam processus dynamicus.
-                    </p>
-                </div>
-                <!-- SIZE CHART -->
-                <div class="tab-pane fade" id="size" role="tabpanel">
-                    <h5 class="fw-semibold mb-3">Size Chart</h5>
-                    <div class="table-responsive">
-                        <table class="table table-bordered text-center align-middle">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>Country</th>
-                                    <th>18</th>
-                                    <th>20</th>
-                                    <th>22</th>
-                                    <th>24</th>
-                                    <th>26</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>UK</td>
-                                    <td>18</td>
-                                    <td>20</td>
-                                    <td>22</td>
-                                    <td>24</td>
-                                    <td>26</td>
-                                </tr>
-                                <tr>
-                                    <td>European</td>
-                                    <td>46</td>
-                                    <td>48</td>
-                                    <td>50</td>
-                                    <td>52</td>
-                                    <td>54</td>
-                                </tr>
-                                <tr>
-                                    <td>USA</td>
-                                    <td>14</td>
-                                    <td>16</td>
-                                    <td>18</td>
-                                    <td>20</td>
-                                    <td>22</td>
-                                </tr>
-                                <tr>
-                                    <td>Australia</td>
-                                    <td>28</td>
-                                    <td>10</td>
-                                    <td>12</td>
-                                    <td>14</td>
-                                    <td>16</td>
-                                </tr>
-                                <tr>
-                                    <td>Canada</td>
-                                    <td>24</td>
-                                    <td>18</td>
-                                    <td>14</td>
-                                    <td>42</td>
-                                    <td>36</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         </div>
@@ -293,8 +181,7 @@
         <!-- Featured Products -->
         <div class="featured-products container text-center my-5">
             <h3 class="section-title">
-                <span class="sub-title">The Most Trendy</span><br>
-                <span class="main-title">FEATURED PRODUCTS</span>
+                <span>Sản phẩm liên quan</span>
             </h3>
 
             <div class="row mt-4 g-4">
@@ -583,6 +470,13 @@
         </div>
     </div>
     <div id="footer"></div>
+
+    <script>
+        function formatPrice(x) {
+            x = x.toLocaleString('vi', { style: 'currency', currency: 'VND' });
+            return x;
+        }
+    </script>
 
     <script src="../../components/header.js"></script>
     <script src="../../components/footer.js"></script>
