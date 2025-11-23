@@ -29,7 +29,7 @@ export class Login {
             if (foundUser.role == "customer") {
               sessionStorage.setItem("customer_login", foundUser.id);
               sessionStorage.setItem("fullname_login", foundUser.name);
-              alert("Đăng nhập thành công!");
+              sessionStorage.setItem("login_success", "Đăng nhập thành công");
               window.location.href = "../../index.html";
               return;
             }

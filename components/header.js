@@ -131,6 +131,7 @@ if (logoutBtn) {
     sessionStorage.removeItem("admin_login");
     sessionStorage.removeItem("customer_login");
     sessionStorage.removeItem("fullname_login");
+    sessionStorage.setItem("logout_success");
     alert("Bạn đã đăng xuất thành công!");
     window.location.href = "../../index.html";
   });

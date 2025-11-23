@@ -1,8 +1,17 @@
 import { Register } from "../../services/client/register.service.js";
+import { User } from "../../services/client/user.service.js";
 
-const register = new Register();
+let userList = [];
 
-const createAction = (event) => {
+const userService = new User();
+
+async function init() {
+  await userService.list();
+  userList = userService.getUserList();
+
+  const register = new Register();
+
+  const createAction = (event) => {
     event.preventDefault();
 
     let name = document.querySelector("#name");
@@ -18,55 +27,80 @@ const createAction = (event) => {
     let password_Error = document.querySelector("#password_error");
 
     const ERRORTEXT = "Không được để trống";
-    const ERRORNUMBER = "Số điện thoại không hợp lệ"
+    const ERRORNUMBER = "Số điện thoại không hợp lệ";
 
     let isError = false;
-    if (!name.value || !email.value || !phone.value || !address.value || !password.value) {
-        isError = true;
+    if (
+      !name.value ||
+      !email.value ||
+      !phone.value ||
+      !address.value ||
+      !password.value ||
+      password.value.length < 6
+    ) {
+      isError = true;
     }
 
     if (isError) {
-        if (!name.value) {
-            name_Error.innerHTML = ERRORTEXT;
-        } else {
-            name_Error.innerHTML = "";
-        }
+      if (!name.value) {
+        name_Error.innerHTML = ERRORTEXT;
+      } else {
+        name_Error.innerHTML = "";
+      }
 
-        if (!email.value) {
-            email_Error.innerHTML = ERRORTEXT;
-        } else {
-            email_Error.innerHTML = "";
-        }
+      if (!email.value) {
+        email_Error.innerHTML = ERRORTEXT;
+      } else {
+        email_Error.innerHTML = "";
+      }
 
-        if (!phone.value) {
-            phone_Error.innerHTML = ERRORTEXT;
-        } else if (phone.value.lenght != 10) {
-            phone_Error.innerHTML = ERRORNUMBER;
-        }
-        else {
-            phone_Error.innerHTML = "";
-        }
+      if (!phone.value) {
+        phone_Error.innerHTML = ERRORTEXT;
+      } else if (isValidPhone(phone.value)) {
+        phone_Error.innerHTML = ERRORNUMBER;
+      } else {
+        phone_Error.innerHTML = "";
+      }
 
+      if (!address.value) {
+        address_Error.innerHTML = ERRORTEXT;
+      } else {
+        address_Error.innerHTML = "";
+      }
 
-
-        if (!address.value) {
-            address_Error.innerHTML = ERRORTEXT;
-        } else {
-            address_Error.innerHTML = "";
-        }
-
-        if (!password.value) {
-            password_Error.innerHTML = ERRORTEXT;
-        } else {
-            password_Error.innerHTML = "";
-        }
-
+      if (!password.value) {
+        password_Error.innerHTML = ERRORTEXT;
+      } else {
+        if (password.value.length < 6)
+          password_Error.innerHTML = "Mật khẩu phải từ 6-12 kí tự";
+        else password_Error.innerHTML = "";
+      }
     } else {
-        console.log("Success");
-        register.register(name.value, email.value, phone.value, address.value, password.value);
+      let emailDuplicate = userList.find((item) => item.email == email.value);
+
+      if (emailDuplicate) {
+        email_Error.innerHTML = "Trùng email";
+        console.log(emailDuplicate);
+        return;
+      }
+
+      register.register(
+        name.value,
+        email.value,
+        phone.value,
+        address.value,
+        password.value
+      );
     }
-};
+  };
 
-const btn = document.querySelector("#register-btn");
-btn.addEventListener("click", createAction);
+  const btn = document.querySelector("#register-btn");
+  btn.addEventListener("click", createAction);
+}
 
+function isValidPhone(phone) {
+  const regex = /^(0|\+84)(3|5|7|8|9)\d{8}$/;
+  return regex.test(phone);
+}
+
+init();

@@ -1,0 +1,22 @@
+#alert_danger,
+#alert_success {
+  display: none;
+  align-items: center;
+  position: fixed;
+  top: 80px;
+  right: 0px;
+  z-index: 2000;
+  transition: all 0.5s ease-in-out;
+  animation: alert_in 1s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes alert_in {
+  0% {
+    right: -500px;
+  }
+
+  100% {
+    right: 0px;
+  }
+}

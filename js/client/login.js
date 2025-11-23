@@ -1,5 +1,14 @@
 import { Login } from "../../services/client/login.service.js";
 
+// Check Alert
+if (sessionStorage.getItem("register_success")) {
+  document.querySelector("#alert_success").style.display = "flex";
+  setInterval(() => {
+    sessionStorage.removeItem("register_success");
+    document.querySelector("#alert_success").style.display = "none";
+  }, 4000);
+}
+
 const loginControl = new Login();
 
 const loginAction = (event) => {

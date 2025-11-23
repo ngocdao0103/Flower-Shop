@@ -13,11 +13,15 @@ export class Register {
         avatar: "",
         birth: "",
         role: "customer",
-        status: "1"
+        status: "1",
       })
       .then((response) => {
-        console.log(response);
-        alert("Đăng kí thành công!");
+        if (response.status == status.CREATED) {
+          sessionStorage.setItem("register_success", "Đăng ký thành công");
+          window.location.href = "/pages/client/login.html";
+        } else {
+          alert("Lỗi hệ thống");
+        }
       })
       .catch((error) => console.error(error));
   }

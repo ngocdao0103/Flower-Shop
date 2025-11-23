@@ -9,12 +9,22 @@
     <link rel="stylesheet" href="../../css/client/style.css">
     <link rel="stylesheet" href="../../css/client/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../css/client/alert.css">
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 </style>
 
 <body>
+    <!-- Alert -->
+    <div id="alert_success" class="alert alert-success" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+        <div>
+            Đăng ký thành công
+        </div>
+    </div>
+
+    <!-- Header -->
     <div id="header"></div>
     <!-- Banner -->
     <div class="breadcrumbs-area position-relative">
@@ -48,7 +58,8 @@
                         </div>
                         <div class="mb-4">
                             <label for="" class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control" id="password" placeholder="Vui lòng nhập mật khẩu">
+                            <input type="password" class="form-control" id="password"
+                                placeholder="Vui lòng nhập mật khẩu">
                             <small class="text-danger" id="password_error"></small>
                         </div>
                         <br>
@@ -71,7 +82,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Orther Scripts -->
-     <script type="module" src="../../js/client/login.js"></script>
+    <script type="module" src="../../js/client/login.js"></script>
     <script src="../../components/header.js"></script>
     <script src="../../components/footer.js"></script>
 </body>
