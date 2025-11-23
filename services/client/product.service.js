@@ -72,20 +72,31 @@ export class ProductService {
     }
 
 // Click danh mục
-    registerCategoryClick() {
-        document.querySelectorAll(".category-tag").forEach(tag => {
-            tag.addEventListener("click", () => {
+registerCategoryClick() {
+    const tags = document.querySelectorAll(".category-tag");
 
-                document.querySelectorAll(".category-tag")
-                    .forEach(t => t.classList.remove("active-category"));
+    tags.forEach(tag => {
+        tag.addEventListener("click", () => {
 
+            const isActive = tag.classList.contains("active-category");
+
+            // Bỏ active tất cả
+            tags.forEach(t => t.classList.remove("active-category"));
+
+            if (!isActive) {
+                // Nếu tag chưa active, kích hoạt lại
                 tag.classList.add("active-category");
-
                 this.selectedCategory = tag.dataset.id;
-                this.applyFilters();
-            });
+            } else {
+                // Nếu đang active mà click lại → bỏ chọn
+                this.selectedCategory = null;
+            }
+
+            this.applyFilters();
         });
-    }
+    });
+}
+
 
 // Tìm kiếm
     registerSearch() {

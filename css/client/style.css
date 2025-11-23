@@ -1314,3 +1314,7 @@ form .btn-dark {
     color: #ffffff;
     background-color: #0a0a0a;
 }
+.active-category {
+    background: #d63384 !important;
+    color: white !important;
+}
