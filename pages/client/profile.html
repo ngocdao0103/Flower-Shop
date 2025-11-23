@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flower Shop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../../css/client/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../../css/client/profile.css">
+  </head>
+
+  <body>
+    <div id="loadingOverlay" class="justify-content-center align-items-center">
+        <div class="spinner-border text-light" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden"></span>
+        </div>
+    </div>
+    <div id="header"></div>
+    <main>
+      <div class="container py-4">
+        <div class="row g-4">
+          <!-- Sidebar -->
+          <div class="col-md-4">
+            <div class="sidebar mb-4">
+              <div class="d-flex align-items-center mb-3">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="./order.html"
+                      ><i class="bi bi-box"></i> Đơn hàng của tôi</a
+                    >
+                  </li>
+                  <li>
+                    <button class="btn bg-green text-white" onclick="logout()">
+                      <i class="bi bi-box-arrow-right"></i> Đăng xuất
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main content -->
+          <div class="col-md-8" id="profilePage"></div>
+        </div>
+      </div>
+    </main>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../../js/client/profile.js"></script>
+    <script src="../../components/footer.js"></script>
+    <script src="../../components/header.js"></script>
+  </body>
+</html>

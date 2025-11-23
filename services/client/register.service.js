@@ -10,6 +10,8 @@ export class Register {
         phone: phone,
         address: address,
         password: password,
+        avatar: "",
+        birth: "",
         role: "customer",
         status: "1"
       })

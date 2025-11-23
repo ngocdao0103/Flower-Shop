@@ -55,5 +55,3 @@ footer.innerHTML = `
 </footer>
 `
 
-
-footer.append(footer);

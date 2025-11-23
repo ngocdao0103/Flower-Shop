@@ -17,7 +17,7 @@ if (userCustomerLogin) {
                 <i class="bi bi-person"></i>
             </a>
             <div class="dropdown-menu bg-light rounded-0 m-0">
-                <a href="" class="dropdown-item">
+                <a href="/pages/client/profile.html" class="dropdown-item">
                     <i class="bi bi-file-earmark-person me-2 text-success"></i> ${userFullName}
                 </a>
                 <a href="" class="dropdown-item" id="logoutBtn"><i class="bi bi-box-arrow-in-right text-danger me-2"></i>Đăng xuất</a>
