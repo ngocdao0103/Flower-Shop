@@ -174,8 +174,8 @@ export class ProductService {
                         <img src="${prod.image_url}" class="img">
 
                         <div class="product-actions">
-                            <button class="btn btn-light rounded-circle"><i class="bi bi-eye"></i></button>
-                            <button class="btn btn-light rounded-circle"><i class="bi bi-cart4"></i></button>
+                          <a class="btn btn-light rounded-circle" href="detail_product.html?id=${prod.id}"><i class="bi bi-eye"></i></a>
+                          <button class="btn btn-light rounded-circle"><i class="bi bi-cart4"></i></button>
                         </div>
                     </div>
 
