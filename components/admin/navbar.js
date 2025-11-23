@@ -22,11 +22,8 @@ navbar.innerHTML = `
                 <i class="bi bi-tags-fill me-3"></i><span>Quản lý Danh mục</span>
             </a>
             <hr class="mx-3 my-2">
-            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                <i class="bi bi-bar-chart-fill me-3"></i><span>Báo cáo & Thống kê</span>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                <i class="bi bi-gear-fill me-3"></i><span>Cài đặt hệ thống</span>
+            <a href="/" class="list-group-item list-group-item-action py-2 ripple">
+                <i class="bi bi-arrow-90deg-left me-3"></i><span>Trang người dùng</span>
             </a>
         </div>
     </div>
