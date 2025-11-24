@@ -339,29 +339,113 @@ class DetailProductService {
       qtyInput.value = v;
     });
 
-    addBtn?.addEventListener("click", () => {
+    addBtn?.addEventListener("click", async () => {
       const qty = parseInt(qtyInput.value) || 1;
       const selectedVariant = findVariantBySelection();
-      if (!selectedVariant) {
-        alert("Không có hàng cho lựa chọn này.");
+      const userId = sessionStorage.getItem("customer_login");
+
+      const showPageAlert = (msg, type = "success") => {
+        try {
+          const key = type === "success" ? "cart_success" : type === "warning" ? "cart_warning" : "cart_error";
+          sessionStorage.setItem(key, "1");
+          const el = document.getElementById("alert_success");
+          if (el) {
+            // set icon and color class
+              el.classList.remove("alert-success", "alert-warning", "alert-danger");
+            let iconHtml = '<i class="bi bi-check-circle-fill me-2"></i>';
+            if (type === "success") {
+              el.classList.add("alert-success");
+              iconHtml = '<i class="bi bi-check-circle-fill me-2"></i>';
+            } else if (type === "warning") {
+              el.classList.add("alert-warning");
+              iconHtml = '<i class="bi bi-exclamation-triangle-fill me-2"></i>';
+            } else {
+              el.classList.add("alert-danger");
+              iconHtml = '<i class="bi bi-x-circle-fill me-2"></i>';
+            }
+
+            el.innerHTML = iconHtml + `<div><span>${msg}</span></div>`;
+            el.style.display = "flex";
+            setTimeout(() => {
+              sessionStorage.removeItem(key);
+              el.style.display = "none";
+              el.classList.remove("alert-success", "alert-warning", "alert-danger");
+            }, 4000);
+          } else {
+            alert(msg);
+          }
+        } catch (e) {
+          console.warn("showPageAlert error", e);
+        }
+      };
+
+      if (!userId) {
+        showPageAlert("Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.", "warning");
         return;
       }
 
-      console.log(
-        "Add to cart:",
-        prod.id,
-        "variant",
-        selectedVariant.variant_id,
-        "qty",
-        qty
-      );
-      alert(
-        "Đã thêm " +
-          qty +
-          " sản phẩm (variant " +
-          selectedVariant.variant_id +
-          ") vào giỏ (demo)."
-      );
+      if (!selectedVariant) {
+        if (variantMessage) variantMessage.textContent = "Không có hàng cho lựa chọn này.";
+        return;
+      }
+
+      // Build cart item
+      const newItem = {
+        cart_item_id: Date.now(),
+        product_id: prod.id,
+        variant_id: selectedVariant.variant_id,
+        quantity: qty,
+      };
+
+      try {
+        // Check existing cart for this user
+        const cartsRes = await axios.get(
+          `${apiURL + endpoints.CART}?user_id=${userId}`
+        );
+
+        if (cartsRes.status !== status.OK) throw new Error("Không thể lấy giỏ hàng");
+
+        const existing = (cartsRes.data || [])[0];
+
+        if (!existing) {
+          // Create new cart for user
+          const payload = {
+            user_id: userId,
+            items: [newItem],
+          };
+          const createRes = await axios.post(apiURL + endpoints.CART, payload);
+          if (createRes.status === status.CREATED || createRes.status === status.OK) {
+            showPageAlert("Đã thêm sản phẩm vào giỏ hàng.", "success");
+          } else {
+            throw new Error("Tạo giỏ hàng thất bại");
+          }
+        } else {
+          // Update existing cart: merge quantities if same product+variant
+          const updated = { ...existing };
+          updated.items = updated.items || [];
+          const found = updated.items.find(
+            (it) => it.product_id === newItem.product_id && it.variant_id === newItem.variant_id
+          );
+          if (found) {
+            found.quantity = (parseInt(found.quantity) || 0) + newItem.quantity;
+          } else {
+            updated.items.push(newItem);
+          }
+
+          const putRes = await axios.put(
+            `${apiURL + endpoints.CART}/${existing.id}`,
+            updated
+          );
+          if (putRes.status === status.OK) {
+            showPageAlert("Đã cập nhật giỏ hàng.", "success");
+          } else {
+            throw new Error("Cập nhật giỏ hàng thất bại");
+          }
+        }
+      } catch (err) {
+        console.error("Add to cart error:", err);
+        showPageAlert("Có lỗi khi thêm vào giỏ hàng. Vui lòng thử lại sau.", "error");
+      }
     });
   }
 }
