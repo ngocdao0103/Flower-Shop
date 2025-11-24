@@ -1,5 +1,8 @@
 import { apiURL } from "../../environments/environment.js";
-import { endpoints, status as STATUS } from "../../config/api-endpoint.config.js";
+import {
+  endpoints,
+  status as STATUS,
+} from "../../config/api-endpoint.config.js";
 export class User {
   username;
   email;
@@ -18,12 +21,18 @@ export class User {
                                     <td>${index + 1}</td>
                                     <td>${item.name}</td>
                                     <td>${item.email}</td>
-                                    <td>${item.role == "admin" ? "Quản trị viên" : "Khách hàng"}</td>
+                                    <td>${
+                                      item.role == "admin"
+                                        ? "Quản trị viên"
+                                        : "Khách hàng"
+                                    }</td>
                                     <td><span class="badge ${
                                       item.status == 0
                                         ? "bg-danger"
                                         : "bg-success"
-                                    }">${item.status == 0 ? "Khóa" : "Hoạt động"}</span>
+                                    }">${
+        item.status == 0 ? "Khóa" : "Hoạt động"
+      }</span>
                                       </td>
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary me-1 btn-edit" data-id="${
@@ -32,7 +41,9 @@ export class User {
                                             data-bs-target="#editModal">
                                             <i class="bi bi-pencil"></i>
                                         </button>
-                                        <button class="btn btn-sm btn-outline-danger btn-delete" data-id="${item.id}">
+                                        <button class="btn btn-sm btn-outline-danger btn-delete" data-id="${
+                                          item.id
+                                        }">
                                             <i class="bi bi-trash"></i>
                                         </button>
                                     </td>
@@ -78,6 +89,8 @@ export class User {
       .post(apiURL + endpoints.USER, obj)
       .then((res) => {
         if (res.status == STATUS.CREATED) {
+          sessionStorage.setItem("successMessage", "Tạo người dùng thành công");
+          sessionStorage.setItem("classMessage", "success");
           this.users.push(res.data);
           this.render();
         }
@@ -91,6 +104,8 @@ export class User {
 
       .then((res) => {
         if (res.status == STATUS.OK) {
+          sessionStorage.setItem("successMessage", "Xóa người dùng thành công");
+          sessionStorage.setItem("classMessage", "success");
           this.users = this.users.filter(
             (item) => String(item.id) != String(id)
           );
@@ -118,6 +133,8 @@ export class User {
       .put(apiURL + endpoints.USER + `/${id}`, obj)
       .then((res) => {
         if (res.status == STATUS.OK) {
+          sessionStorage.setItem("successMessage", "Cập nhật người dùng thành công");
+          sessionStorage.setItem("classMessage", "success");
           this.users = this.users.map((item) =>
             String(item.id) == String(id) ? res.data : item
           );
