@@ -27,12 +27,7 @@ export class Home {
              />
 
             <div class="product-actions d-flex justify-content-center align-items-center">
-              <button class="btn btn-light btn-sm me-2" title="Quick View">
-                <i class="bi bi-eye"></i>
-              </button>
-              <button class="btn btn-light btn-sm me-2" title="Add to Cart">
-                <i class="bi bi-cart4"></i>
-              </button>
+               <a class="btn btn-light btn-sm me-2" href="./pages/client/detail_product.html?id=${item.id}"><i class="bi bi-eye"></i></a>
             </div>
           </div>
 
@@ -82,7 +77,7 @@ export class Home {
 
       html += `
          <div class="col-12 col-lg-3 col-md-6">
-    <a href="../client/detail_blog.html?blog=${item.slug}">
+    <a href="./pages/client/detail_blog.html?blog=${item.slug}">
       <div class="card border-0 shadow-sm h-100">
         <img
           src="${item.thumbnail_url}"

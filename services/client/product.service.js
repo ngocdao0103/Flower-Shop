@@ -175,7 +175,6 @@ export class ProductService {
 
                         <div class="product-actions">
                           <a class="btn btn-light rounded-circle" href="detail_product.html?id=${prod.id}"><i class="bi bi-eye"></i></a>
-                          <button class="btn btn-light rounded-circle"><i class="bi bi-cart4"></i></button>
                         </div>
                     </div>
 
