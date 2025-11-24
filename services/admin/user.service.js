@@ -42,6 +42,14 @@ export class User {
     if (document.getElementById("List")) {
       document.getElementById("List").innerHTML = html;
     }
+    $(document).ready(function () {
+      $("#user_table").DataTable({
+        destroy: true,
+        language: {
+          url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/vi.json",
+        },
+      });
+    });
   }
 
   List() {

@@ -78,6 +78,10 @@ function submit() {
   emailError.innerText = "";
   phoneError.innerText = "";
   addressError.innerText = "";
+
+  alert("Thêm người dùng thành công!");
+  location.reload();
+
 }
 
 let deleteId = null;
@@ -100,6 +104,7 @@ document.querySelector("#btn_delete").addEventListener("click", () => {
     return;
   }
   user.delete(deleteId);
+  alert("Xóa người dùng thành công!")
   bootstrap.Modal.getInstance(document.getElementById("deleteModal")).hide();
 });
 
@@ -107,6 +112,8 @@ const deleteModalEl = document.getElementById("deleteModal");
 deleteModalEl.addEventListener("hidden.bs.modal", () => {
   deleteId = null;
 });
+
+
 
 
 let editId = null;
@@ -173,5 +180,7 @@ document.getElementById("btn_edit_user").addEventListener("click", (e) => {
   user.edit(name,password, email, phone, address, role, status, editId, reason);
 
   editId = null;
+  alert("Cập nhật người dùng thành công!");
+  location.reload();
   editModal.hide();
 });

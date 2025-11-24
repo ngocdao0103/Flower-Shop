@@ -21,6 +21,20 @@ export const dashboardService = {
         return result;
     },
 
+    async getTotalRevenueByMonth() {
+        const orders = await this.getOrders();
+        const result = Array(12).fill(0);
+
+        orders.forEach(order => {
+            if (order.status === "Delivered"&&order.grand_total) {
+                const month = new Date(order.order_date).getMonth();
+                result[month] += order.grand_total;
+            }
+        });
+
+        return result;
+    },
+
     async getUsers() {
         return fetch(apiURL + endpoints.USER)
             .then(res => res.json());
@@ -56,3 +70,26 @@ export const dashboardService = {
         return data.length;
     }
 };
+
+
+
+export function initializeChartTabSwitching() {
+    const tabs = document.querySelectorAll('.nav-pills .nav-link');
+    const chartContainers = document.querySelectorAll('.chart-container');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function(event) {
+            event.preventDefault();
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            const targetChart = this.getAttribute('data-chart');
+            chartContainers.forEach(container => {
+                if (container.getAttribute('data-chart') === targetChart) {
+                    container.classList.remove('d-none');
+                } else {
+                    container.classList.add('d-none');
+                }
+            });
+        });
+    });
+}
