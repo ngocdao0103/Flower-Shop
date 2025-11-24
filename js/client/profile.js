@@ -110,7 +110,7 @@ if (userCustomerLogin) {
   <div class="avatar mb-2">
             <img
           src="${
-            user.avatar ? user.avatar : "https://res.cloudinary.com/dfmoftnpw/image/upload/v1761575599/default_avatar_v9lenr.png"
+            user.avatar ? user.avatar : "./Assets/images/default_avatar.png"
           }"
           id="avatar"
           alt="Avatar"

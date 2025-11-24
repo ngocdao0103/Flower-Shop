@@ -19,7 +19,6 @@ export class ProfileService {
             await axios.put(`${apiURL + endpoints.USER}/${profileData.id}`, profileData);
             sessionStorage.setItem('message', 'Cập nhật thông tin thành công!');
             sessionStorage.setItem('loggedInUser', JSON.stringify(profileData));
-            sessionStorage.setItem('fullname_login', profileData.name);
         } catch (error) {
             console.error("Error updating profile:", error);
             return null;
