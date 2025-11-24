@@ -77,7 +77,7 @@ export class OrderService {
                                         </ul>
                                     </div>
                                     <div class="col-md-4 text-md-end mt-3 mt-md-0">
-                                        <p class="mb-1 fw-bold fs-5 text-danger">1.290.000 ₫</p>
+                                        <p class="mb-1 fw-bold fs-5 text-danger">${order.grand_total.toLocaleString()} ₫</p>
                                         <small class="text-muted">Thanh toán khi nhận hàng</small>
                                     </div>
                                 </div>
@@ -136,7 +136,7 @@ export class OrderService {
                                         </ul>
                                     </div>
                                     <div class="col-md-4 text-md-end mt-3 mt-md-0">
-                                        <p class="mb-1 fw-bold fs-5 text-danger">1.290.000 ₫</p>
+                                        <p class="mb-1 fw-bold fs-5 text-danger">${order.grand_total.toLocaleString()} ₫</p>
                                     </div>
                                 </div>
                                 <hr>
