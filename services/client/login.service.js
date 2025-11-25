@@ -20,6 +20,8 @@ export class Login {
               sessionStorage.setItem("admin_login", foundUser.id);
               sessionStorage.setItem("customer_login", foundUser.id);
               sessionStorage.setItem("fullname_login", foundUser.name);
+              sessionStorage.setItem("classMessage", "success");
+              sessionStorage.setItem("successMessage", "Đăng nhập thành công");
               alert("Đăng nhập thành công!");
               window.location.href =
                 "../../pages/admin/dashboard/dashboard.html";
@@ -29,7 +31,8 @@ export class Login {
             if (foundUser.role == "customer") {
               sessionStorage.setItem("customer_login", foundUser.id);
               sessionStorage.setItem("fullname_login", foundUser.name);
-              sessionStorage.setItem("login_success", "Đăng nhập thành công");
+              sessionStorage.setItem("classMessage", "success");
+              sessionStorage.setItem("successMessage", "Đăng nhập thành công");
               window.location.href = "../../index.html";
               return;
             }

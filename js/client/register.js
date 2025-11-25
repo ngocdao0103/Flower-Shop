@@ -59,7 +59,8 @@ async function init() {
 
       if (!phone.value) {
         phone_Error.innerHTML = ERRORTEXT;
-      } else if (isValidPhone(phone.value)) {
+      }
+      else if(!isValidPhone(phone.value)) {
         phone_Error.innerHTML = ERRORNUMBER;
       } else {
         phone_Error.innerHTML = "";

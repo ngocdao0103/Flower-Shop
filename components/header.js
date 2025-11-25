@@ -122,7 +122,8 @@ setTimeout(() => {
     logoutBtn.addEventListener("click", (e) => {
       e.preventDefault();
       sessionStorage.clear();
-      alert("Bạn đã đăng xuất thành công!");
+      sessionStorage.setItem("classMessage", "danger");
+      sessionStorage.setItem("successMessage", "Đăng xuất thành công");
       window.location.href = "/index.html";
     });
   }
