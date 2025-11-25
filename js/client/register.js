@@ -19,12 +19,14 @@ async function init() {
     let phone = document.querySelector("#phone");
     let address = document.querySelector("#address");
     let password = document.querySelector("#password");
+    let confirmpassword = document.querySelector("#confirmpassword");
 
     let name_Error = document.querySelector("#name_error");
     let email_Error = document.querySelector("#email_error");
     let phone_Error = document.querySelector("#phone_error");
     let address_Error = document.querySelector("#address_error");
     let password_Error = document.querySelector("#password_error");
+    let confirmpassword_Error = document.querySelector("#confirmpassword_error");
 
     const ERRORTEXT = "Không được để trống";
     const ERRORNUMBER = "Số điện thoại không hợp lệ";
@@ -36,7 +38,8 @@ async function init() {
       !phone.value ||
       !address.value ||
       !password.value ||
-      password.value.length < 6
+      password.value.length < 6 ||
+      confirmpassword.value !== password.value
     ) {
       isError = true;
     }
@@ -74,6 +77,12 @@ async function init() {
         if (password.value.length < 6)
           password_Error.innerHTML = "Mật khẩu phải từ 6-12 kí tự";
         else password_Error.innerHTML = "";
+      }if (!confirmpassword.value) {
+        confirmpassword_Error.innerHTML = ERRORTEXT;
+      } else {
+        if (confirmpassword.value !== password.value)
+          confirmpassword_Error.innerHTML = "Mật khẩu không khớp";
+        else confirmpassword_Error.innerHTML = "";
       }
     } else {
       let emailDuplicate = userList.find((item) => item.email == email.value);

@@ -4,7 +4,7 @@ const header = document.getElementById("header");
 const userCustomerLogin = sessionStorage.getItem("customer_login");
 const userAdminLogin = sessionStorage.getItem("admin_login");
 const userFullName = sessionStorage.getItem("fullname_login") ?? "";
-const cartCount = sessionStorage.getItem("cart_count") ?? 3;
+const cartCount = sessionStorage.getItem("cart_count") ?? 0;
 
 // =====================================================
 // 1) HÀM TẠO ACCOUNT DROPDOWN

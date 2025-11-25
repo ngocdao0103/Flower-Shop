@@ -16,22 +16,6 @@
 
 <body>
     <div id="header"></div>
-    <!-- Banner -->
-    <div class="breadcrumbs-area position-relative">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="breadcrumb-content position-relative section-content">
-                        <h3 class="title-3">Đăng nhập - Đăng ký</h3>
-                        <ul>
-                            <li><a href="../../index.html">Trang chủ</a></li>
-                            <li>Đăng nhập - Đăng ký</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Login -->
     <div class="container">
         <div class="row d-flex justify-content-center">
@@ -59,19 +43,26 @@
                                 placeholder="Vui lòng nhập vào số điện thoại">
                             <small id="phone_error" class="text-danger"></small>
                         </div>
-                        <div class="mb-4">
-                            <label for="" class="form-label">Địa chỉ</label>
-                            <input type="text" class="form-control" id="address"
-                                placeholder="Vui lòng nhập vào địa chỉ">
-                            <small id="address_error" class="text-danger"></small>
-                        </div>
+
                         <div class="mb-4">
                             <label for="" class="form-label">Mật khẩu</label>
                             <input type="password" id="password" class="form-control"
                                 placeholder="Vui lòng nhập mật khẩu" />
                             <small id="password_error" class="text-danger"></small>
                         </div>
+                        <div class="mb-4">
+                            <label for="confirmpassword" class="form-label">Xác Nhận Mật khẩu</label>
+                            <input type="password" id="confirmpassword" class="form-control"
+                                placeholder="Vui lòng xác nhận mật khẩu" />
+                            <small id="confirmpassword_error" class="text-danger"></small>
+                        </div>
+                        <div class="mb-4">
+                            <label for="" class="form-label">Địa chỉ</label>
+                            <textarea class="form-control" id="address"
+                                placeholder="Vui lòng nhập vào địa chỉ"></textarea>
+                            <small id="address_error" class="text-danger"></small>
 
+                        </div>
                         <br />
                         <div class="mb-4">
                             <button type="button" id="register-btn" class="btn btn-dark w-100 p-2">
