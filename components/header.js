@@ -103,7 +103,7 @@ header.innerHTML = `
       ${generateAccountSection()}
       <a href="/pages/client/cart.html" class="position-relative">
         <i class="bi bi-cart3 fs-5"></i>
-        <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
+        <span id="cartCountBadge" class="badge bg-danger position-absolute top-0 start-100 translate-middle">
           ${cartCount}
         </span>
       </a>
