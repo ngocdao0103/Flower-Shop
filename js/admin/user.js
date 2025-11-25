@@ -74,16 +74,13 @@ function submit() {
   if (name === "") {
     nameError.innerText = "Vui lòng điền tên người dùng";
     isError = true;
-  } else if (
-    Array.isArray(user.users) &&
-    user.users.some((item) => item.name.toLowerCase() === name.toLowerCase())
-  ) {
-    nameError.innerText = "Tên người dùng đã tồn tại";
-    isError = true;
   }
 
   if (password === "") {
     passwordError.innerText = "Vui lòng nhập mật khẩu";
+    isError = true;
+  }else if (password.length < 6) {
+    passwordError.innerText = "Mật khẩu phải có ít nhất 6 ký tự";
     isError = true;
   }
 

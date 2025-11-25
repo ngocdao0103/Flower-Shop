@@ -82,6 +82,8 @@ export class User {
       email: email,
       phone: phone,
       address: address,
+      avatar: "",
+      birth: "",
       role: role,
       status: status,
     };
