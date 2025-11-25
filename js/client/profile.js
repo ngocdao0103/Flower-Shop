@@ -216,13 +216,14 @@ if (userCustomerLogin) {
         <input type="text" class="form-control" id="fullname" value="${
           user.name
         }">
+        <small id="nameError" class="text-danger"></small>
       </div>
 
       <!-- Số điện thoại -->
       <div class="mb-3">
         <label for="phone" class="form-label">Số điện thoại</label>
-        <input type="text" class="form-control" id="phone" value="${
-          user.phone ? user.phone : "Chưa cập nhật"
+        <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại" value="${
+          user.phone ? user.phone : ""
         }">
       </div>
       <!-- Ngày sinh -->
@@ -230,22 +231,25 @@ if (userCustomerLogin) {
         <label class="form-label">Ngày sinh</label>
         <div class="d-flex">
           <input type="date" class="form-control" id="birth" value="${
-            user.birth ? user.birth : "Chưa cập nhật"
+            user.birth ? user.birth : ""
           }" />
+        </div>
+        <small id="birthError" class="text-danger"></small>
       </div>
 
       <!-- Email -->
       <div class="mb-4">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Nhập địa chỉ email" value="${
-          user.email ? user.email : "Chưa cập nhật"
+        <input type="email" class="form-control" id="email" placeholder="Nhập địa chỉ email" placeholder="Nhập địa chỉ email" value="${
+          user.email ? user.email : ""
         }">
+        <small id="emailError" class="text-danger"></small>
       </div>
       <div class="mb-3">
-        <label class="form-label">Ngày sinh</label>
+        <label class="form-label">Địa chỉ</label>
         <div class="d-flex">
-          <input type="text" class="form-control" id="address" value="${
-            user.address ? user.address : "Chưa cập nhật"
+          <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ" value="${
+            user.address ? user.address : ""
           }" />
       </div>
       <!-- Button -->
@@ -423,6 +427,30 @@ if (userCustomerLogin) {
     let birth = document.getElementById("birth").value;
     let email = document.getElementById("email").value;
     let address = document.getElementById("address").value;
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let birthError = document.getElementById("birthError");
+
+    if (fullname.trim() === "") {
+      nameError.textContent = "Họ và tên không được để trống.";
+    }else {
+      nameError.textContent = "";
+    }
+    if (email.trim() === "") {
+      emailError.textContent = "Email không được để trống.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailError.textContent = "Định dạng email không hợp lệ.";
+    } else {
+      emailError.textContent = "";
+    }
+    if(birth > new Date().toISOString().split("T")[0]){
+      birthError.textContent = "Ngày sinh không được lớn hơn ngày hiện tại.";
+    } else {
+      birthError.textContent = "";
+    }
+    if (nameError.textContent || emailError.textContent || birthError.textContent) {
+      return;
+    }
     const updatedUser = {
       ...user,
       name: fullname,
