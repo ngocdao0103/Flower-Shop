@@ -10,6 +10,31 @@ class CartService {
     const container = document.getElementById("cartContainer");
     if (!container) return;
 
+    try {
+      const successMsg = sessionStorage.getItem('cart_success_msg');
+      const errorMsg = sessionStorage.getItem('cart_error_msg');
+      const el = document.getElementById('alert_success');
+      if (el) {
+        if (successMsg) {
+          el.classList.remove('alert-warning', 'alert-danger');
+          el.classList.add('alert-success');
+          el.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i><div>' + successMsg + '</div>';
+          el.style.display = 'flex';
+          sessionStorage.removeItem('cart_success_msg');
+          setTimeout(() => { el.style.display = 'none'; el.innerHTML = '<div></div>'; }, 4000);
+        } else if (errorMsg) {
+          el.classList.remove('alert-success', 'alert-warning');
+          el.classList.add('alert-danger');
+          el.innerHTML = '<i class="bi bi-x-circle-fill me-2"></i><div>' + errorMsg + '</div>';
+          el.style.display = 'flex';
+          sessionStorage.removeItem('cart_error_msg');
+          setTimeout(() => { el.style.display = 'none'; el.innerHTML = '<div></div>'; }, 4000);
+        }
+      }
+    } catch (e) {
+      console.warn('show pending cart message error', e);
+    }
+
     const userId = sessionStorage.getItem("customer_login");
     if (!userId) {
       container.innerHTML = `
@@ -47,6 +72,31 @@ class CartService {
 
       container.innerHTML = this.template(cart, productsMap);
       this.bindEvents(cart, productsMap);
+
+      try {
+        const successMsg = sessionStorage.getItem('cart_success_msg');
+        const errorMsg = sessionStorage.getItem('cart_error_msg');
+        const el = document.getElementById('alert_success');
+        if (el) {
+          if (successMsg) {
+            el.classList.remove('alert-warning', 'alert-danger');
+            el.classList.add('alert-success');
+            el.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i><div>' + successMsg + '</div>';
+            el.style.display = 'flex';
+            sessionStorage.removeItem('cart_success_msg');
+            setTimeout(() => { el.style.display = 'none'; el.innerHTML = '<div></div>'; }, 4000);
+          } else if (errorMsg) {
+            el.classList.remove('alert-success', 'alert-warning');
+            el.classList.add('alert-danger');
+            el.innerHTML = '<i class="bi bi-x-circle-fill me-2"></i><div>' + errorMsg + '</div>';
+            el.style.display = 'flex';
+            sessionStorage.removeItem('cart_error_msg');
+            setTimeout(() => { el.style.display = 'none'; el.innerHTML = '<div></div>'; }, 4000);
+          }
+        }
+      } catch (e) {
+        console.warn('show pending cart message error', e);
+      }
     } catch (err) {
       console.error('Load cart error', err);
       container.innerHTML = `<div class="text-center py-5"><p class="text-muted">Lỗi khi tải giỏ hàng.</p></div>`;
@@ -67,10 +117,21 @@ class CartService {
       const line = price * qty;
       subtotal += line;
 
+      let variantLabel = '';
+      if (variant) {
+        if (variant.name) variantLabel = variant.name;
+        else if (Array.isArray(variant.attributes) && variant.attributes.length) {
+          variantLabel = variant.attributes.map(a => a.value).join(' / ');
+        }
+      }
+
       rows += `
         <tr data-item-id="${it.cart_item_id}">
           <td class="pro-thumbnail"><a href="#"><img src="${img}" alt="" style="max-width:120px; height:auto;"></a></td>
-          <td class="pro-title"><a class="text-decoration-none" href="#">${p.name || 'Sản phẩm'}</a></td>
+          <td class="pro-title">
+            <a class="text-decoration-none" href="#">${p.name || 'Sản phẩm'}</a>
+            ${variantLabel ? `<div class="small text-muted">${variantLabel}</div>` : ''}
+          </td>
           <td class="pro-price text-success">${fmt.format(price)}</td>
           <td class="pro-quantity">
             <div class="d-flex align-items-center">

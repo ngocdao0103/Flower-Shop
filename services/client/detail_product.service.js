@@ -12,6 +12,32 @@ class DetailProductService {
     const container = document.getElementById("detailProductContainer");
     if (!container) return;
 
+    // If user was redirected back here after adding to cart, show deferred messages
+    try {
+      const successMsg = sessionStorage.getItem('cart_success_msg');
+      const errorMsg = sessionStorage.getItem('cart_error_msg');
+      const el = document.getElementById('alert_success');
+      if (el) {
+        if (successMsg) {
+          el.classList.remove('alert-warning', 'alert-danger');
+          el.classList.add('alert-success');
+          el.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i><div>' + successMsg + '</div>';
+          el.style.display = 'flex';
+          sessionStorage.removeItem('cart_success_msg');
+          setTimeout(() => { el.style.display = 'none'; el.innerHTML = '<div></div>'; }, 4000);
+        } else if (errorMsg) {
+          el.classList.remove('alert-success', 'alert-warning');
+          el.classList.add('alert-danger');
+          el.innerHTML = '<i class="bi bi-x-circle-fill me-2"></i><div>' + errorMsg + '</div>';
+          el.style.display = 'flex';
+          sessionStorage.removeItem('cart_error_msg');
+          setTimeout(() => { el.style.display = 'none'; el.innerHTML = '<div></div>'; }, 4000);
+        }
+      }
+    } catch (e) {
+      console.warn('show pending cart message error', e);
+    }
+
     if (!id) {
       container.innerHTML = `<div class="text-center py-5"><p class="text-muted">Không tìm thấy sản phẩm (id thiếu).</p></div>`;
       return;
@@ -182,6 +208,7 @@ class DetailProductService {
           <div id="variantSelectors">
             ${selectHtml}
             <div id="variantMessage" class="small text-danger mt-1"></div>
+            <div id="adminMessage" class="small text-danger mt-1"></div>
           </div>
 
           <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3 mb-4">
@@ -247,6 +274,15 @@ class DetailProductService {
     const select0 = document.getElementById("selectAttr0");
     const select1 = document.getElementById("selectAttr1");
     const variantMessage = document.getElementById("variantMessage");
+    const adminMessage = document.getElementById("adminMessage");
+    const isAdmin = !!sessionStorage.getItem("admin_login");
+    // initial admin state: disable add button and show message if admin
+    if (isAdmin) {
+      if (addBtn) addBtn.disabled = true;
+      if (adminMessage) adminMessage.textContent = "Admin không thể thực hiện chức năng mua hàng";
+    } else {
+      if (adminMessage) adminMessage.textContent = "";
+    }
     const mainImage = document.getElementById("mainProductImage");
     const priceDisplay = document.getElementById("priceDisplay");
 
@@ -317,6 +353,13 @@ class DetailProductService {
 
       variantMessage.textContent = "";
       addBtn.disabled = false;
+      // if admin, keep add disabled and show admin message
+      if (isAdmin) {
+        addBtn.disabled = true;
+        if (adminMessage) adminMessage.textContent = "Admin không thể thực hiện chức năng mua hàng";
+      } else {
+        if (adminMessage) adminMessage.textContent = "";
+      }
       if (variant.image_url) mainImage.src = variant.image_url;
       const finalPrice = prod.base_price + (variant.price_modifier || 0);
       priceDisplay.textContent = new Intl.NumberFormat("vi-VN", {
@@ -344,13 +387,18 @@ class DetailProductService {
       const selectedVariant = findVariantBySelection();
       const userId = sessionStorage.getItem("customer_login");
 
+      // Prevent admin users from performing add-to-cart even if button enabled programmatically
+      if (isAdmin) {
+        if (adminMessage) adminMessage.textContent = "Admin không thể thực hiện chức năng mua hàng";
+        return;
+      }
+
       const showPageAlert = (msg, type = "success") => {
         try {
           const key = type === "success" ? "cart_success" : type === "warning" ? "cart_warning" : "cart_error";
           sessionStorage.setItem(key, "1");
           const el = document.getElementById("alert_success");
           if (el) {
-            // set icon and color class
               el.classList.remove("alert-success", "alert-warning", "alert-danger");
             let iconHtml = '<i class="bi bi-check-circle-fill me-2"></i>';
             if (type === "success") {
@@ -389,7 +437,6 @@ class DetailProductService {
         return;
       }
 
-      // Build cart item
       const newItem = {
         cart_item_id: Date.now(),
         product_id: prod.id,
@@ -398,7 +445,6 @@ class DetailProductService {
       };
 
       try {
-        // Check existing cart for this user
         const cartsRes = await axios.get(
           `${apiURL + endpoints.CART}?user_id=${userId}`
         );
@@ -408,19 +454,18 @@ class DetailProductService {
         const existing = (cartsRes.data || [])[0];
 
         if (!existing) {
-          // Create new cart for user
           const payload = {
             user_id: userId,
             items: [newItem],
           };
           const createRes = await axios.post(apiURL + endpoints.CART, payload);
           if (createRes.status === status.CREATED || createRes.status === status.OK) {
-            showPageAlert("Đã thêm sản phẩm vào giỏ hàng.", "success");
+            // defer showing success until next page load
+            sessionStorage.setItem('cart_success_msg', 'Đã thêm sản phẩm vào giỏ hàng.');
           } else {
             throw new Error("Tạo giỏ hàng thất bại");
           }
         } else {
-          // Update existing cart: merge quantities if same product+variant
           const updated = { ...existing };
           updated.items = updated.items || [];
           const found = updated.items.find(
@@ -437,14 +482,15 @@ class DetailProductService {
             updated
           );
           if (putRes.status === status.OK) {
-            showPageAlert("Đã cập nhật giỏ hàng.", "success");
+            // defer showing success until next page load
+            sessionStorage.setItem('cart_success_msg', 'Đã cập nhật giỏ hàng.');
           } else {
             throw new Error("Cập nhật giỏ hàng thất bại");
           }
         }
       } catch (err) {
         console.error("Add to cart error:", err);
-        showPageAlert("Có lỗi khi thêm vào giỏ hàng. Vui lòng thử lại sau.", "error");
+        sessionStorage.setItem('cart_error_msg', 'Có lỗi khi thêm vào giỏ hàng. Vui lòng thử lại sau.');
       }
     });
   }
