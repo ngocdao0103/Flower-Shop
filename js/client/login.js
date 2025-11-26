@@ -9,6 +9,15 @@ if (sessionStorage.getItem("register_success")) {
   }, 4000);
 }
 
+// Check Alert
+if (sessionStorage.getItem("account_block")) {
+  document.querySelector("#alert_danger").style.display = "flex";
+  setInterval(() => {
+    sessionStorage.removeItem("account_block");
+    document.querySelector("#alert_danger").style.display = "none";
+  }, 4000);
+}
+
 const loginControl = new Login();
 
 const loginAction = (event) => {

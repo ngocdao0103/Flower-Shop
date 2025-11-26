@@ -1,6 +1,5 @@
 import { apiURL } from "../../environments/environment.js";
 import { endpoints, status } from "../../config/api-endpoint.config.js";
-
 export class Login {
   user = [];
 
@@ -16,18 +15,24 @@ export class Login {
           );
 
           if (foundUser) {
+            if (foundUser.status == "0") {
+              sessionStorage.setItem("account_block", "Tài khoản đã bị khóa");
+              window.location.reload();
+              return;
+            }
+
             if (foundUser.role == "admin") {
               sessionStorage.setItem("admin_login", foundUser.id);
               sessionStorage.setItem("customer_login", foundUser.id);
               sessionStorage.setItem("fullname_login", foundUser.name);
               sessionStorage.setItem("classMessage", "success");
-              sessionStorage.setItem("successMessage", "Đăng nhập hệ thống quản trị thành công");
+              sessionStorage.setItem("successMessage", "Đăng nhập thành công");
               window.location.href =
                 "../../pages/admin/dashboard/dashboard.html";
               return;
             }
 
-            if (foundUser.role == "customer" ) {
+            if (foundUser.role == "customer") {
               sessionStorage.setItem("customer_login", foundUser.id);
               sessionStorage.setItem("fullname_login", foundUser.name);
               sessionStorage.setItem("classMessage", "success");
