@@ -22,7 +22,7 @@ class DetailProductService {
           el.classList.remove("alert-warning", "alert-danger");
           el.classList.add("alert-success");
           el.innerHTML =
-            '<i class="bi bi-check-circle-fill me-2"></i><div>' +
+            '<i class="bi bi-check-circle me-2"></i><div>' +
             successMsg +
             "</div>";
           el.style.display = "flex";
@@ -466,10 +466,12 @@ class DetailProductService {
       };
 
       if (!userId) {
-        showPageAlert(
-          "Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.",
-          "warning"
-        );
+        // showPageAlert(
+        //   "Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.",
+        //   "warning"
+        // );
+        sessionStorage.setItem("buy_must_login", "Vui lòng đăng nhập");
+        window.location.href = "http://127.0.0.1:5501/pages/client/login.html";
         return;
       }
 
@@ -502,7 +504,9 @@ class DetailProductService {
             createRes.status === status.CREATED ||
             createRes.status === status.OK
           ) {
-            showPageAlert("Đã thêm sản phẩm vào giỏ hàng.", "success");
+            // showPageAlert("Đã thêm sản phẩm vào giỏ hàng.", "success");
+            sessionStorage.setItem("add_to_cart", "Thêm thành công");
+            window.location.reload();
           } else {
             throw new Error("Tạo giỏ hàng thất bại");
           }
@@ -525,7 +529,7 @@ class DetailProductService {
           );
           if (putRes.status === status.OK) {
             // defer showing success until next page load
-            sessionStorage.setItem("cart_success_msg", "Đã cập nhật giỏ hàng.");
+            sessionStorage.setItem("cart_success_msg", "Thêm thành công");
           } else {
             throw new Error("Cập nhật giỏ hàng thất bại");
           }

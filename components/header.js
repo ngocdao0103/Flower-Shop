@@ -118,8 +118,10 @@ setTimeout(() => {
     logoutBtn.addEventListener("click", (e) => {
       e.preventDefault();
       sessionStorage.clear();
-      sessionStorage.setItem("classMessage", "danger");
-      sessionStorage.setItem("successMessage", "Đăng xuất thành công");
+      sessionStorage.setItem(
+        "successClientLogoutMessage",
+        "Đăng xuất thành công"
+      );
       window.location.href = "/index.html";
     });
   }

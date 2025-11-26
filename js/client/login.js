@@ -1,22 +1,23 @@
 import { Login } from "../../services/client/login.service.js";
 
-// Check Alert
-if (sessionStorage.getItem("register_success")) {
-  document.querySelector("#alert_success").style.display = "flex";
-  setInterval(() => {
-    sessionStorage.removeItem("register_success");
-    document.querySelector("#alert_success").style.display = "none";
-  }, 4000);
+function checkAlert(alertTypeId, sessionName) {
+  if (sessionStorage.getItem(sessionName)) {
+    let alert = document.querySelector("#" + alertTypeId);
+    alert.style.display = "flex";
+
+    alert.lastElementChild.innerText = sessionStorage.getItem(sessionName);
+
+    sessionStorage.removeItem(sessionName);
+
+    setInterval(() => {
+      document.querySelector("#" + alertTypeId).style.display = "none";
+    }, 4000);
+  }
 }
 
-// Check Alert
-if (sessionStorage.getItem("account_block")) {
-  document.querySelector("#alert_danger").style.display = "flex";
-  setInterval(() => {
-    sessionStorage.removeItem("account_block");
-    document.querySelector("#alert_danger").style.display = "none";
-  }, 4000);
-}
+checkAlert("alert_success", "register_success");
+checkAlert("alert_danger", "buy_must_login");
+checkAlert("alert_danger", "account_block");
 
 const loginControl = new Login();
 
