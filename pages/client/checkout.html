@@ -40,7 +40,7 @@
                     <h3>Chi tiết thanh toán</h3>
                     <hr>
                     <form action="http://localhost:8888/create_payment" method="post">
-                        <input type="number" name="amount" class="form-control" placeholder="Tổng tiền">
+                        <input id="amount" type="hidden" name="amount" class="form-control" placeholder="">
                         <input type="hidden" id="user_id" name="user_id" class="form-control" value="">
                         <!-- <input type="hidden" id="array" name="array" class="form-control" value=""> -->
 
@@ -49,7 +49,7 @@
                             <label class="form-label">Họ và tên</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="bi bi-person"></i></span>
-                                <input id="fullname" name="receiver_name" type="text" class="form-control"
+                                <input required id="fullname" name="receiver_name" type="text" class="form-control"
                                     placeholder="Nhập họ và tên">
                             </div>
                             <small id="fullname_error" class="text-danger"></small>
@@ -60,7 +60,7 @@
                             <label class="form-label">Số điện thoại</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="bi bi-telephone"></i></span>
-                                <input id="phone" name="receiver_phone" type="text" class="form-control"
+                                <input required id="phone" name="receiver_phone" type="text" class="form-control"
                                     placeholder="Nhập số điện thoại">
                             </div>
                             <small id="phone_error" class="text-danger"></small>
@@ -70,7 +70,7 @@
                             <label class="form-label">Địa chỉ chi tiết</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
-                                <input name="receiver_address" id="address" type="text" class="form-control"
+                                <input required name="receiver_address" id="address" type="text" class="form-control"
                                     placeholder="Nhập địa chỉ cụ thể">
                             </div>
                             <small id="address_error" class="text-danger"></small>
@@ -107,7 +107,7 @@
                                     <th scope="col">Tổng tiền</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="cart_render">
                                 <tr>
                                     <td>Hoa hồng đỏ</td>
                                     <td>x2</td>
@@ -161,7 +161,7 @@
     </div>
 
 
-    <div id=" footer">
+    <div id="footer">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

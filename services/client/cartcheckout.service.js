@@ -8,76 +8,84 @@ export class CartCheckoutService {
     await axios.get(apiURL + endpoints.CART).then((res) => {
       if (res.status == status.OK) {
         this.carts = res.data;
-        console.log(this.carts);
-        // this.render();
       }
     });
+  }
+
+  getCarts() {
+    return this.carts;
   }
 
   render(userId, productList) {
     let cartCurrent = this.carts.find((item) => item.user_id == userId);
 
-    cartCurrent.items.forEach((itemCart) => {
-      //   let proCurrent = productList.find((pro) => pro.id == itemCart.product_id);
-      //   let proVariantCurrent = proCurrent.variants.find(
-      //     (variant) => variant.variant_id == itemCart.variant_id
-      //   );
+    let html = "";
+    let total = 0;
 
-      console.log(itemCart);
-      return;
+    cartCurrent.items.forEach((itemCart) => {
+      let proCurrent = productList.find((pro) => pro.id == itemCart.product_id);
+
+      let proVariantCurrent = proCurrent.variants.find(
+        (variant) => variant.variant_id == itemCart.variant_id
+      );
+
+      total +=
+        (Number(proCurrent.base_price) +
+          Number(proVariantCurrent.price_modifier)) *
+        itemCart.quantity;
+
       let cartHTMLItem = `
             <tr>
-                <td>Hoa hồng đỏ</td>
-                <td>x2</td>
-                <td>100.000.000.000đ</td>
+                <td>${proCurrent.name}</td>
+                <td>${itemCart.quantity}</td>
+                <td>${this.formatPrice(total) ?? 0}</td>
             </tr>
             `;
+
+      html += cartHTMLItem;
     });
 
-    let html = `
-    <tr>
-        <td>Hoa hồng đỏ</td>
-        <td>x2</td>
-        <td>100.000.000.000đ</td>
-    </tr>
-    <tr>
-        <td>Hoa Tulip</td>
-        <td>x3</td>
-        <td>100.000.000.000đ</td>
-    </tr>
-    <tr>
-        <td>Hoa hồng trắng</td>
-        <td>x4</td>
-        <td>100.000.000.000đ</td>
-    </tr>
-    <tr class="border-0">
+    let totalHTML = `
+        <tr class="border-0">
         <td>
             <h6 class="fw-bold">Tổng giỏ hàng:</h6>
         </td>
         <td></td>
         <td>
-            100.000.000.000đ
+            ${this.formatPrice(total) ?? 0}
         </td>
     </tr>
     <tr>
         <td>Phương thức thanh toán:</td>
         <td></td>
-        <td>Thanh toán online (Ví dụ)</td>
+        <td>Thanh toán online</td>
     </tr>
     <tr>
         <td>Phí vận chuyển:</td>
         <td></td>
-        <td>35.000đ</td>
+        <td>${this.formatPrice(30000)}</td>
     </tr>
     <tr>
         <td>
-            <h5 class="fw-bold">Phí vận chuyển:</h5>
+            <h5 class="fw-bold">Tổng:</h5>
         </td>
         <td></td>
         <td>
-            <h5 class="fw-bold text-danger">100.000.035.000đ</h5>
+            <h5 class="fw-bold text-danger">${
+              this.formatPrice(total + 30000) ?? 0
+            }</h5>
         </td>
     </tr>
     `;
+
+    document.querySelector("#amount").value = total;
+
+    html += totalHTML;
+    return html;
+  }
+
+  formatPrice(x) {
+    x = x.toLocaleString("vi", { style: "currency", currency: "VND" });
+    return x;
   }
 }

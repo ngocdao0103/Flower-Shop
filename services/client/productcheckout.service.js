@@ -5,8 +5,8 @@ export class ProductCheckoutService {
   products = [];
 
   async init() {
-    axios
-      .get(apiURL + endpoints.products)
+    await axios
+      .get(apiURL + endpoints.PRODUCT)
       .then((res) => {
         if (res.status == status.OK) {
           this.products = res.data;

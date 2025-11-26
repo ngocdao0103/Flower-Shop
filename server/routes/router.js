@@ -21,6 +21,8 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.post("/create_payment", (req, res) => {
+  let amount = Number(req.body.amount);
+  amount += 30000;
   let userId = req.body.user_id;
   let receiver_name = req.body.receiver_name; //DB
   let receiver_phone = req.body.receiver_phone; //DB
@@ -48,7 +50,6 @@ router.post("/create_payment", (req, res) => {
     `?user_id=${userId}&name=${encoded_name}&address=${encoded_address}&phone=${encoded_phone}`;
 
   let orderId = moment(date).format("DDHHmmss");
-  let amount = req.body.amount;
   let bankCode = req.body.bankCode;
 
   let locale = req.body.language;
@@ -166,7 +167,7 @@ router.get("/order/vnpay_return", (req, res) => {
                   status: status,
                   items: itemsToCreate,
                   shipping_fee: 30000,
-                  grand_total: Number(amount) + 30000,
+                  grand_total: Number(amount) / 100,
                 };
 
                 axios
