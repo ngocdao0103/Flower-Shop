@@ -68,3 +68,6 @@ ul {
   padding: 0 10px;
   font-weight: 400;
 }
+.picture {
+  object-fit: cover;
+}

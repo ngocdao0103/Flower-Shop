@@ -185,7 +185,7 @@ class DetailProductService {
         );
 
         out += `
-          <div class="mb-2 w-100">
+          <div class="mb-2 w-50 me-3">
             <label class="form-label small d-block text-truncate">${name}</label>
             <select class="form-select form-select-sm w-100" id="selectAttr${idx}" data-attr-name="${name}">
               <option value="" disabled selected>Chọn ${name}</option>
@@ -203,13 +203,13 @@ class DetailProductService {
       <div class="row g-4">
         <div class="col-lg-5 col-md-6 col-12">
           <div class="product-img-detail mb-3">
-            <div class="ratio ratio-4x3 rounded overflow-hidden bg-white">
+            <div class="ratio ratio-4x3 rounded picture bg-white">
               <img id="mainProductImage" src="${
                 p.image_url ||
                 "https://via.placeholder.com/520x400?text=No+Image"
               }" alt="${
       p.name || ""
-    }" class="img-fluid w-100 h-100 object-contain" style="display:block;">
+    }" class="img-fluid w-100 h-100  object-fit-cover picture">
             </div>
           </div>
         </div>
@@ -224,7 +224,7 @@ class DetailProductService {
             p.short_description || p.description || ""
           }</p>
 
-          <div id="variantSelectors">
+          <div id="variantSelectors" class="mb-5">
             ${selectHtml}
             <div id="variantMessage" class="small text-danger mt-1"></div>
             <div id="adminMessage" class="small text-danger mt-1"></div>
