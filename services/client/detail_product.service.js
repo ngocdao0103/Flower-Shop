@@ -65,30 +65,30 @@ class DetailProductService {
       const prod = res.data;
       container.innerHTML = this.template(prod);
       this.bindEvents(prod);
-      this.loadFeaturedProducts(prod.id);
+      this.loadRelatedProducts(prod.id, prod.category_id);
     } catch (err) {
       console.error("Load product detail error:", err);
       container.innerHTML = `<div class="text-center py-5"><p class="text-muted">Lỗi khi tải sản phẩm.</p></div>`;
     }
   }
 
-  async loadFeaturedProducts(currentProductId) {
+  async loadRelatedProducts(currentProductId, currentCategoryId) {
     try {
       const res = await axios.get(apiURL + endpoints.PRODUCT);
       if (res.status !== status.OK) return;
 
       const featured = (res.data || []).filter(
-        (p) => p.is_featured && p.id !== currentProductId
+        (p) => p.category_id === currentCategoryId && p.id !== currentProductId
       );
-      this.renderFeatured(featured);
+      this.renderRelated(featured);
     } catch (err) {
       console.error("Load featured products error:", err);
     }
   }
 
-  renderFeatured(products) {
+  renderRelated(products) {
     const container = document.querySelector(
-      ".featured-products .row.mt-4.g-4"
+      ".related-products .row.mt-4.g-4"
     );
     if (!container) return;
 
@@ -104,7 +104,8 @@ class DetailProductService {
     }
 
     let html = "";
-    products.forEach((prod) => {
+    products.forEach((prod,index) => {
+      if(index>=6) return;
       let priceHtml = "";
       if (prod.sale_price && prod.sale_price > 0) {
         priceHtml = `
