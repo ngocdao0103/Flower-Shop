@@ -164,7 +164,7 @@ class DetailProductService {
       }
     }
 
-    const priceHtml = ` <div id="priceDisplay">${fmt.format(
+    const priceHtml = ` <div id="priceDisplay" class="text-danger">${fmt.format(
       baseDisplayPrice
     )}</div>`;
 
@@ -200,10 +200,10 @@ class DetailProductService {
     })();
 
     return `
-      <div class="row g-4">
+      <div class="row g-4 d-flex justify-content-center">
         <div class="col-lg-5 col-md-6 col-12">
           <div class="product-img-detail mb-3">
-            <div class="ratio ratio-4x3 rounded picture bg-white">
+            <div class="ratio ratio-4x3 rounded bg-white">
               <img id="mainProductImage" src="${
                 p.image_url ||
                 "https://via.placeholder.com/520x400?text=No+Image"
@@ -214,7 +214,7 @@ class DetailProductService {
           </div>
         </div>
 
-        <div class="col-lg-7 col-md-6 col-12">
+        <div class="col-lg-5 col-md-6 col-12">
           <h3 class="mb-2">${p.name || ""}</h3>
           <h4 class="price-detail mb-1 text-success fw-bold">
             ${priceHtml}
