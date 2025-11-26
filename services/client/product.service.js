@@ -56,7 +56,7 @@ export class ProductService {
 
     // Lọc theo giá
     filtered = filtered.filter((p) => {
-      let price = p.sale_price ?? p.base_price;
+      let price = p.base_price;
       return price <= this.maxPrice;
     });
 
@@ -151,18 +151,15 @@ export class ProductService {
       let priceHtml = "";
       if (prod.sale_price) {
         priceHtml = `
-                <p class="text-danger fw-bold">${formatter.format(
-                  prod.sale_price
-                )}</p>
-                <s class="text-secondary">${formatter.format(
-                  prod.base_price
-                )}</s>
+              <p class="text-dark fw-bold">${formatter.format(
+          prod.base_price
+        )}</p>
             `;
       } else {
         priceHtml = `
                 <p class="text-dark fw-bold">${formatter.format(
-                  prod.base_price
-                )}</p>
+          prod.base_price
+        )}</p>
             `;
       }
 

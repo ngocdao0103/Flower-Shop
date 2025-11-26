@@ -39,10 +39,7 @@ export class Home {
               ${
                 hasSale
                   ? `
-                      <p class="card-text mb-0 fw-bold text-danger">
-                        ${item.sale_price.toLocaleString("vi-VN")}₫
-                      </p>
-                      <p class="text-decoration-line-through mb-0 text-muted">
+                    <p class="card-text mb-0 fw-bold  text-danger">
                         ${item.base_price.toLocaleString("vi-VN")}₫
                       </p>
                     `
