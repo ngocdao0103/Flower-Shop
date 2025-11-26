@@ -31,7 +31,7 @@ export class BlogService {
             ? blog.content.substring(0, 50) + "..."
             : blog.content;
         html += `
-                    <div class="col-md-6 col-12 col-lg-3">
+                    <div class="col-md-6 col-12 col-lg-4">
                         <a href="../client/detail_blog.html?blog=${blog.slug}" >
                             <div class="card border-0 shadow-sm h-100">
                                 <img src="${blog.thumbnail_url}"
