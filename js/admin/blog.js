@@ -90,13 +90,11 @@ previewContainer.addEventListener("click", (e) => {
 // --- NÚT LƯU ---
 btnSave.addEventListener("click", async () => {
   const title = document.getElementById("blog-title").value.trim();
-  const slug = document.getElementById("blog-slug").value.trim();
   const content = document.getElementById("blog-content").value.trim();
   const author = document.getElementById("blog-author").value.trim();
-  const category = document.getElementById("blog-category").value.trim();
 
   let isValid = true;
-  let msg = { title: "", content: "", image: "" };
+  let msg = { title: "", content: "", image: "", author: "" };
 
   if (!title) {
     msg.title = "Vui lòng nhập tiêu đề!";
@@ -110,11 +108,15 @@ btnSave.addEventListener("click", async () => {
     msg.image = "Vui lòng chọn ảnh!";
     isValid = false;
   }
+  if(!author){
+    msg.author = "Vui lòng nhập tác giả!";
+    isValid = false;
+  }
 
   document.getElementById("title-error").innerText = msg.title;
   document.getElementById("content-error").innerText = msg.content;
   document.getElementById("image-error").innerText = msg.image;
-
+  document.getElementById("author-error").innerText = msg.author;
   if (!isValid) return;
 
   let thumbnail_url = "";
@@ -136,11 +138,9 @@ btnSave.addEventListener("click", async () => {
     document.querySelector("#loadingOverlay").classList.add("d-flex");
     await blogService.createBlog(
       title,
-      slug,
       content,
       thumbnail_url,
       author,
-      category
     );
     document.querySelector("#loadingOverlay").classList.remove("d-flex");
     // alert("Thêm blog thành công!");
@@ -154,13 +154,31 @@ btnSave.addEventListener("click", async () => {
 // --- Cập nhật blog ---
 window.updateBlog = async (id) => {
   const title = document.getElementById(`edit-title-${id}`).value.trim();
-  const slug = document.getElementById(`edit-slug-${id}`).value.trim();
   const content = document.getElementById(`edit-content-${id}`).value.trim();
   const author = document.getElementById(`edit-author-${id}`).value.trim();
-  const category = document.getElementById(`edit-category-${id}`).value.trim();
   const fileInput = document.getElementById(`edit-image-${id}`);
   const previewImg = document.getElementById(`preview-${id}`);
 
+  const titleError = document.getElementById(`edit-title-error-${id}`);
+  const contentError = document.getElementById(`edit-content-error-${id}`);
+  const authorError = document.getElementById(`edit-author-error-${id}`);
+  titleError.innerText = "";
+  contentError.innerText = "";
+  authorError.innerText = "";
+  let isValid = true;
+  if (!title){
+    titleError.innerText = "Vui lòng nhập tiêu đề!";
+    isValid = false;
+  }
+  if (!content){
+    contentError.innerText = "Vui lòng nhập nội dung!";
+    isValid = false;
+  }
+  if (!author){
+    authorError.innerText = "Vui lòng nhập tác giả!";
+    isValid = false;
+  }
+  if (!isValid) return;
   let thumbnail_url = previewImg.src;
 
   if (fileInput.files && fileInput.files[0]) {
@@ -180,11 +198,9 @@ window.updateBlog = async (id) => {
     await blogService.updateBlog(
       id,
       title,
-      slug,
       content,
       thumbnail_url,
       author,
-      category
     );
     location.reload();
   } catch (error) {

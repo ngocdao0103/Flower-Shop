@@ -4,11 +4,9 @@ import { endpoints, status } from "../../config/api-endpoint.config.js";
 export class BlogService {
   id;
   title;
-  slug;
   content;
   thumbnail_url;
   author;
-  category;
   created_at;
   blog = [];
 
@@ -60,21 +58,23 @@ export class BlogService {
                                     <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                                 </div>
                                 <div class="modal-body">
+                                    <div class="mb-3">
                                     <label>Tiêu đề</label>
                                     <input id="edit-title-${blog.id}" value="${blog.title}" class="form-control mb-2" />
-
-                                    <label>Slug</label>
-                                    <input id="edit-slug-${blog.id}" value="${blog.slug}" class="form-control mb-2" />
-
-                                    <label>Danh mục</label>
-                                    <input id="edit-category-${blog.id}" value="${blog.category}" class="form-control mb-2" />
-
+                                    <small id="edit-title-error-${blog.id}" class="text-danger"></small>
+                                    </div>
+                                    <div class="mb-3">
                                     <label>Tác giả</label>
                                     <input id="edit-author-${blog.id}" value="${blog.author}" class="form-control mb-2" />
-
+                                    
+                                    <small id="edit-author-error-${blog.id}" class="text-danger"></small>
+                                    </div>
+                                    <div class="mb-3">
                                     <label>Nội dung</label>
                                     <textarea id="edit-content-${blog.id}" class="form-control mb-3" rows="4">${blog.content}</textarea>
-
+                                    
+                                    <small id="edit-content-error-${blog.id}" class="text-danger"></small>
+                                    </div>
                                     <label>Ảnh hiện tại</label>
                                     <div class="text-center mb-3">
                                         <img src="${blog.thumbnail_url}" id="preview-${blog.id}" class="img-fluid rounded shadow" style="max-height: 150px;">
@@ -115,19 +115,25 @@ export class BlogService {
                 `;
       });
       blogTable.innerHTML = html;
+          $(document).ready(function () {
+      $("#blog_table").DataTable({
+        destroy: true,
+        language: {
+          url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/vi.json",
+        },
+      });
+    });
     }
   }
 
   // --- Thêm blog ---
-  async createBlog(title, slug, content, thumbnail_url, author, category) {
+  async createBlog(title, content, thumbnail_url, author) {
     const newBlog = {
       id: "ART" + Math.floor(Math.random() * 1000 + 1),
       title,
-      slug,
       content,
       thumbnail_url,
       author,
-      category,
       created_at: new Date().toISOString(),
     };
 
@@ -155,15 +161,13 @@ export class BlogService {
   }
 
   // --- Cập nhật blog ---
-  async updateBlog(id, title, slug, content, thumbnail_url, author, category) {
+  async updateBlog(id, title, content, thumbnail_url, author) {
     try {
       const res = await axios.put(`${apiURL + endpoints.BLOG}/${id}`, {
         title,
-        slug,
         content,
         thumbnail_url,
         author,
-        category,
       });
       if (res.status === status.OK) {
         sessionStorage.setItem("delete_blog_success", "Cập nhật thành công");

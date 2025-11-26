@@ -30,14 +30,6 @@ export class BlogDetailService {
         container.innerHTML = `
         <div class="card-body">
             <h2 class="fw-bold mb-3 text-center">${blog.title}</h2>
-            <p class="text-muted text-center">
-                <i class="bi bi-person"></i> ${blog.author || "Không rõ"} 
-                &nbsp; | &nbsp; 
-                <i class="bi bi-tags"></i> ${blog.category || "Chưa có danh mục"}
-                &nbsp; | &nbsp;
-                <i class="bi bi-calendar"></i> ${new Date(blog.created_at).toLocaleDateString('vi-VN')}
-            </p>
-
             <div class="text-center mb-4">
                 <img src="${blog.thumbnail_url}" class="img-fluid blog-thumbnail shadow-sm" alt="${blog.title}">
             </div>
