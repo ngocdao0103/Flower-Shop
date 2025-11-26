@@ -503,7 +503,6 @@ class DetailProductService {
             createRes.status === status.OK
           ) {
             showPageAlert("Đã thêm sản phẩm vào giỏ hàng.", "success");
-            sessionStorage.setItem("cart_count", "1");
           } else {
             throw new Error("Tạo giỏ hàng thất bại");
           }
@@ -519,12 +518,7 @@ class DetailProductService {
             found.quantity = (parseInt(found.quantity) || 0) + newItem.quantity;
           } else {
             updated.items.push(newItem);
-            sessionStorage.setItem(
-              "cart_count",
-              (updated.items.length + 1).toString()
-            );
           }
-
           const putRes = await axios.put(
             `${apiURL + endpoints.CART}/${existing.id}`,
             updated

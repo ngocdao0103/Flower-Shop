@@ -4,7 +4,6 @@ const header = document.getElementById("header");
 const userCustomerLogin = sessionStorage.getItem("customer_login");
 const userAdminLogin = sessionStorage.getItem("admin_login");
 const userFullName = sessionStorage.getItem("fullname_login") ?? "";
-const cartCount = sessionStorage.getItem("cart_count") ?? 0;
 
 // =====================================================
 // 1) HÀM TẠO ACCOUNT DROPDOWN
@@ -103,9 +102,6 @@ header.innerHTML = `
       ${generateAccountSection()}
       <a href="/pages/client/cart.html" class="position-relative">
         <i class="bi bi-cart3 fs-5"></i>
-        <span id="cartCountBadge" class="badge bg-danger position-absolute top-0 start-100 translate-middle">
-          ${cartCount}
-        </span>
       </a>
 
     </div>
