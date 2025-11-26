@@ -88,6 +88,25 @@
           </li>
         </ul>
 
+        <div class="row mb-3 ">
+          <div class="col-md-3">
+            <label>Từ ngày</label>
+            <input type="date" id="startDate" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label>Đến ngày</label>
+            <input type="date" id="endDate" class="form-control" />
+          </div>
+          <div class="col-md-3 d-flex align-items-end gap-3">
+            <button id="cancel" class="btn btn-danger">Hủy</button>
+            <button id="filterDateBtn" class="btn btn-primary">Lọc</button>
+          </div>
+        </div>
+
+        <div class="chart-container d-none" data-chart="dayFilter">
+          <canvas id="filteredChart"></canvas>
+        </div>
+
         <div
           class="card shadow-sm border-0 chart-container"
           id="order-chart-container"
@@ -99,7 +118,11 @@
           </div>
         </div>
 
-        <div class="card shadow-sm border-0 chart-container d-none" id="total-chart-container" data-chart="total">
+        <div
+          class="card shadow-sm border-0 chart-container d-none"
+          id="total-chart-container"
+          data-chart="total"
+        >
           <div class="card-body">
             <h5 class="mb-3 fw-semibold">📈 Biểu đồ doanh thu</h5>
             <canvas id="totalRevenueChart" height="120"></canvas>

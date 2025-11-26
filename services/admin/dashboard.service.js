@@ -68,28 +68,60 @@ export const dashboardService = {
     async countCategories() {
         const data = await this.getCategories();
         return data.length;
-    }
+    },
+
+    async filterOrdersByDate(start, end) {
+    const orders = await this.getOrders();
+    const result = {};
+
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+
+    orders.forEach(order => {
+        if (order.status === "Delivered") {
+            const date = new Date(order.order_date);
+            if (date >= startDate && date <= endDate) {
+                const key = date.toISOString().split("T")[0];
+                if (!result[key]) result[key] = 0;
+
+                result[key] += 1;
+            }
+        }
+    });
+
+    return result; 
+}
+
 };
 
 
 
 export function initializeChartTabSwitching() {
-    const tabs = document.querySelectorAll('.nav-pills .nav-link');
-    const chartContainers = document.querySelectorAll('.chart-container');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function(event) {
-            event.preventDefault();
-            tabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
+  const tabs = document.querySelectorAll('.nav-pills .nav-link');
+  const chartContainers = document.querySelectorAll('.chart-container');
 
-            const targetChart = this.getAttribute('data-chart');
-            chartContainers.forEach(container => {
-                if (container.getAttribute('data-chart') === targetChart) {
-                    container.classList.remove('d-none');
-                } else {
-                    container.classList.add('d-none');
-                }
-            });
-        });
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function(event) {
+      event.preventDefault();
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+
+      const targetChart = this.getAttribute('data-chart');
+      chartContainers.forEach(container => {
+        if (container.getAttribute('data-chart') === targetChart) {
+          container.classList.remove('d-none');
+        } else {
+          container.classList.add('d-none');
+          const canvas = container.querySelector('canvas');
+          if (canvas && canvas.chartInstance) {
+            canvas.chartInstance.destroy();
+            canvas.chartInstance = null;
+          }
+        }
+      });
     });
+  });
 }
+
+
+
