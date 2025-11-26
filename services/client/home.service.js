@@ -17,17 +17,19 @@ export class Home {
 
       html += `
          <div class="col-12 col-lg-3 col-md-6">
-        <div class="card product-card-home h-100 border-0 rounded-0 position-relative overflow-hidden">
+        <div class="card product-card-home h-100 border-0 rounded-1 position-relative overflow-hidden">
 
           <div class="image-wrapper">
             <img 
              src="${item.image_url}"
              alt="${item.name}"
-             style="width:100%;height:250px;object-fit:contain;"
+             style="width:100%;height:280px;object-fit:cover;"
              />
 
             <div class="product-actions d-flex justify-content-center align-items-center">
-               <a class="btn btn-light btn-sm me-2" href="./pages/client/detail_product.html?id=${item.id}"><i class="bi bi-eye"></i></a>
+               <a class="btn btn-light btn-sm me-2" href="./pages/client/detail_product.html?id=${
+                 item.id
+               }"><i class="bi bi-eye"></i></a>
             </div>
           </div>
 
