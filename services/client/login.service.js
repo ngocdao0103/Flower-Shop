@@ -21,14 +21,13 @@ export class Login {
               sessionStorage.setItem("customer_login", foundUser.id);
               sessionStorage.setItem("fullname_login", foundUser.name);
               sessionStorage.setItem("classMessage", "success");
-              sessionStorage.setItem("successMessage", "Đăng nhập thành công");
-              alert("Đăng nhập thành công!");
+              sessionStorage.setItem("successMessage", "Đăng nhập hệ thống quản trị thành công");
               window.location.href =
                 "../../pages/admin/dashboard/dashboard.html";
               return;
             }
 
-            if (foundUser.role == "customer") {
+            if (foundUser.role == "customer" ) {
               sessionStorage.setItem("customer_login", foundUser.id);
               sessionStorage.setItem("fullname_login", foundUser.name);
               sessionStorage.setItem("classMessage", "success");

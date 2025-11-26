@@ -50,7 +50,8 @@ if (logoutBtnAdmin) {
     sessionStorage.removeItem("admin_login");
     sessionStorage.removeItem("customer_login");
     sessionStorage.removeItem("fullname_login");
-    alert("Bạn đã đăng xuất thành công!");
+    sessionStorage.setItem("classMessage", "danger");
+    sessionStorage.setItem("successMessage", "Đăng xuất thành công");
     window.location.href = "../../../index.html";
   });
 }
