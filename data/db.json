@@ -1,136 +1,95 @@
 {
   "categories": [
     {
+      "id": "CAT001",
       "name": "Bó Hoa",
-      "description": "Các mẫu bó hoa tươi đẹp, thích hợp cho mọi dịp lễ và tặng người thương.",
-      "image_url": "https://example.com/images/categories/bouquet.jpg",
-      "statusCategory": 1,
-      "id": "CAT001"
+      "description": "Các mẫu bó hoa tươi đẹp phù hợp tặng người yêu bạn bè và người thân",
+      "image_url": "https://images.unsplash.com/photo-1528731708534-816fe59f90cb"
     },
     {
       "id": "CAT002",
       "name": "Chậu Hoa",
-      "description": "Các loại chậu hoa trang trí nhà cửa, văn phòng hoặc làm quà tặng sang trọng.",
-      "image_url": "https://example.com/images/categories/potted.jpg"
+      "description": "Chậu hoa trang trí phòng khách văn phòng hoặc làm quà tặng",
+      "image_url": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6"
     },
     {
       "id": "CAT003",
       "name": "Hoa Hộp Quà",
-      "description": "Hoa được gói trong hộp quà tinh tế – lựa chọn sang trọng cho các dịp đặc biệt.",
-      "image_url": "https://example.com/images/categories/giftbox.jpg"
+      "description": "Hoa được gói trong hộp quà sang trọng phù hợp các dịp đặc biệt",
+      "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
     },
     {
       "id": "CAT004",
       "name": "Hoa Sinh Nhật",
-      "description": "Những bó hoa và hộp hoa rực rỡ, mang thông điệp chúc mừng sinh nhật đầy ý nghĩa.",
-      "image_url": "https://example.com/images/categories/birthday.jpg"
+      "description": "Hoa tươi mừng sinh nhật rực rỡ và ý nghĩa",
+      "image_url": "https://images.unsplash.com/photo-1509043759401-136742328bb3"
+    },
+    {
+      "id": "CAT005",
+      "name": "Hoa Sự Kiện",
+      "description": "Hoa khai trương hoa chúc mừng dùng trong sự kiện",
+      "image_url": "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92"
     }
   ],
   "products": [
     {
-      "is_featured": true,
-      "id": "FLW001",
+      "id": "PRD001",
       "name": "Bó Hoa Hồng Đỏ",
-      "description": "Bó hoa hồng đỏ rực rỡ – lựa chọn tuyệt vời cho ngày lễ, tỏ tình hoặc kỷ niệm.",
-      "base_price": 1200000,
-      "sale_price": 950000,
+      "description": "Bó hoa hồng đỏ tươi sang trọng thích hợp tặng người yêu",
+      "base_price": 600000,
+      "sale_price": 550000,
       "category_id": "CAT001",
-      "image_url": "https://th.bing.com/th/id/R.00baacb19cce2cc8320e372c78d828c3?rik=XEkOQlUnLSy4gQ&pid=ImgRaw&r=0",
+      "image_url": "https://hoatuoi360.vn/upload/hinhanh/thumb/bo-hoa-hong-do-tron-doi-yeu-em873.jpg",
+      "is_featured": true,
       "variants": [
         {
-          "variant_id": "FLW001-VAR1",
+          "variant_id": "PRD001VAR1",
           "attributes": [
             {
               "name": "Kích cỡ",
               "value": "Nhỏ"
             },
             {
-              "name": "Bao giấy",
-              "value": "Giấy Kraft"
+              "name": "Số lượng cành",
+              "value": "12 cành"
             }
           ],
           "price_modifier": 0,
-          "stock_quantity": 10,
-          "sku": "ROSE-RED-S-KR",
-          "image_url": "https://example.com/images/rose-bouquet-red-small.jpg"
+          "stock_quantity": 12,
+          "sku": "ROSE12SMALL",
+          "image_url": "https://bizweb.dktcdn.net/100/347/446/files/bo-hoa-hong-do-nho-xinh.jpg?v=1600241043216"
         },
         {
-          "variant_id": "FLW001-VAR2",
+          "variant_id": "PRD001VAR2",
           "attributes": [
             {
               "name": "Kích cỡ",
               "value": "Lớn"
             },
             {
-              "name": "Bao giấy",
-              "value": "Giấy trắng"
+              "name": "Số lượng cành",
+              "value": "24 cành"
             }
           ],
-          "price_modifier": 300000,
-          "stock_quantity": 5,
-          "sku": "ROSE-RED-L-WH",
-          "image_url": "https://example.com/images/rose-bouquet-red-large.jpg"
+          "price_modifier": 180000,
+          "stock_quantity": 6,
+          "sku": "ROSE24LARGE",
+          "image_url": "https://hoaviet247.com/wp-content/uploads/2024/07/bo-hoa-tuoi-bh029-hong-do.webp"
         }
       ]
     },
     {
-      "is_featured": true,
-      "id": "FLW002",
-      "name": "Chậu Hoa Lan Cam",
-      "description": "Chậu hoa lan cam sang trọng, thích hợp để bàn, phòng khách hoặc làm quà tặng VIP.",
-      "base_price": 850000,
-      "sale_price": 0,
-      "category_id": "CAT002",
-      "image_url": "https://thumbs.dreamstime.com/b/rose-gialle-4226950.jpg",
-      "variants": [
-        {
-          "variant_id": "FLW002-VAR1",
-          "attributes": [
-            {
-              "name": "Kích thước chậu",
-              "value": "25cm"
-            },
-            {
-              "name": "Bao gồm hộp quà",
-              "value": "Có"
-            }
-          ],
-          "price_modifier": 0,
-          "stock_quantity": 3,
-          "sku": "ORCHID-ORANGE-25-GIFT",
-          "image_url": "https://example.com/images/orchid-orange-25cm.jpg"
-        },
-        {
-          "variant_id": "FLW002-VAR2",
-          "attributes": [
-            {
-              "name": "Kích thước chậu",
-              "value": "30cm"
-            },
-            {
-              "name": "Bao gồm hộp quà",
-              "value": "Không"
-            }
-          ],
-          "price_modifier": -50000,
-          "stock_quantity": 7,
-          "sku": "ORCHID-ORANGE-30-NOGIFT",
-          "image_url": "https://example.com/images/orchid-orange-30cm.jpg"
-        }
-      ]
-    },
-    {
-      "is_featured": true,
-      "id": "FLW003",
-      "name": "Bó Hoa Tulip Mix Màu",
-      "description": "Bó hoa tulip nhiều màu tươi tắn – phù hợp làm quà sinh nhật, tặng bạn bè.",
-      "base_price": 550000,
+      "id": "PRD002",
+      "name": "Bó Hoa Tulip Trắng",
+      "description": "Bó tulip trắng tinh khôi phù hợp tặng bạn bè hoặc dịp kỷ niệm",
+      "base_price": 750000,
       "sale_price": 0,
       "category_id": "CAT001",
-      "image_url": "https://th.bing.com/th/id/R.bd305fd10411bc676b05abb3cb0b6576?rik=5dkw1%2bsNVhg8EA&pid=ImgRaw&r=0",
+      "image_url": "https://shophoaquynhdao.com/watermark/product/500x630x2/upload/product/31281293-8b91-4c54-9096-9434e285dd08-4194.jpeg",
+      "is_featured": true,
       "variants": [
         {
-          "variant_id": "FLW003-VAR1",
+          "variant_id": "PRD002VAR1",
           "attributes": [
             {
               "name": "Số lượng cành",
@@ -143,11 +102,11 @@
           ],
           "price_modifier": 0,
           "stock_quantity": 20,
-          "sku": "TULIP-MIX-10-KR",
-          "image_url": "https://example.com/images/tulip-mix-10.jpg"
+          "sku": "TULIP10WHITE",
+          "image_url": "https://hoasaphanoi.vn/wp-content/uploads/2022/08/bo-hoa-tuylip-trang.jpg"
         },
         {
-          "variant_id": "FLW003-VAR2",
+          "variant_id": "PRD002VAR2",
           "attributes": [
             {
               "name": "Số lượng cành",
@@ -158,10 +117,512 @@
               "value": "Giấy trắng"
             }
           ],
-          "price_modifier": 250000,
+          "price_modifier": 280000,
           "stock_quantity": 8,
-          "sku": "TULIP-MIX-20-WH",
-          "image_url": "https://example.com/images/tulip-mix-20.jpg"
+          "sku": "TULIP20WHITE",
+          "image_url": "https://hoathangtu.com/wp-content/uploads/2022/08/img_3446_4feced4b34d24da3b33ffd2aa4e795c4-scaled.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "PRD003",
+      "name": "Chậu Hoa Lan Tím",
+      "description": "Chậu lan tím sang trọng phù hợp trang trí phòng khách",
+      "base_price": 900000,
+      "sale_price": 0,
+      "category_id": "CAT002",
+      "image_url": "https://shophoahong.com/wp-content/uploads/2021/12/85.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD003VAR1",
+          "attributes": [
+            {
+              "name": "Chiều cao",
+              "value": "40 cm"
+            },
+            {
+              "name": "Số nhánh",
+              "value": "2 nhánh"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 5,
+          "sku": "ORCHID40SMALL",
+          "image_url": "https://sieuthihoalan.vn/wp-content/uploads/2016/12/lan-ho-diep-de-ban-6c.png"
+        },
+        {
+          "variant_id": "PRD003VAR2",
+          "attributes": [
+            {
+              "name": "Chiều cao",
+              "value": "60 cm"
+            },
+            {
+              "name": "Số nhánh",
+              "value": "3 nhánh"
+            }
+          ],
+          "price_modifier": 250000,
+          "stock_quantity": 3,
+          "sku": "ORCHID60LARGE",
+          "image_url": "https://bizweb.dktcdn.net/100/261/741/products/chau-lan-ho-diep-6-canh-hong-hdh-0604.jpg?v=1563524959510"
+        }
+      ]
+    },
+    {
+      "id": "PRD004",
+      "name": "Bó Hoa Baby Trắng",
+      "description": "Bó baby trắng tinh khôi nhẹ nhàng phù hợp tặng bạn bè",
+      "base_price": 320000,
+      "sale_price": 290000,
+      "category_id": "CAT001",
+      "image_url": "https://hoathangtu.com/wp-content/uploads/2023/05/IMG_7240-scaled.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD004VAR1",
+          "attributes": [
+            {
+              "name": "Kích cỡ",
+              "value": "Nhỏ"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 15,
+          "sku": "BABYSMALL",
+          "image_url": "https://bonn.vn/wp-content/uploads/2021/06/bo-hoa-baby-dep-mau-trang-gia-re.jpg"
+        },
+        {
+          "variant_id": "PRD004VAR2",
+          "attributes": [
+            {
+              "name": "Kích cỡ",
+              "value": "Lớn"
+            }
+          ],
+          "price_modifier": 90000,
+          "stock_quantity": 7,
+          "sku": "BABYLARGE",
+          "image_url": "https://flowersight.com/wp-content/uploads/2024/08/bo-hoa-baby-tron.jpg"
+        }
+      ]
+    },
+    {
+      "id": "PRD005",
+      "name": "Hoa Hồng Sáp Hộp Quà",
+      "description": "Hộp quà hoa hồng sáp sang trọng thích hợp tặng sinh nhật",
+      "base_price": 450000,
+      "sale_price": 420000,
+      "category_id": "CAT003",
+      "image_url": "https://lili.vn/wp-content/uploads/2021/12/Hop-qua-tang-trang-suc-dong-mo-den-Led-hoa-hong-sap-Sugar-LILI_834237_7.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD005VAR1",
+          "attributes": [
+            {
+              "name": "Màu sắc",
+              "value": "Đỏ"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 10,
+          "sku": "SOAPRED",
+          "image_url": "https://static.hotdeal.vn/images/1489/1489293/500x500/339089-hop-qua-tang-hoa-hong-sap-vinh-cuu-trai-tim-lang-man-339088-vn.jpg"
+        },
+        {
+          "variant_id": "PRD005VAR2",
+          "attributes": [
+            {
+              "name": "Màu sắc",
+              "value": "Hồng"
+            }
+          ],
+          "price_modifier": 20000,
+          "stock_quantity": 8,
+          "sku": "SOAPPINK",
+          "image_url": "https://static.hotdeal.vn/images/1121/1121426/500x500/297902-hop-qua-tang-11-hoa-hong-sap-trai-tim-lang-man.jpg"
+        }
+      ]
+    },
+    {
+      "id": "PRD006",
+      "name": "Bó Hoa Hướng Dương",
+      "description": "Bó hướng dương rực rỡ mang ý nghĩa tích cực và năng lượng",
+      "base_price": 380000,
+      "sale_price": 0,
+      "category_id": "CAT001",
+      "image_url": "https://i.pinimg.com/736x/59/c8/c9/59c8c96592ad2cfb60f1b65253e2b76f.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD006VAR1",
+          "attributes": [
+            {
+              "name": "Số lượng hoa",
+              "value": "3 bông"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 20,
+          "sku": "SUN3",
+          "image_url": "https://i.pinimg.com/1200x/c2/ec/d2/c2ecd2384d4e3921ef62a48afc08aeec.jpg"
+        },
+        {
+          "variant_id": "PRD006VAR2",
+          "attributes": [
+            {
+              "name": "Số lượng hoa",
+              "value": "5 bông"
+            }
+          ],
+          "price_modifier": 60000,
+          "stock_quantity": 12,
+          "sku": "SUN5",
+          "image_url": "https://i.pinimg.com/736x/4c/b4/18/4cb41825e86108dc6e84eef47a050af3.jpg"
+        }
+      ]
+    },
+    {
+      "id": "PRD007",
+      "name": "Chậu Cây Kim Tiền",
+      "description": "Cây kim tiền phong thủy mang tài lộc thịnh vượng",
+      "base_price": 500000,
+      "sale_price": 470000,
+      "category_id": "CAT002",
+      "image_url": "https://mowgarden.com/wp-content/uploads/2022/08/kimtien002.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD007VAR1",
+          "attributes": [
+            {
+              "name": "Kích thước",
+              "value": "Nhỏ"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 14,
+          "sku": "ZZSMALL",
+          "image_url": "https://mowgarden.com/wp-content/uploads/2021/06/cay-kim-tien-de-ban-chau-gom-su.jpg"
+        },
+        {
+          "variant_id": "PRD007VAR2",
+          "attributes": [
+            {
+              "name": "Kích thước",
+              "value": "Lớn"
+            }
+          ],
+          "price_modifier": 80000,
+          "stock_quantity": 6,
+          "sku": "ZZLARGE",
+          "image_url": "https://caycanhdepbinhduong.com/thumbs/900x900x2/upload/product/cay-kim-tien-socgarden-9914.webp"
+        }
+      ]
+    },
+    {
+      "id": "PRD008",
+      "name": "Hoa Tú Cầu Xanh",
+      "description": "Bó hoa tú cầu xanh nhẹ nhàng thanh lịch",
+      "base_price": 520000,
+      "sale_price": 490000,
+      "category_id": "CAT001",
+      "image_url": "https://i.pinimg.com/1200x/b2/3c/72/b23c7239d3a7e722882e00d1ea7ec88f.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD008VAR1",
+          "attributes": [
+            {
+              "name": "Số lượng bông",
+              "value": "3 bông"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 10,
+          "sku": "HYD3",
+          "image_url": "https://i.pinimg.com/736x/79/04/b7/7904b7334fedfb8a25cc1c7dd2fe8a9f.jpg"
+        },
+        {
+          "variant_id": "PRD008VAR2",
+          "attributes": [
+            {
+              "name": "Số lượng bông",
+              "value": "5 bông"
+            }
+          ],
+          "price_modifier": 100000,
+          "stock_quantity": 5,
+          "sku": "HYD5",
+          "image_url": "https://i.pinimg.com/1200x/2e/25/05/2e25050d6cd4753c8f3f73bbbd22e681.jpg"
+        }
+      ]
+    },
+    {
+      "id": "PRD009",
+      "name": "Hoa Cẩm Chướng Mix",
+      "description": "Bó cẩm chướng nhiều màu tươi tắn phù hợp nhiều dịp",
+      "base_price": 420000,
+      "sale_price": 0,
+      "category_id": "CAT001",
+      "image_url": "https://product.hstatic.net/200000427529/product/71010537-40ab-4563-a549-cb0c6a2ded48_8bca900537b04bb2b469f08f70727730_master.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD009VAR1",
+          "attributes": [
+            {
+              "name": "Số lượng cành",
+              "value": "10 cành"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 20,
+          "sku": "CARN10",
+          "image_url": "https://fairyflowers.vn/wp-content/uploads/2025/05/Hoa-tuoi-Cam-chuong-Mau-mix-Bo-hoa-700k.jpg"
+        },
+        {
+          "variant_id": "PRD009VAR2",
+          "attributes": [
+            {
+              "name": "Số lượng cành",
+              "value": "20 cành"
+            }
+          ],
+          "price_modifier": 120000,
+          "stock_quantity": 10,
+          "sku": "CARN20",
+          "image_url": "https://hoatuoi360.vn/uploads/file/hoa-tuoi-360-bo-hoa-cam-chuong-hong-ngot-ngao%202(4).jpg"
+        }
+      ]
+    },
+    {
+      "id": "PRD010",
+      "name": "Hộp Hoa Hồng Kem",
+      "description": "Hộp hoa hồng kem thanh lịch và sang trọng",
+      "base_price": 680000,
+      "sale_price": 650000,
+      "category_id": "CAT003",
+      "image_url": "https://minhlanorchids.com/public/manipulate/800x1120/shopping-product-images/1608049480-af3520a5ac485d160459.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD010VAR1",
+          "attributes": [
+            {
+              "name": "Màu sắc",
+              "value": "Kem"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 8,
+          "sku": "CREAMBOX",
+          "image_url": "https://hoathangtu.com/wp-content/uploads/2023/03/IMG_1917.jpg"
+        },
+        {
+          "variant_id": "PRD010VAR2",
+          "attributes": [
+            {
+              "name": "Màu sắc",
+              "value": "Trắng"
+            }
+          ],
+          "price_modifier": 30000,
+          "stock_quantity": 6,
+          "sku": "WHITEBOX",
+          "image_url": "https://static.uyenshop.vn/uploads/2019/01/hoa-lua-41.jpg"
+        }
+      ]
+    },
+    {
+      "id": "PRD011",
+      "name": "Hoa Ly Hồng",
+      "description": "Bó hoa ly hồng sang trọng và nổi bật",
+      "base_price": 650000,
+      "sale_price": 0,
+      "category_id": "CAT001",
+      "image_url": "https://i.pinimg.com/736x/74/67/d4/7467d4886028ad51a99ed24258ef3562.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD011VAR1",
+          "attributes": [
+            {
+              "name": "Số lượng bông",
+              "value": "5 bông"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 10,
+          "sku": "LILY5",
+          "image_url": "https://i.pinimg.com/736x/1a/bc/e2/1abce25fd9c98873c6b7f33fabc55b9f.jpg"
+        },
+        {
+          "variant_id": "PRD011VAR2",
+          "attributes": [
+            {
+              "name": "Số lượng bông",
+              "value": "8 bông"
+            }
+          ],
+          "price_modifier": 180000,
+          "stock_quantity": 6,
+          "sku": "LILY8",
+          "image_url": "https://i.pinimg.com/736x/a7/6f/a5/a76fa557ccc961590c55e22373b04637.jpg"
+        }
+      ]
+    },
+    {
+      "id": "PRD012",
+      "name": "Chậu Hoa Sen Đá Mini",
+      "description": "Chậu sen đá mini dễ thương phù hợp để bàn",
+      "base_price": 120000,
+      "sale_price": 0,
+      "category_id": "CAT002",
+      "image_url": "https://i.pinimg.com/736x/59/0e/9f/590e9fddcb9749a8ac43cb4ef99ad912.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD012VAR1",
+          "attributes": [
+            {
+              "name": "Kích thước",
+              "value": "Nhỏ"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 30,
+          "sku": "SENDA_SM",
+          "image_url": "https://i.pinimg.com/736x/76/c0/e1/76c0e19b4a3da75ade6151e0004975ef.jpg"
+        },
+        {
+          "variant_id": "PRD012VAR2",
+          "attributes": [
+            {
+              "name": "Kích thước",
+              "value": "Trung bình"
+            }
+          ],
+          "price_modifier": 30000,
+          "stock_quantity": 18,
+          "sku": "SENDA_MD",
+          "image_url": "https://i.pinimg.com/736x/ee/99/2f/ee992fe2fb49346a923f918ef8da55e5.jpg"
+        }
+      ]
+    },
+    {
+      "id": "PRD013",
+      "name": "Hoa Đồng Tiền Mix",
+      "description": "Bó đồng tiền nhiều màu tươi sáng thích hợp tặng bạn bè",
+      "base_price": 330000,
+      "sale_price": 0,
+      "category_id": "CAT001",
+      "image_url": "https://i.pinimg.com/736x/ea/ad/80/eaad803257cb4a2e19ad77f8cef805e7.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD013VAR1",
+          "attributes": [
+            {
+              "name": "Số lượng bông",
+              "value": "10 bông"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 18,
+          "sku": "GER10",
+          "image_url": "https://i.pinimg.com/1200x/5f/3d/b6/5f3db6f2883b54a4330720f152d3803a.jpg"
+        },
+        {
+          "variant_id": "PRD013VAR2",
+          "attributes": [
+            {
+              "name": "Số lượng bông",
+              "value": "20 bông"
+            }
+          ],
+          "price_modifier": 90000,
+          "stock_quantity": 10,
+          "sku": "GER20",
+          "image_url": "https://i.pinimg.com/736x/18/64/7e/18647e1a2f04c9e54a786f32584eaf65.jpg"
+        }
+      ]
+    },
+    {
+      "id": "PRD014",
+      "name": "Chậu Cây Lưỡi Hổ",
+      "description": "Cây lưỡi hổ thanh lọc không khí phù hợp trang trí nhà cửa",
+      "base_price": 350000,
+      "sale_price": 330000,
+      "category_id": "CAT002",
+      "image_url": "https://i.pinimg.com/1200x/42/f3/a7/42f3a73d00f08a320cf1aabdee8444a9.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD014VAR1",
+          "attributes": [
+            {
+              "name": "Kích thước",
+              "value": "Nhỏ"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 12,
+          "sku": "SNAKE_SM",
+          "image_url": "https://i.pinimg.com/1200x/3c/f4/6e/3cf46ed2e7dafa80e0e559594ffe3424.jpg"
+        },
+        {
+          "variant_id": "PRD014VAR2",
+          "attributes": [
+            {
+              "name": "Kích thước",
+              "value": "Lớn"
+            }
+          ],
+          "price_modifier": 70000,
+          "stock_quantity": 5,
+          "sku": "SNAKE_LG",
+          "image_url": "https://i.pinimg.com/736x/f7/6c/4d/f76c4d013a46122594b82201b447b52b.jpg"
+        }
+      ]
+    },
+    {
+      "id": "PRD015",
+      "name": "Hoa Mẫu Đơn Hồng",
+      "description": "Bó hoa mẫu đơn hồng sang trọng và nổi bật",
+      "base_price": 850000,
+      "sale_price": 790000,
+      "category_id": "CAT001",
+      "image_url": "https://i.pinimg.com/736x/22/be/de/22bede70b63bf93069da7f4d88ed2b4c.jpg",
+      "is_featured": true,
+      "variants": [
+        {
+          "variant_id": "PRD015VAR1",
+          "attributes": [
+            {
+              "name": "Số bông",
+              "value": "5 bông"
+            }
+          ],
+          "price_modifier": 0,
+          "stock_quantity": 10,
+          "sku": "PEONY5",
+          "image_url": "https://i.pinimg.com/1200x/b5/17/dd/b517dd0cef5b7900ed825bad975febae.jpg"
+        },
+        {
+          "variant_id": "PRD015VAR2",
+          "attributes": [
+            {
+              "name": "Số bông",
+              "value": "8 bông"
+            }
+          ],
+          "price_modifier": 200000,
+          "stock_quantity": 4,
+          "sku": "PEONY8",
+          "image_url": "https://i.pinimg.com/736x/42/2b/10/422b1078cae47e5fa73a30dbbad53c7c.jpg"
         }
       ]
     }
@@ -268,51 +729,46 @@
   ],
   "articles": [
     {
-      "title": "Cách bảo quản hoa tươi lâu trong mùa hè",
-      "slug": "cach-bao-quan-hoa-tuoi-lau-trong-mua-he",
-      "content": "Mùa hè với thời tiết nắng nóng khiến hoa tươi rất dễ bị héo, rụng cánh và mất đi vẻ đẹp tự nhiên chỉ sau vài giờ. Tuy nhiên, nếu biết cách chăm sóc đúng, bạn hoàn toàn có thể giúp bình hoa của mình giữ được độ tươi lâu hơn, thậm chí từ 3–5 ngày. Dưới đây là những bí quyết đơn giản nhưng cực kỳ hiệu quả.\n\n🌿 1. Cắt vát gốc hoa trước khi cắm\nKhi mới mua hoa về, hãy dùng kéo sắc cắt vát gốc khoảng 45 độ. Điều này giúp hoa hấp thu nước tốt hơn. Bạn nên cắt thêm một chút phần gốc mỗi 1–2 ngày để hoa luôn được cung cấp nước tối ưu.\n\n💧 2. Thay nước bình hoa thường xuyên\nNhiệt độ cao khiến nước trong bình dễ bị đục và sinh vi khuẩn. Tốt nhất nên thay nước mỗi ngày và rửa sạch bình để hạn chế vi khuẩn làm thối gốc hoa.\n\n🌬️ 3. Đặt hoa ở nơi thoáng mát, tránh ánh nắng trực tiếp\nNắng nóng là kẻ thù số một của hoa tươi. Hãy đặt bình hoa ở nơi mát mẻ, tránh cửa sổ, quạt mạnh hoặc khu vực có nhiệt độ cao như gần bếp.\n\n❄️ 4. Cho một vài viên đá vào bình hoa\nĐá giúp hạ nhiệt độ nước, làm chậm quá trình héo của hoa. Tuy nhiên, không nên bỏ quá nhiều để tránh sốc nhiệt.\n\n🍯 5. Thêm chất dưỡng hoa tự nhiên\nBạn có thể “tự chế” dung dịch dưỡng hoa bằng:\n\n1 muỗng đường (cung cấp dinh dưỡng)\n\n1 muỗng giấm trắng hoặc vài giọt chanh (kháng khuẩn)\n\nHỗn hợp này giúp hoa vừa sạch vi khuẩn, vừa được bổ sung năng lượng.\n\n🌼 6. Loại bỏ lá ngập dưới nước\nLá khi ngâm nước lâu sẽ mục nát, tạo ra vi khuẩn gây hỏng hoa nhanh hơn. Vì vậy, hãy tỉa hết lá ở phần thân cắm vào nước.\n\n🌙 7. Để hoa “nghỉ ngơi” buổi tối\nMẹo nhỏ: Trong những ngày nắng nóng, bạn có thể đặt hoa vào phòng mát hoặc gần máy điều hoà vào ban đêm để hoa phục hồi tốt hơn.\n\nVới những cách đơn giản này, bạn hoàn toàn có thể giữ hoa tươi lâu hơn trong suốt mùa hè oi bức, giúp không gian sống luôn tràn ngập sắc màu và hương thơm tự nhiên.",
-      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763134703/utnkt2qldsigm8iqoj1x.jpg",
+      "id": "ART011",
+      "title": "Bí quyết giữ hoa tươi lâu trong mọi điều kiện thời tiết",
+      "thumbnail_url": "https://i.pinimg.com/1200x/0e/c5/60/0ec56093551f124fec64f76674eb60fe.jpg",
       "author": "Admin FlowerShop",
-      "category": "Mẹo chăm hoa",
-      "id": "ART001"
+      "content": "Giữ hoa tươi lâu là điều mà rất nhiều người quan tâm, đặc biệt là những ai yêu thích việc trang trí nhà cửa, bàn làm việc hoặc thường xuyên tặng hoa cho người thân, bạn bè. Tuy nhiên, không phải ai cũng biết rằng hoa là một loại thực thể sống, và mỗi loại hoa lại có đặc điểm khác nhau về nhu cầu ánh sáng, nước, nhiệt độ và môi trường bảo quản. Nếu bạn biết cách xử lý và chăm sóc đúng cách, một bình hoa có thể giữ được đến 5–7 ngày, thậm chí lâu hơn. Bài viết này sẽ chia sẻ những bí quyết giúp bạn bảo quản hoa tươi trong cả điều kiện nắng nóng, ẩm thấp hay thời tiết lạnh thất thường. Điều đầu tiên và quan trọng nhất là chọn hoa tươi ngay từ lúc mua. Hãy quan sát phần cánh hoa, lá và thân. Một bông hoa tươi sẽ có cánh căng, không bị thâm, không nhăn và không bị rụng cánh khi chạm vào nhẹ. Phần lá phải còn xanh, không ngả vàng, và thân phải cứng cáp. Với hoa hồng, bạn nên chọn những bông còn hơi nụ, không nên chọn bông nở to vì hoa sẽ nhanh tàn. Với các loại hoa thân mềm như cúc, hướng dương, hãy để ý phần gốc xem có bị mềm hay thối không. Khi đem hoa về nhà, việc đầu tiên cần làm là cắt bỏ phần gốc bị khô. Dùng kéo sắc hoặc dao bén cắt vát khoảng 45 độ để tăng khả năng hút nước. Điều này giúp hoa tươi lâu hơn rất nhiều so với việc cắt bằng kéo cùn khiến thân bị dập. Sau đó, hãy loại bỏ những chiếc lá nằm dưới mức nước trong bình, vì lá khi ngâm nước lâu sẽ phân hủy và tạo ra vi khuẩn làm đục nước, khiến hoa thối nhanh hơn. Một bí quyết quan trọng nữa là thay nước thường xuyên. Tốt nhất là bạn nên thay nước mỗi ngày, kết hợp rửa bình bằng nước sạch và lau kỹ thành bình để tránh tích tụ vi khuẩn. Khi thay nước, hãy cắt đi khoảng 1–2 cm phần gốc để mở lại đường hút nước cho hoa. Nếu bạn có điều kiện, hãy sử dụng nước lạnh hoặc cho vài viên đá vào bình để giảm nhiệt độ, giúp hoa giữ lâu hơn, nhất là trong mùa nóng. Việc sử dụng dung dịch dưỡng hoa cũng là cách rất hiệu quả. Bạn có thể tự pha bằng cách trộn 1 muỗng đường với vài giọt nước chanh hoặc 1 muỗng giấm trắng. Đường sẽ cung cấp năng lượng cho hoa nở đẹp, trong khi chanh hoặc giấm giúp nước không bị nhiễm khuẩn. Tuy nhiên, đừng sử dụng quá nhiều đường vì sẽ gây phản tác dụng, làm vi khuẩn phát triển nhanh hơn. Ngoài ra, vị trí đặt hoa cũng ảnh hưởng rất nhiều đến độ bền. Không nên đặt hoa ở nơi có ánh nắng trực tiếp hoặc gần cửa sổ có gió mạnh. Những nơi như cạnh bếp, nơi có hơi nóng hoặc máy lạnh thổi trực tiếp cũng khiến hoa nhanh héo. Tốt nhất là đặt hoa ở nơi thoáng mát, có ánh sáng nhẹ và không quá khô. Vào ban đêm, bạn có thể chuyển bình hoa vào nơi mát hơn để hoa nghỉ ngơi, giúp hoa phục hồi sau cả ngày tiếp xúc môi trường. Cuối cùng, hãy nhớ rằng mỗi loài hoa có đặc tính riêng. Ví dụ, hướng dương cần nhiều nước hơn bình thường, trong khi cúc lại rất bền và ít cần chăm sóc. Hãy tìm hiểu về từng loại hoa bạn sử dụng để có phương pháp bảo quản phù hợp nhất. Chỉ cần áp dụng những mẹo đơn giản trên, bạn hoàn toàn có thể giữ hoa tươi lâu và đẹp như mới cắm."
     },
     {
-      "title": "Gợi ý bó hoa tặng sinh nhật người yêu",
-      "slug": "goi-y-bo-hoa-tang-sinh-nhat-nguoi-yeu",
-      "content": "Hồng đỏ thể hiện tình yêu mãnh liệt, tulip tượng trưng cho niềm vui – cùng chọn bó hoa ý nghĩa nhất cho người bạn yêu.",
-      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763092678/fokv6yg6jv1pzsip95dl.jpg",
-      "author": "Nguyễn Thị Hoa",
-      "category": "Gợi ý quà tặng",
-      "id": "ART002"
+      "id": "ART012",
+      "title": "Hướng dẫn chọn hoa tặng người yêu theo từng dịp đặc biệt",
+      "thumbnail_url": "https://i.pinimg.com/1200x/4e/14/e3/4e14e3583a07c21c9acd672335d60b18.jpg",
+      "author": "Nguyễn Nhật Minh",
+      "content": "Tặng hoa cho người yêu luôn là một hành động chứa đựng nhiều cảm xúc và ý nghĩa. Dù bạn đang trong giai đoạn hẹn hò, mới yêu hay đã yêu lâu năm, một bó hoa đẹp, phù hợp với dịp và cảm xúc sẽ giúp mối quan hệ trở nên gắn kết hơn. Tuy nhiên, không phải ai cũng biết cách chọn hoa đúng với tâm trạng, ngữ cảnh và thông điệp muốn gửi gắm. Hãy để bài viết này hướng dẫn bạn cách chọn hoa cho từng dịp đặc biệt để món quà luôn khiến người nhận cảm động. Đối với dịp sinh nhật, hoa hồng đỏ vẫn luôn là lựa chọn hàng đầu nhờ ý nghĩa tượng trưng cho tình yêu nồng nàn và chân thành. Tuy nhiên, nếu bạn muốn thay đổi phong cách, có thể chọn tulip, mang đến cảm giác tươi trẻ, năng động và hạnh phúc. Baby trắng cũng là lựa chọn rất phổ biến hiện nay vì thể hiện sự tinh khôi, nhẹ nhàng và thuần khiết. Với ngày kỷ niệm yêu nhau hoặc kỷ niệm cưới, những loài hoa mang tính gợi nhớ, sâu sắc như lavender, hồng đỏ, hoặc hồng pastel sẽ giúp khẳng định lại tình cảm và sự chung thủy. Lavender đặc biệt phù hợp cho các cặp đã yêu nhau lâu năm vì biểu trưng của nó là sự bền bỉ và lòng trung thành. Hồng pastel thì mang lại cảm giác dịu dàng, lãng mạn mà không quá mãnh liệt như hồng đỏ. Ngày Valentine tất nhiên là dịp không thể thiếu hoa hồng đỏ. Tuy nhiên, những năm gần đây, nhiều cặp đôi trẻ chọn tặng tulip đỏ, mẫu đơn hoặc cả baby để tạo điểm mới lạ và độc đáo. Mẫu đơn mang ý nghĩa của sự phồn vinh và hạnh phúc viên mãn, rất thích hợp cho cặp đôi đang mong chờ một tương lai lâu dài. Trong ngày giáng sinh hoặc lễ tết, những loại hoa mang màu sắc ấm áp như đỏ, trắng, vàng thường được ưu tiên. Bạn có thể chọn hoa trạng nguyên, lily trắng, hồng đỏ hoặc hướng dương để mang lại không khí an lành, vui tươi và hy vọng. Nếu người yêu của bạn có cá tính mạnh mẽ, hiện đại, hãy thử tặng họ bó hoa phong cách Hàn Quốc với phối màu nhẹ nhàng cùng giấy gói thanh lịch. Ngược lại, nếu người ấy thích sự cổ điển, bạn có thể chọn giỏ hoa hoặc hộp hoa tone vintage như nâu, kem, hồng phớt. Chọn hoa không chỉ là chọn màu sắc hay kiểu dáng, mà còn là chọn cảm xúc. Điều quan trọng nhất vẫn là hiểu được sở thích, tính cách và tâm trạng của người nhận. Một bó hoa phù hợp sẽ truyền tải thông điệp yêu thương rõ ràng và chân thành hơn bất kỳ lời nói nào."
     },
     {
-      "title": "Top 5 loài hoa mang lại may mắn trong nhà",
-      "slug": "top-5-loai-hoa-may-man",
-      "content": "Hoa lan, hoa đồng tiền, cúc vàng, hoa sen và lavender là những loài hoa giúp thu hút năng lượng tích cực và tài lộc.",
-      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763092687/r8cu51jwjcznquhonlh8.jpg",
+      "id": "ART013",
+      "title": "6 loại hoa dễ trồng giúp khu vườn nhà bạn luôn rực rỡ quanh năm",
+      "thumbnail_url": "https://i.pinimg.com/736x/c8/ee/b7/c8eeb7403fa40272aeb1d0a1723525a4.jpg",
       "author": "Admin FlowerShop",
-      "category": "Phong thủy & may mắn",
-      "id": "ART003"
+      "content": "Nếu bạn yêu thích không gian xanh nhưng lại không có nhiều thời gian chăm sóc, những loại hoa dễ trồng và ít tốn công dưới đây sẽ là lựa chọn hoàn hảo. Việc sở hữu một khu vườn đầy màu sắc không chỉ giúp ngôi nhà trở nên sinh động mà còn tạo cảm giác thư giãn sau những giờ làm việc căng thẳng. Dưới đây là 6 loại hoa dễ trồng, phù hợp với khí hậu Việt Nam và nở quanh năm. Hoa mười giờ là loại hoa cực kỳ quen thuộc và rất dễ sống. Chỉ cần có ánh nắng nhẹ và đất thoát nước tốt, loài hoa này có thể nở rực rỡ mỗi ngày. Đặc biệt, hoa mười giờ có nhiều màu sắc khác nhau như đỏ, vàng, cam, hồng, giúp khu vườn của bạn luôn đầy sức sống. Dừa cạn cũng là một loại hoa rất bền, chịu nắng tốt và ít sâu bệnh. Hoa dừa cạn nở liên tục quanh năm và rất dễ trồng trong chậu hoặc bồn hoa. Chỉ cần tưới nước đều đặn và đặt ở nơi có ánh sáng vừa phải, bạn sẽ luôn có những bông hoa xinh xắn trang trí quanh nhà. Cúc họa mi tuy thường được biết đến như loài hoa của mùa thu, nhưng thực chất chúng có thể trồng quanh năm nếu chăm đúng cách. Đây là loài hoa mang ý nghĩa về sự trong sáng và hy vọng. Cúc họa mi dễ trồng bằng phương pháp giâm cành và rất ít sâu bệnh. Hoa giấy là lựa chọn dành cho những ai muốn có một giàn hoa bắt mắt nhưng không tốn công chăm sóc. Loại hoa này càng nắng càng nở và không cần tưới nhiều. Khi trồng hoa giấy, chỉ cần đảm bảo đất thoát nước tốt và cắt tỉa định kỳ là cây sẽ phát triển mạnh. Hoa hồng leo mang lại vẻ đẹp lãng mạn và cổ điển cho ngôi nhà. Điều tuyệt vời là loại hoa này sống tốt trong nhiều điều kiện thời tiết. Nếu được bón phân định kỳ và cắt tỉa hợp lý, hoa hồng leo có thể nở rộ quanh năm. Cuối cùng là lavender – loại hoa mang hương thơm nhẹ nhàng và màu tím đặc trưng. Dù không phổ biến bằng các loại hoa khác, lavender vẫn được nhiều người yêu thích vì dễ chăm và có mùi thơm thư giãn. Chỉ cần đặt ở nơi khô ráo, có ánh nắng nhẹ là cây phát triển rất tốt. Với 6 loại hoa dễ trồng này, bạn hoàn toàn có thể tạo nên một khu vườn đa dạng, nhiều màu sắc và luôn tươi mới mà không cần lo lắng về việc chăm sóc quá nhiều. Chỉ vài phút mỗi ngày, khu vườn của bạn sẽ trở thành nơi lý tưởng để thư giãn và tận hưởng cuộc sống."
     },
     {
-      "id": "ART655",
-      "title": "5 loại hoa dễ trồng và nở quanh năm",
-      "slug": "5-loai-hoa-de-trong-va-no-quanh-nam",
-      "content": "Nếu bạn là người yêu hoa nhưng không có nhiều thời gian chăm sóc, hãy thử trồng những loài hoa dễ sống và ra hoa quanh năm như hoa mười giờ, cúc họa mi, dừa cạn, hoa giấy và hoa hồng leo.\n\nNhững loài hoa này không chỉ dễ trồng, ít sâu bệnh, mà còn chịu được thời tiết khắc nghiệt, từ nắng nóng đến mưa nhiều.\n\n🌸 Hoa mười giờ – nở rực rỡ vào buổi sáng, chỉ cần ánh nắng là đủ.\n🌼 Cúc họa mi – tượng trưng cho sự trong sáng, dễ nhân giống bằng cách giâm cành.\n🌺 Dừa cạn – loài hoa “bền bỉ”, có thể trồng trong chậu hay ngoài sân vườn.\n🌹 Hoa hồng leo – mang vẻ đẹp cổ điển, thích hợp để trang trí hàng rào, ban công.\n🌷 Hoa giấy – càng nắng càng nở rộ, không cần tưới nhiều nước.\n\nNhờ đặc điểm dễ trồng và nở quanh năm, những loài hoa này sẽ giúp khu vườn của bạn luôn rực rỡ sắc màu, tạo không gian tươi mát và thư giãn cho mọi người.",
-      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763020232/stku2iisgmjuyx6pc1ul.jpg",
-      "author": "Admin FlowerShop",
-      "category": "Góc làm vườn",
-      "created_at": "2025-11-13T07:50:32.920Z"
+      "id": "ART014",
+      "title": "Cách phối màu hoa để tạo nên bó hoa hài hòa và ấn tượng",
+      "thumbnail_url": "https://i.pinimg.com/1200x/aa/90/dc/aa90dce2f3e583516f7cc9dd89173192.jpg",
+      "author": "Trần Bích Thủy",
+      "content": "Phối màu hoa là một yếu tố quan trọng trong nghệ thuật cắm hoa và trang trí. Một bó hoa đẹp không chỉ nằm ở loại hoa được sử dụng mà còn ở cách kết hợp màu sắc sao cho hài hòa và thu hút ánh nhìn. Tuy nhiên, nhiều người vẫn nghĩ rằng chỉ cần chọn những loại hoa đẹp là đủ, mà quên mất việc phối màu đúng cách cũng có thể nâng tầm toàn bộ bó hoa. Hãy cùng tìm hiểu những nguyên tắc phối màu hoa giúp bạn tạo nên tác phẩm ấn tượng. Trong nghệ thuật phối màu, có ba nhóm màu cơ bản thường được sử dụng: màu tương đồng, màu đối lập và màu đơn sắc. Mỗi nhóm mang đến một hiệu ứng khác nhau về mặt thị giác và cảm xúc. Màu tương đồng là các màu nằm gần nhau trên bánh xe màu như đỏ – cam – vàng hoặc xanh – xanh lá – vàng. Phối hoa theo nhóm màu này sẽ mang lại cảm giác hài hòa, mềm mại và dễ chịu. Đây là kiểu phối màu phù hợp cho những bó hoa tặng sự kiện nhẹ nhàng như sinh nhật, tân gia hoặc trang trí nhà cửa. Màu đối lập là những cặp màu nằm đối diện nhau như đỏ – xanh lá hoặc vàng – tím. Phối theo kiểu này sẽ tạo ra sự nổi bật mạnh mẽ và thu hút ánh nhìn ngay lập tức. Tuy nhiên, bạn phải cẩn thận khi dùng màu đối lập vì nếu quá nhiều, bó hoa dễ trở nên rối mắt. Hãy dùng một màu làm chủ đạo và màu còn lại làm điểm nhấn. Màu đơn sắc là sự kết hợp các sắc độ khác nhau của cùng một màu. Ví dụ như các tông hồng nhạt – hồng trung – hồng đậm. Đây là phong cách sang trọng, tinh tế và dễ phối cho mọi loại hoa. Ngoài việc phối màu, bạn cũng nên chú ý đến kích thước và hình dáng của hoa. Những bông lớn như mẫu đơn hoặc hồng Ecuador nên làm trung tâm, trong khi các bông nhỏ như baby hoặc cúc tana nên làm lớp nền để tạo chiều sâu. Giấy gói và phụ kiện cũng góp phần quan trọng trong tổng thể. Nếu bó hoa có nhiều màu rực rỡ, hãy dùng giấy gói màu pastel để cân bằng. Ngược lại, nếu hoa màu nhẹ, bạn có thể chọn giấy gói đậm để tạo điểm nhấn. Phối màu hoa không khó, chỉ cần bạn nắm các nguyên tắc cơ bản và biết rõ mục đích bó hoa. Dù bạn là người mới tập cắm hoa hay đã có kinh nghiệm, việc hiểu rõ cách phối màu sẽ giúp bạn tạo nên những tác phẩm thật sự nổi bật và mang đầy cảm xúc."
     },
     {
-      "id": "ART810",
-      "title": "Bí quyết chăm sóc hoa vào mùa mưa để tránh úng rễ",
-      "slug": "bi-quyet-cham-soc-hoa-vao-mua-mua-de-tranh-ung-re",
-      "content": "Mùa mưa mang lại không khí dễ chịu nhưng cũng là thời điểm nhiều loại hoa dễ bị thối rễ, vàng lá và nấm bệnh do nước đọng quá nhiều. Để giúp vườn hoa của bạn luôn khỏe mạnh trong thời tiết ẩm ướt, bạn có thể áp dụng những bí quyết đơn giản sau:\n\n🌿 1. Tăng khả năng thoát nước cho chậu\nHãy kiểm tra đáy chậu xem lỗ thoát nước có bị tắc hay không. Nếu đất quá bí, bạn nên trộn thêm sỏi nhẹ hoặc xơ dừa để đất tơi hơn, giúp nước thoát nhanh hơn sau mỗi cơn mưa.\n\n🌦️ 2. Hạn chế tưới nước vào sáng sớm\nMưa đã cung cấp đủ độ ẩm, nên bạn chỉ cần tưới nếu đất quá khô. Việc tưới thêm khi trời ẩm dễ khiến hoa bị úng.\n\n🍃 3. Dọn lá rụng và cành héo\nLá và cành mục rất dễ là nơi tích tụ nấm. Việc dọn dẹp định kỳ không chỉ giữ chậu hoa sạch sẽ mà còn hạn chế các loại bệnh thường gặp trong mùa mưa.\n\n🪴 4. Che chắn bằng mái hiên hoặc lưới\nNếu mưa lớn kéo dài, hãy di chuyển các chậu hoa vào gần mái hiên hoặc phủ lưới che nhằm giảm lượng nước tạt trực tiếp vào gốc.\n\n🌸 5. Sử dụng chế phẩm sinh học chống nấm\nMột số loại nấm phát triển mạnh khi độ ẩm cao. Bạn có thể dùng các sản phẩm sinh học an toàn giúp bảo vệ rễ hoa mà không lo gây hại môi trường.\n\nNhờ những mẹo nhỏ này, khu vườn của bạn sẽ luôn khỏe mạnh và tươi tắn ngay cả trong những ngày mưa dài dai dẳng.",
-      "thumbnail_url": "https://res.cloudinary.com/djbobb5oe/image/upload/v1763134389/bk2xkbcma0fwol1uy0fl.jpg",
+      "id": "ART015",
+      "title": "Làm sao để chọn hoa tươi online mà không bị thất vọng",
+      "thumbnail_url": "https://i.pinimg.com/736x/d3/a3/3d/d3a33dc84b0ae00379f8398c8dadbb0f.jpg",
       "author": "Admin FlowerShop",
-      "category": "Mẹo chăm hoa",
-      "created_at": "2025-11-14T15:33:09.118Z"
+      "content": "Trong thời đại mua sắm trực tuyến ngày càng phổ biến, việc đặt hoa online đã trở thành lựa chọn quen thuộc vì sự tiện lợi, nhanh chóng và đa dạng mẫu mã. Tuy nhiên, không ít người từng gặp phải tình trạng hoa nhận được không giống hình, hoa héo, giấy gói xấu hoặc giao hàng trễ giờ quan trọng. Để tránh những trải nghiệm không mong muốn, bạn cần biết cách chọn hoa online sao cho an toàn và hiệu quả. Điều đầu tiên là chọn những cửa hàng uy tín. Hãy xem các đánh giá từ khách hàng cũ, số lượng phản hồi, hình ảnh thật và cách cửa hàng xử lý những bình luận tiêu cực. Một shop hoa tốt thường sẽ đăng hình thật, không lạm dụng ảnh chỉnh sửa và có chính sách đổi trả rõ ràng. Tiếp theo, bạn cần xem kỹ mô tả sản phẩm. Nhiều shop dùng hình minh họa nhưng không nói rõ về kích thước hoặc số lượng hoa trong bó. Hãy ưu tiên những nơi ghi rõ: số lượng bông, loại hoa, kích thước bó, màu giấy gói, phụ kiện kèm theo. Điều này giúp bạn hình dung chính xác sản phẩm sẽ nhận. Một yếu tố quan trọng nữa là thời gian giao hàng. Nếu bạn cần giao đúng giờ như các dịp sinh nhật, sự kiện hoặc tỏ tình, hãy chọn shop có dịch vụ giao nhanh và cam kết thời gian cụ thể. Tốt nhất là liên hệ trước để xác nhận giờ giao và yêu cầu shop chụp hình bó hoa trước khi gửi đi. Bạn cũng nên chú ý đến phong cách thiết kế của cửa hàng. Một số shop chuyên phong cách Hàn Quốc, số khác lại theo kiểu cổ điển châu Âu hoặc sang trọng hiện đại. Hãy xem album của shop để biết phong cách có phù hợp với ý muốn của bạn hay không. Ngoài ra, hãy tận dụng dịch vụ hỗ trợ khách hàng. Nếu có điều gì chưa rõ, đừng ngại nhắn tin hỏi chi tiết về chất lượng hoa, thời gian tươi, màu sắc thật hoặc nhu cầu thay đổi thiết kế. Cửa hàng chuyên nghiệp luôn sẵn sàng tư vấn nhanh chóng và rõ ràng. Cuối cùng, đừng quên kiểm tra chính sách bảo hành hoa. Một số shop uy tín cho phép đổi sản phẩm nếu hoa bị dập, thiếu bông, sai màu hoặc thấp hơn giá trị đã đặt. Điều này giúp bạn yên tâm khi đặt hoa online, nhất là những dịp quan trọng. Chỉ cần lưu ý những điều trên, bạn hoàn toàn có thể chọn được bó hoa đẹp, đúng ý và chất lượng ngay cả khi không đến trực tiếp cửa hàng."
+    },
+    {
+      "id": "ART016",
+      "title": "Bí quyết giữ hoa tươi khi vận chuyển xa mà không bị dập nát",
+      "thumbnail_url": "https://i.pinimg.com/736x/00/75/ec/0075ec70ff13583a1c638e1459892007.jpg",
+      "author": "Admin FlowerShop",
+      "content": "Vận chuyển hoa tươi là một thách thức lớn, nhất là khi quãng đường xa hoặc thời tiết khắc nghiệt. Hoa rất dễ bị dập, gãy cành, mất nước hoặc héo nếu không được bảo quản đúng cách. Đối với các cửa hàng hoa hoặc những người thường xuyên gửi hoa làm quà, việc nắm rõ kỹ thuật vận chuyển hoa là điều bắt buộc. Bài viết này sẽ chia sẻ những bí quyết giúp hoa giữ được độ tươi và an toàn trong suốt quá trình di chuyển. Trước khi vận chuyển, bạn cần chọn loại hoa phù hợp. Các loại hoa như rose Ecuador, cẩm chướng, lan hồ điệp và baby có độ bền cao hơn so với hướng dương, tulip hoặc hồng nội. Nếu bắt buộc phải vận chuyển các loại hoa mềm, bạn cần chuẩn bị kỹ càng hơn trong khâu cố định và giữ nước. Bước tiếp theo là cố định bó hoa. Hãy buộc thân hoa bằng dây mềm để tránh xê dịch. Giấy gói cần được quấn chắc nhưng không quá chặt để tránh làm dập cánh. Với hoa giỏ, cần chèn thêm mút xốp hoặc giấy để hạn chế rung lắc. Trong những chuyến vận chuyển dài, việc giữ nước cho hoa là điều bắt buộc. Bạn có thể sử dụng ống nước cắm hoa mini hoặc bọc gốc hoa bằng khăn giấy ẩm, sau đó quấn nylon để giữ độ ẩm. Điều này giúp thân không bị khô dù phải di chuyển lâu. Nhiệt độ trong quá trình vận chuyển cũng rất quan trọng. Hoa cần được giữ ở nơi mát, tránh ánh nắng trực tiếp. Nếu vận chuyển bằng xe máy, nên đặt hoa trong thùng chuyên dụng hoặc hộp carton để tránh gió tạt làm mất nước. Với xe hơi, tránh để hoa gần cửa kính nóng. Đặc biệt, bạn cần hạn chế rung lắc. Khi đi xa, hãy để hoa ở vị trí cố định, không để chung với vật nặng hoặc đồ dễ rơi. Nếu có thể, hãy yêu cầu đơn vị vận chuyển chuyên nghiệp có kinh nghiệm giao hoa. Khi đến nơi, hãy kiểm tra lại tình trạng hoa. Nếu cánh hoa bị hơi héo, bạn chỉ cần cắt lại gốc và ngâm vào nước lạnh trong 30 phút là hoa sẽ tươi trở lại. Với hoa bị dập nhẹ, bạn có thể cắt bỏ cánh hỏng và chỉnh lại form để bó hoa trông hoàn hảo trở lại. Nhờ áp dụng những bí quyết trên, việc vận chuyển hoa dù xa đến đâu vẫn có thể đảm bảo được chất lượng. Hoa sẽ luôn tươi đẹp, chỉn chu và giữ nguyên được ý nghĩa mà bạn muốn gửi gắm."
     }
   ]
 }
