@@ -151,13 +151,13 @@ export class ProductService {
       let priceHtml = "";
       if (prod.sale_price) {
         priceHtml = `
-              <p class="text-dark fw-bold">${formatter.format(
+              <p class="text-danger fw-bold">${formatter.format(
           prod.base_price
         )}</p>
             `;
       } else {
         priceHtml = `
-                <p class="text-dark fw-bold">${formatter.format(
+                <p class="text-danger fw-bold">${formatter.format(
           prod.base_price
         )}</p>
             `;
