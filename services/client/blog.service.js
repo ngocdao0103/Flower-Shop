@@ -32,8 +32,8 @@ export class BlogService {
             : blog.content;
         html += `
                     <div class="col-md-6 col-12 col-lg-4">
-                        <a href="../client/detail_blog.html?blog=${blog.slug}" >
-                            <div class="card border-0 shadow-sm h-100">
+                        <a href="../client/detail_blog.html?blog=${blog.id}" >
+                            <div class="card blog-item border-0 shadow-sm h-100">
                                 <img src="${blog.thumbnail_url}"
                                     class="card-img-top" 
                                     alt="Blog image"
@@ -51,7 +51,6 @@ export class BlogService {
                                     <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
                                         ${shortContent}
                                     </p>
-                                    <a href="#" class="text-decoration-none text-dark fw-semibold mt-auto">Read More →</a>
                                 </div>
                             </div>
                         </a>

@@ -2,48 +2,51 @@ import { apiURL } from "../../environments/environment.js";
 import { endpoints } from "../../config/api-endpoint.config.js";
 
 export class BlogDetailService {
-    constructor() { }
+  constructor() {}
 
-    async getAllBlogs() {
-        const res = await axios.get(apiURL + endpoints.BLOG);
-        return res.data;
-    }
+  async getAllBlogs() {
+    const res = await axios.get(apiURL + endpoints.BLOG);
+    return res.data;
+  }
 
-    // Lấy chi tiết blog theo SLUG
-    async getBlogById(slug) {
-        try {
-            const allBlogs = await this.getAllBlogs();
+  // Lấy chi tiết blog theo id
+  async getBlogById(id) {
+    try {
+      const allBlogs = await this.getAllBlogs();
 
-            // Tìm blog theo slug
-            const blog = allBlogs.find(b => b.slug === slug);
+      // Tìm blog theo id
+      const blog = allBlogs.find((b) => b.id == id);
 
-            if (!blog) {
-                document.getElementById("blog-detail").innerHTML = `
+      if (!blog) {
+        document.getElementById("blog-detail").innerHTML = `
                     <div class="alert alert-warning text-center">Không tìm thấy bài viết.</div>
                 `;
-                return;
-            }
+        return;
+      }
 
-            // Tìm vị trí bài hiện tại
-            const index = allBlogs.findIndex(b => b.id === blog.id);
+      // Tìm vị trí bài hiện tại
+      const index = allBlogs.findIndex((b) => b.id == blog.id);
 
-            // Xác định bài trước / sau
-            const prevBlog = allBlogs[index - 1] || null;
-            const nextBlog = allBlogs[index + 1] || null;
+      // Xác định bài trước / sau
+      const prevBlog = allBlogs[index - 1] || null;
+      const nextBlog = allBlogs[index + 1] || null;
 
-            this.renderBlogDetail(blog, prevBlog, nextBlog);
-
-        } catch (error) {
-            console.error(error);
-        }
+      this.renderBlogDetail(blog, prevBlog, nextBlog);
+    } catch (error) {
+      console.error(error);
     }
+  }
 
-    // Hiển thị chi tiết blog
-    renderBlogDetail(blog, prevBlog, nextBlog) {
-        const container = document.getElementById("blog-detail");
+  // Hiển thị chi tiết blog
+  renderBlogDetail(blog, prevBlog, nextBlog) {
+    const container = document.getElementById("blog-detail");
 
-        container.innerHTML = `
-            <img src="${blog.thumbnail_url}" class="img-fluid mb-4 rounded" style="width: 1200px; object-fit: cover;">
+    container.innerHTML = `
+            <div class="mb-5" style="width: 100%; height: 700px"; overflow: hidden;>
+                <img src="${
+                  blog.thumbnail_url
+                }" class="img-fluid mb-4 rounded" style="width: 100%; height:100%; object-fit: cover;">
+            </div>
             
             <h2 class="fw-bold text-uppercase mb-4">${blog.title}</h2>
 
@@ -53,14 +56,17 @@ export class BlogDetailService {
                 <em>
                     Contrary to popular belief, Lorem Ipsum is not simply random text...
                 </em>
-                <footer class="blockquote-footer mt-2">${blog.author || "Không rõ"}</footer>
+                <footer class="blockquote-footer mt-2">${
+                  blog.author || "Không rõ"
+                }</footer>
             </blockquote>
 
             <!-- Điều hướng bài viết -->
             <div class="d-flex justify-content-between align-items-center my-4">
 
                 <!-- Older Post -->
-                ${prevBlog
+                ${
+                  prevBlog
                     ? `<a href="../client/detail_blog.html?blog=${prevBlog.slug}"
                         class="text-decoration-none text-secondary"
                         data-bs-toggle="tooltip"
@@ -83,7 +89,8 @@ export class BlogDetailService {
                 </div>
 
                 <!-- Newer Post -->
-                ${nextBlog
+                ${
+                  nextBlog
                     ? `<a href="../client/detail_blog.html?blog=${nextBlog.slug}"
                         class="text-decoration-none text-secondary"
                         data-bs-toggle="tooltip"
@@ -96,9 +103,9 @@ export class BlogDetailService {
 
             </div>
         `;
-        // Tooltip
-        new bootstrap.Tooltip(document.body, {
-            selector: "[data-bs-toggle='tooltip']"
-        });
-    }
+    // Tooltip
+    new bootstrap.Tooltip(document.body, {
+      selector: "[data-bs-toggle='tooltip']",
+    });
+  }
 }
