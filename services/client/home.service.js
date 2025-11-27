@@ -77,7 +77,7 @@ export class Home {
       html += `
          <div class="col-12 col-lg-3 col-md-6">
     <a href="./pages/client/detail_blog.html?blog=${item.slug}">
-      <div class="card border-0 shadow-sm h-100">
+      <div class="card blog-card border-0 shadow-sm h-100">
         <img
           src="${item.thumbnail_url}"
           class="card-img-top"
@@ -114,9 +114,6 @@ export class Home {
           >
             ${shortContent}
           </p>
-          <a href="#" class="text-decoration-none text-dark fw-semibold mt-auto"
-            >Read More →</a
-          >
         </div>
       </div>
     </a>

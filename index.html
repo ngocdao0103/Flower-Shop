@@ -32,6 +32,15 @@
     height: 100%;
     object-fit: cover;
   }
+
+  .blog-card {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .blog-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  }
 </style>
 
 <body>
@@ -44,7 +53,7 @@
   </div>
 
   <div id="header"></div>
-  <div id="flowerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div id="flowerCarousel" class="carousel slide carousel-fade container mb-5" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#flowerCarousel" data-bs-slide-to="0" class="active" aria-current="true"
         aria-label="Slide 1"></button>
@@ -57,9 +66,9 @@
         <img src="./images/banners/image1.png" class="d-block w-100" alt="Bó hồng tình yêu" />
 
         <div class="carousel-caption d-none d-md-block">
-          <h1 class="banner-title display-5 fw-bold text-shadow-dark">
+          <h2 class="banner-title display-5 fw-bold text-shadow-dark">
             Gửi trọn yêu thương
-          </h1>
+          </h2>
           <p class="lead text-dark">
             Bộ sưu tập hoa hồng lãng mạn, tinh tế cho mọi khoảnh khắc đáng
             nhớ.
@@ -72,9 +81,9 @@
         <img src="./images/banners/image2.png" class="d-block w-100" alt="Giao hoa hỏa tốc" />
 
         <div class="carousel-caption d-none d-md-block">
-          <h1 class="banner-title display-5 fw-bold text-shadow-dark">
+          <h2 class="banner-title display-5 fw-bold text-shadow-dark">
             Giao hoa hỏa tốc 60 phút
-          </h1>
+          </h2>
           <p class="lead text-dark">
             Luôn đảm bảo hoa tươi mới, nguyên vẹn đến tận tay người nhận một
             cách nhanh nhất.
@@ -87,9 +96,9 @@
         <img src="./images/banners/image3.png" class="d-block w-100" alt="Hoa theo mùa" />
 
         <div class="carousel-caption d-none d-md-block">
-          <h1 class="banner-title display-5 fw-bold text-shadow-dark">
+          <h2 class="banner-title display-5 fw-bold text-shadow-dark">
             Sắc màu hoa theo mùa
-          </h1>
+          </h2>
           <p class="lead text-dark">
             Khám phá các loại hoa nhập khẩu, độc đáo chỉ có trong mùa này.
           </p>
@@ -99,8 +108,8 @@
     </div>
   </div>
 
-  <section class="py-4">
-    <div class="container-fluid">
+  <section class="">
+    <div class="container mb-5">
       <div class="row g-4">
         <div class="col-md-5">
           <div class="position-relative">
@@ -138,18 +147,18 @@
         </div>
       </div>
     </div>
-    <div class="container-xl">
-      <div class="text-center py-5">
-        <p class="h4 fst-italic text-danger">Món quà tuyệt vời</p>
-        <p class="h1 fw-bold">Sản phẩm nổi bật</p>
+    <div class="container mb-5">
+      <div class="text-center mb-5">
+        <p class="fst-italic text-danger fw-bold">Món quà tuyệt vời</p>
+        <h3 class="fw-bold">Sản phẩm nổi bật</h3>
       </div>
       <div class="row row-cols-1 row-cols-md-4 g-4" id="List"></div>
     </div>
 
-    <div class="container text-center mt-5">
-      <p class="h4 fst-italic text-danger">Một câu chuyện nhỏ về chúng tôi</p>
-      <p class="h1 fw-bold">Lịch sử của chúng tôi</p>
-      <p class="lh-base fw-normal m-5" style="font-size: 18px; text-align: justify">
+    <div class="container text-center mb-5">
+      <p class="fst-italic text-danger fw-bold">Một câu chuyện nhỏ về chúng tôi</p>
+      <h2 class="fw-bold">Lịch sử của chúng tôi</h2>
+      <p class="lh-base fw-normal my-3" style="font-size: 18px; text-align: justify">
         Khi thời gian cho phép và mọi ràng buộc được gỡ bỏ, chúng ta có thể
         lựa chọn những giải pháp linh hoạt mà không gặp bất kỳ cản trở nào để
         thực hiện điều mang lại sự hài lòng lớn nhất. Các kiểu chữ vốn dĩ
@@ -162,7 +171,7 @@
       </p>
     </div>
 
-    <div class="container-fluid py-5">
+    <div class="container mb-5">
       <div class="row g-4">
         <!-- Card 1 -->
         <div class="col-12 col-lg-3 col-md-6">
@@ -194,39 +203,54 @@
       </div>
     </div>
 
-    <div class="py-5 bg-white">
+    <div class="bg-white">
       <div class="container">
         <!-- Tiêu đề -->
         <div class="text-center mb-5">
-          <p class="text-danger fw-semibold fst-italic">
+          <p class="fst-italic text-danger fw-bold">
             Từ Blog của chúng tôi
           </p>
-          <h2 class="fw-bold text-uppercase">
+          <h2 class="fw-bold">
             Bài viết mới nhất của chúng tôi
           </h2>
         </div>
 
         <!-- Danh sách bài viết -->
-        <div class="row g-4" id="ListBlog"></div>
+        <div class="row g-4 mb-5" id="ListBlog"></div>
       </div>
     </div>
 
-    <div class="brand-section">
-      <div class="brand-container">
-        <div class="brand-item">
-          <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/1.png" alt="Brand 1" />
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="brand-item">
+            <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/1.png" alt="Brand 1" />
+          </div>
         </div>
-        <div class="brand-item">
-          <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/2.png" alt="Brand 2" />
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="brand-item">
+            <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/2.png" alt="Brand 2" />
+          </div>
         </div>
-        <div class="brand-item">
-          <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/3.png" alt="Brand 3" />
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="brand-item">
+            <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/3.png" alt="Brand 3" />
+          </div>
         </div>
-        <div class="brand-item">
-          <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/4.png" alt="Brand 4" />
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="brand-item">
+            <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/4.png" alt="Brand 4" />
+          </div>
         </div>
-        <div class="brand-item">
-          <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/5.png" alt="Brand 5" />
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="brand-item">
+            <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/5.png" alt="Brand 5" />
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="brand-item">
+            <img src="https://htmldemo.net/flosun/flosun/assets/images/brand/2.png" alt="Brand 2" />
+          </div>
         </div>
       </div>
     </div>

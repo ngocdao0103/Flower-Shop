@@ -20,16 +20,18 @@
 <body>
     <div id="header"></div>
     <!-- Banner -->
-    <div class="breadcrumbs-area position-relative">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="breadcrumb-content position-relative section-content">
-                        <h3 class="title-3">Cửa hàng</h3>
-                        <ul>
-                            <li><a href="../../index.html">Trang chủ</a></li>
-                            <li>Cửa hàng</li>
-                        </ul>
+    <div class="container">
+        <div class="breadcrumbs-area position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="breadcrumb-content position-relative section-content">
+                            <h3 class="title-3">Cửa hàng</h3>
+                            <ul>
+                                <li><a href="../../index.html">Trang chủ</a></li>
+                                <li>Cửa hàng</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,12 +42,12 @@
         <p class="text-dark">Trang chủ > Cửa hàng</p>
     </div> -->
     <div class="container my-5">
-        <div class="row">
+        <div class="row justify-content-between">
             <!-- Sidebar -->
-            <aside class="col-lg-3 sidebar-custom">
+            <aside class="col-lg-3 col-12">
                 <!-- Search -->
-                <div class="mb-5">
-                    <h6 class="sidebar-title mb-4">Tìm kiếm</h6>
+                <div class="mb-4">
+                    <h6 class="sidebar-title mb-3">Tìm kiếm</h6>
                     <div class="input-group">
                         <input type="text" class="form-control form-control-sm" placeholder="Tìm kiếm cửa hàng">
                         <button class="btn btn-dark btn-sm">
@@ -59,8 +61,8 @@
                 </div>
 
                 <!-- Price Filter -->
-                <div class="mb-5">
-                    <h6 class="sidebar-title mb-4">Lọc theo giá tiền</h6>
+                <div class="mb-4">
+                    <h6 class="sidebar-title mb-3">Lọc theo giá tiền</h6>
                     <input type="range" min="0" max="500" value="250" class="price-range" id="priceRange">
                     <div class="d-flex justify-content-between mt-2">
                         <button class="filter-btn">Lọc</button>
@@ -69,26 +71,14 @@
                 </div>
 
                 <!-- Category -->
-                <div class="mb-5">
-                    <h6 class="sidebar-title mb-4">Loại sản phẩm</h6>
+                <div class="mb-4">
+                    <h6 class="sidebar-title mb-3">Loại sản phẩm</h6>
                     <div id="categoryContainer"></div>
                 </div>
             </aside>
 
             <!-- Product Grid -->
-            <section class="col-lg-9">
-                <div class="shop-toolbar mb-4">
-                    <div class="view-toggle">
-                        <button id="gridView" class="active">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-grid-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
+            <section class="col-lg-8 col-md-12 col-12">
                 <div id="productContainer" class="row g-4">
                     <!-- Render -->
                 </div>

@@ -33,7 +33,7 @@ export class BlogService {
         html += `
                     <div class="col-md-6 col-12 col-lg-4">
                         <a href="../client/detail_blog.html?blog=${blog.id}" >
-                            <div class="card blog-item border-0 shadow-sm h-100">
+                            <div class="card blog-item blog-card border-0 shadow-sm h-100">
                                 <img src="${blog.thumbnail_url}"
                                     class="card-img-top" 
                                     alt="Blog image"

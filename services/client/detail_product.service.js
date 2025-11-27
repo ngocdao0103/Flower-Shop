@@ -87,9 +87,7 @@ class DetailProductService {
   }
 
   renderRelated(products) {
-    const container = document.querySelector(
-      ".related-products .row.mt-4.g-4"
-    );
+    const container = document.querySelector(".related-products .row.mt-4.g-4");
     if (!container) return;
 
     const formatter = new Intl.NumberFormat("vi-VN", {
@@ -104,23 +102,14 @@ class DetailProductService {
     }
 
     let html = "";
-    products.forEach((prod,index) => {
-      if(index>=6) return;
+    products.forEach((prod, index) => {
+      if (index >= 6) return;
       let priceHtml = "";
-      if (prod.sale_price && prod.sale_price > 0) {
-        priceHtml = `
+      priceHtml = `
             <p class="text-danger fw-bold">${formatter.format(
-              prod.sale_price
-            )}</p>
-            <s class="text-secondary">${formatter.format(prod.base_price)}</s>
-        `;
-      } else {
-        priceHtml = `
-            <p class="text-dark fw-bold">${formatter.format(
               prod.base_price
             )}</p>
         `;
-      }
 
       html += `
         <div class="col-md-4 col-sm-6">
