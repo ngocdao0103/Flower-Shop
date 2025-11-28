@@ -2,6 +2,7 @@ import { apiURL } from "../../environments/environment.js";
 import { endpoints, status } from "../../config/api-endpoint.config.js";
 
 export class ProductService {
+  categoryList = [];
   constructor() {
     this.searchKeyword = "";
     this.maxPrice = 5000000;
@@ -9,7 +10,6 @@ export class ProductService {
 
     this.registerSearch();
     this.registerPriceFilter();
-
     this.loadCategories();
     this.loadProducts();
   }
@@ -21,9 +21,10 @@ export class ProductService {
     try {
       const res = await axios.get(apiURL + endpoints.CATEGORY);
       if (res.status !== status.OK) return;
-
+      this.categoryList = res.data;
       let html = "";
       res.data.forEach((cat) => {
+        if(cat.statusCategory == 0) return;
         html += `<span class="tag category-tag" data-id="${cat.id}">${cat.name}</span>`;
       });
 
@@ -146,8 +147,9 @@ export class ProductService {
     }
 
     let html = "";
-
+    
     products.forEach((prod) => {
+      if(prod.category_id && this.categoryList.find(cat => cat.id == prod.category_id && cat.statusCategory == 0)) return;
       let priceHtml = "";
       if (prod.sale_price) {
         priceHtml = `
@@ -166,15 +168,12 @@ export class ProductService {
       html += `
             <div class="col-md-4 col-sm-6">
                 <div class="product-card position-relative">
-
                     <div class="product-img position-relative overflow-hidden">
                         <img src="${prod.image_url}" class="img">
-
                         <div class="product-actions">
                           <a class="btn btn-light rounded-circle" href="detail_product.html?id=${prod.id}"><i class="bi bi-eye"></i></a>
                         </div>
                     </div>
-
                     <h6 class="mt-3">${prod.name}</h6>
                     ${priceHtml}
                 </div>
