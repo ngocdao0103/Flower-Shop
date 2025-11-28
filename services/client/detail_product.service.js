@@ -210,9 +210,7 @@ class DetailProductService {
             ${priceHtml}
           </h4>
           <p class="text-muted mb-2">SKU: ${p.sku || p.id}</p>
-          <p id="shortDescription">${
-            p.short_description || p.description || ""
-          }</p>
+          
 
           <div id="variantSelectors" class="mb-5">
             ${selectHtml}
@@ -247,7 +245,7 @@ class DetailProductService {
 
         <div class="tab-content p-4 bg-white border border-top-0" id="productTabContent">
           <div class="tab-pane fade show active" id="description" role="tabpanel">
-            <p>${p.description || ""}</p>
+            <p style="text-align: justify">${p.description || ""}</p>
           </div>
           <div class="tab-pane fade" id="reviews" role="tabpanel">
             <div class="review-box border p-4 mb-4">

@@ -50,7 +50,7 @@ export class BlogDetailService {
             
             <h2 class="fw-bold text-uppercase mb-4">${blog.title}</h2>
 
-            <p>${blog.content}</p>
+            <p style="text-align: justify;line-height: 1.8;">${blog.content}</p>
 
             <blockquote class="blockquote bg-light p-4 border-start border-4 border-danger ms-md-5 my-4 shadow-sm">
                 <em>
