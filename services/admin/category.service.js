@@ -37,7 +37,7 @@ export class CategoryService {
                                     </td>
                                     <td>${category.description}</td>
                                     <td>${
-                                      category.statusCategory == 0
+                                      category.statusCategory == 1
                                         ? '<span class="badge bg-success">Hiển thị</span>'
                                         : '<span class="badge bg-secondary">Ẩn</span>'
                                     }</td>
@@ -102,13 +102,13 @@ export class CategoryService {
                                             <select id="edit-status-${
                                               category.id
                                             }" class="form-select mb-3">
-                                                <option value="0" ${
-                                                  category.statusCategory == 0
+                                                <option value="1" ${
+                                                  category.statusCategory == 1
                                                     ? "selected"
                                                     : ""
                                                 }>Hiển thị</option>
-                                                <option value="1" ${
-                                                  category.statusCategory == 1
+                                                <option value="0" ${
+                                                  category.statusCategory == 0
                                                     ? "selected"
                                                     : ""
                                                 }>Ẩn</option>

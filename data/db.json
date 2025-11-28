@@ -1,34 +1,39 @@
 {
   "categories": [
     {
-      "id": "CAT001",
       "name": "Bó Hoa",
       "description": "Các mẫu bó hoa tươi đẹp phù hợp tặng người yêu bạn bè và người thân",
-      "image_url": "https://images.unsplash.com/photo-1528731708534-816fe59f90cb"
+      "image_url": "https://images.unsplash.com/photo-1528731708534-816fe59f90cb",
+      "statusCategory": 1,
+      "id": "CAT001"
     },
     {
       "id": "CAT002",
       "name": "Chậu Hoa",
       "description": "Chậu hoa trang trí phòng khách văn phòng hoặc làm quà tặng",
-      "image_url": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6"
+      "image_url": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6",
+      "statusCategory": 1
     },
     {
       "id": "CAT003",
       "name": "Hoa Hộp Quà",
       "description": "Hoa được gói trong hộp quà sang trọng phù hợp các dịp đặc biệt",
-      "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
+      "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+      "statusCategory": 1
     },
     {
-      "id": "CAT004",
       "name": "Hoa Sinh Nhật",
       "description": "Hoa tươi mừng sinh nhật rực rỡ và ý nghĩa",
-      "image_url": "https://images.unsplash.com/photo-1509043759401-136742328bb3"
+      "image_url": "https://images.unsplash.com/photo-1509043759401-136742328bb3",
+      "statusCategory": 1,
+      "id": "CAT004"
     },
     {
       "id": "CAT005",
       "name": "Hoa Sự Kiện",
       "description": "Hoa khai trương hoa chúc mừng dùng trong sự kiện",
-      "image_url": "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92"
+      "image_url": "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92",
+      "statusCategory": 0
     }
   ],
   "products": [
@@ -701,7 +706,7 @@
       "receiver_phone": "0988123456",
       "receiver_address": "45 Lê Lợi, Quận 1, TP. Hồ Chí Minh",
       "order_date": "2025-10-17T09:15:00Z",
-      "status": "Processing",
+      "status": "Delivered",
       "items": [
         {
           "product_id": "FLW001",
