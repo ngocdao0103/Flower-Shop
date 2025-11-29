@@ -24,7 +24,7 @@ export class ProductService {
       this.categoryList = res.data;
       let html = "";
       res.data.forEach((cat) => {
-        if(cat.statusCategory == 0) return;
+        if (cat.statusCategory == 0) return;
         html += `<span class="tag category-tag" data-id="${cat.id}">${cat.name}</span>`;
       });
 
@@ -41,27 +41,39 @@ export class ProductService {
       if (res.status !== status.OK) return;
 
       this.allProducts = res.data;
+
+      const maxPrice = Math.max(...this.allProducts.map(p => p.base_price));
+
+      this.maxPrice = maxPrice;
+
+      const priceRange = document.getElementById("priceRange");
+      const priceLabel = document.querySelector(".price-label");
+
+      if (priceRange) {
+        priceRange.max = maxPrice;             
+        priceRange.value = maxPrice;            
+        priceLabel.textContent = `0đ - ${maxPrice.toLocaleString()}đ`;
+      }
+
       this.applyFilters();
     } catch (err) {
       console.error("Load product error:", err);
     }
   }
 
+
   applyFilters() {
     let filtered = [...this.allProducts];
 
-    // Lọc theo danh mục
     if (this.selectedCategory) {
       filtered = filtered.filter((p) => p.category_id == this.selectedCategory);
     }
 
-    // Lọc theo giá
     filtered = filtered.filter((p) => {
       let price = p.base_price;
       return price <= this.maxPrice;
     });
 
-    // Lọc theo tìm kiếm
     if (this.searchKeyword.trim() !== "") {
       filtered = filtered.filter((p) =>
         p.name.toLowerCase().includes(this.searchKeyword.toLowerCase())
@@ -71,7 +83,6 @@ export class ProductService {
     this.renderProducts(filtered);
   }
 
-  // Click danh mục
   registerCategoryClick() {
     const tags = document.querySelectorAll(".category-tag");
 
@@ -79,15 +90,12 @@ export class ProductService {
       tag.addEventListener("click", () => {
         const isActive = tag.classList.contains("active-category");
 
-        // Bỏ active tất cả
         tags.forEach((t) => t.classList.remove("active-category"));
 
         if (!isActive) {
-          // Nếu tag chưa active, kích hoạt lại
           tag.classList.add("active-category");
           this.selectedCategory = tag.dataset.id;
         } else {
-          // Nếu đang active mà click lại → bỏ chọn
           this.selectedCategory = null;
         }
 
@@ -96,7 +104,6 @@ export class ProductService {
     });
   }
 
-  // Tìm kiếm
   registerSearch() {
     const searchInput = document.querySelector(
       "input[placeholder='Tìm kiếm cửa hàng']"
@@ -108,7 +115,7 @@ export class ProductService {
       this.applyFilters();
     });
   }
-  // Lọc giá
+
   registerPriceFilter() {
     const priceRange = document.getElementById("priceRange");
     const priceLabel = document.querySelector(".price-label");
@@ -117,7 +124,7 @@ export class ProductService {
     if (!priceRange || !priceLabel) return;
 
     priceRange.addEventListener("input", () => {
-      let value = priceRange.value * 10000;
+      let value = Number(priceRange.value);
       priceLabel.textContent = `0đ - ${value.toLocaleString()}đ`;
       this.maxPrice = value;
     });
@@ -126,6 +133,7 @@ export class ProductService {
       this.applyFilters();
     });
   }
+
 
   renderProducts(products) {
     const productContainer = document.getElementById("productContainer");
@@ -136,7 +144,6 @@ export class ProductService {
       currency: "VND",
     });
 
-    // Nếu không có sản phẩm
     if (products.length === 0) {
       productContainer.innerHTML = `
             <div class="col-12 text-center py-5">
@@ -147,9 +154,9 @@ export class ProductService {
     }
 
     let html = "";
-    
+
     products.forEach((prod) => {
-      if(prod.category_id && this.categoryList.find(cat => cat.id == prod.category_id && cat.statusCategory == 0)) return;
+      if (prod.category_id && this.categoryList.find(cat => cat.id == prod.category_id && cat.statusCategory == 0)) return;
       let priceHtml = "";
       if (prod.sale_price) {
         priceHtml = `
